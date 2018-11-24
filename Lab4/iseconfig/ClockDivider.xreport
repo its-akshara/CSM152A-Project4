@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2018-11-20T20:46:59</DateModified>
-  <ModuleName>ClockDivider</ModuleName>
-  <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>/home/ise/Labs/CSM152A-Project4/Lab4/iseconfig/ClockDivider.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/home/ise/Labs/CSM152A-Project4/Lab4</ImplementationReportsDirectory>
-  <DateInitialized>2018-11-20T20:44:51</DateInitialized>
+  <DateModified>2018-11-24T04:51:58</DateModified>
+  <ModuleName>bossBattleTop</ModuleName>
+  <SummaryTimeStamp>2018-11-24T03:08:20</SummaryTimeStamp>
+  <SavedFilePath>/home/ise/VM_Share_Dir/CSM152A-Project4/Lab4/iseconfig/clockDivider.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>/home/ise/VM_Share_Dir/CSM152A-Project4/Lab4/</ImplementationReportsDirectory>
+  <DateInitialized>2018-11-24T03:07:33</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
  <body>

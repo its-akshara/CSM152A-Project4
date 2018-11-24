@@ -27,14 +27,14 @@ module clockDivider(clk, rst, maxValue, clk_out);
 	
 	always @(posedge clk) begin
 		if (rst) begin
-			counter <= 0;
+			counter <= 1;
 			clk_out <= 1'b0;
 		end
 		else begin
 			counter <= counter + 1'b1;
 			if (counter == maxValue) begin
 				clk_out <= ~clk_out;
-				counter <= 0;
+				counter <= 1;
 			end
 		end
 	end

@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "/home/ise/VM_Share_Dir/CSM152A-Project4/Lab4/bossController_tb_isim_beh.exe" -prj "/home/ise/VM_Share_Dir/CSM152A-Project4/Lab4/bossController_tb_beh.prj" "bossController_tb" "work.glbl" 
