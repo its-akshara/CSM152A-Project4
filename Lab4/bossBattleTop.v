@@ -27,5 +27,11 @@ module bossBattleTop(clk, sw, btnLeft, btnRight, btnShoot,
 	output [2:0] vgaRed, vgaGreen;
 	output [1:0] vgaBlue;
 	output Hsync, Vsync;
+	
+	wire clk_vga;
+	clockDivider clkVga(clk, sw, 2, clk_vga);
+	
+	wire clk_bossProjSpeed;
+	clockDivider clkBossProjSpeed(clk, sw, 500000, clk_bossProjSpeed);
 
 endmodule

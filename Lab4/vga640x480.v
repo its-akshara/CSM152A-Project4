@@ -21,6 +21,12 @@
 module vga640x480(
 	input wire dclk,			//pixel clock: 25MHz
 	input wire rst,			//asynchronous reset
+	
+	input wire [9:0] bossX,
+	input wire [8:0] bossY,
+	input wire [9:0] bossW,
+	input wire [8:0] bossH,
+	
 	output wire hsync,		//horizontal sync out
 	output wire vsync,		//vertical sync out
 	output reg [2:0] red,	//red vga output
@@ -100,6 +106,15 @@ begin
 	// first check if we're within vertical active video range
 	if (vc >= vbp && vc < vfp)
 	begin
+		if (vc >= bossY && vc <= bossY + bossH &&
+			hc >= bossX && hc <= bossX + bossW)
+		begin
+			red = 3'b111;
+			green = 3'b000;
+			blue = 2'b00;
+		end
+	
+		/*
 		// now display different colors every 80 pixels
 		// while we're within the active horizontal range
 		// -----------------
@@ -159,6 +174,7 @@ begin
 			green = 3'b000;
 			blue = 2'b00;
 		end
+		*/
 		// we're outside active horizontal range so display black
 		else
 		begin

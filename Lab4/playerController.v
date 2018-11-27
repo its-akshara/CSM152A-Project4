@@ -43,7 +43,7 @@ module playerController(clk_master, pulse_stepCycle, rst, mvLeft, mvRight, playe
 	// parameter PROJ_H = 1;
 	parameter STEP = 1;
 	parameter LEFT_BOUNDARY = 0;
-	parameter RIGHT_BOUNDARY = 400'
+	parameter RIGHT_BOUNDARY = 400;
 	
 	assign playerW = PLAYER_W;
 	assign playerH = PLAYER_H;
