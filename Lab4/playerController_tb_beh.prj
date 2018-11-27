@@ -1,0 +1,4 @@
+verilog work "playerController.v"
+verilog work "clockPulser.v"
+verilog work "playerController_tb.v"
+verilog work "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

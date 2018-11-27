@@ -20,14 +20,85 @@
 //////////////////////////////////////////////////////////////////////////////////
 module playerProjHandler(clk, rst, pulse_projSpeed, shoot, projHit, collidedProj,
 	playerX, playerY, playerW,
-	proj1X, proj1Y, proj2X, proj2Y, proj3X, proj3Y
+	i_proj1X, i_proj1Y, i_proj2X, i_proj2Y, i_proj3X, i_proj3Y,
+	o_proj1X, o_proj1Y, o_proj2X, o_proj2Y, o_proj3X, o_proj3Y
     );
 	input clk, rst, pulse_projSpeed, shoot, projHit;
 	input [1:0] collidedProj;
 	input [9:0] playerX, playerW;
 	input [8:0] playerY;
-	output reg [9:0] proj1X, proj2X, proj3X;
-	output reg [8:0] proj1Y, proj2Y, proj3Y;
+	input [9:0] i_proj1X, i_proj2X, i_proj3X;
+	input [8:0] i_proj1Y, i_proj2Y, i_proj3Y;
+	output reg [9:0] o_proj1X, o_proj2X, o_proj3X;
+	output reg [8:0] o_proj1Y, o_proj2Y, o_proj3Y;
+	
+	parameter TOP_BOUNDARY = 400;
+	parameter STEP = 1;
+	parameter PROJ_OFFSET = playerW;
 
+	always @(posedge clk)
+	begin
+		if(rst)
+		begin
+			o_proj1X <= 0;
+			o_proj1Y <= 0;
+			o_proj2X <= 0;
+			o_proj2Y <= 0;
+			o_proj3X <= 0;
+			o_proj3Y <= 0;
+		end
+		else if(pulse_projSpeed) // update location and check for collision
+		begin
+			if(((i_proj1Y+STEP)>=TOP_BOUNDARY || (projHit && collidedProj==2'b01) || (i_proj1X==0 && i_proj1Y==0))) 
+			begin
+				o_proj1X <= 0;
+				o_proj1Y <= 0;
+			end
+			else
+			begin
+				o_proj1X <= i_proj1X;
+				o_proj1Y <= i_proj1Y+STEP;
+			end // NOTE consider adding !shoot in if
+			if(((i_proj2Y+STEP)>=TOP_BOUNDARY || (projHit && collidedProj==2'b10) || (i_proj2X==0 && i_proj2Y==0))) 
+			begin
+				o_proj2X <= 0;
+				o_proj2Y <= 0;
+			end
+			else
+			begin
+				o_proj2X <= i_proj2X;
+				o_proj2Y <= i_proj2Y+STEP;
+			end
+			if(((i_proj3Y+STEP)>=TOP_BOUNDARY || (projHit && collidedProj==2'b11) || (i_proj3X==0 && i_proj3Y==0))) 
+			begin
+				o_proj3X <= 0;
+				o_proj3Y <= 0;
+			end
+			else
+			begin
+				o_proj3X <= i_proj3X;
+				o_proj3Y <= i_proj3Y+STEP;
+			end
+		end
+		if(shoot) //create a new projectile only if space available
+		begin
+			if(i_proj1X==0 && i_proj1Y ==0)
+			begin
+				o_proj1X <= playerX;
+				o_proj1Y <= playerY + PROJ_OFFSET;
+			end
+			else if(i_proj2X==0 && i_proj2Y ==0)
+			begin
+				o_proj2X <= playerX;
+				o_proj2Y <= playerY + PROJ_OFFSET;
+			end
+			else if(i_proj3X==0 && i_proj3Y ==0)
+			begin
+				o_proj3X <= playerX;
+				o_proj3Y <= playerY + PROJ_OFFSET;
+			end
+		end //NOTE check logic here!!
+		
+	end
 
 endmodule
