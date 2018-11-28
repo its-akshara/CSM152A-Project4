@@ -35,9 +35,13 @@ module bossProjHandler(clk, rst, pulse_projSpeed, bossShoot, projHit, collidedPr
 	
 	parameter STEP = 1;
 	reg [31:0] timer = 1;
+    reg waitSignal = 0;
+    reg turnOffBeam = 0;
 	
 	always @ (posedge clk) begin
-		if (rst) begin
+		if (rst || turnOffBeam) begin
+            if (turnOffBeam == 1)
+                turnOffBeam <= 0;
 			proj1X_out <= 0;
 			proj1Y_out <= 0;
 			proj2X_out <= 0;
@@ -50,9 +54,18 @@ module bossProjHandler(clk, rst, pulse_projSpeed, bossShoot, projHit, collidedPr
 			proj5Y_out <= 0;
 			waitSignal <= 0;
 		end
+        else if (waitSignal) begin
+			timer <= timer + 1;
+			if (timer == delay) begin
+				turnOffBeam <= 1;
+				waitSignal <= 0;
+                timer <= 1;
+			end
+			else
+				turnOffBeam <= 0;
+		end
 		else if (bossShoot) begin
 			if (attackType == 2'b01) begin
-				timer <= 1;
 				waitSignal <= 1;
 			end
 			proj1X_out <= proj1X_start;
@@ -103,16 +116,19 @@ module bossProjHandler(clk, rst, pulse_projSpeed, bossShoot, projHit, collidedPr
 		end
 	end
 
+    /*
 	always @ (posedge clk) begin
 		if (waitSignal) begin
 			timer <= timer + 1;
 			if (timer == delay) begin
-				rst <= 1;
+				turnOffBeam <= 1;
 				waitSignal <= 0;
+                timer <= 1;
 			end
 			else
-				rst <= 0;
+				turnOffBeam <= 0;
 		end
 	end
+    */
 
 endmodule

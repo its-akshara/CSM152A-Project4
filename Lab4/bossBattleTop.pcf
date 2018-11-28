@@ -1,0 +1,150 @@
+//! **************************************************************************
+// Written by: Map P.68d on Wed Nov 28 15:23:23 2018
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "sw" LOCATE = SITE "T10" LEVEL 1;
+COMP "clk" LOCATE = SITE "V10" LEVEL 1;
+COMP "vgaGreen<0>" LOCATE = SITE "P8" LEVEL 1;
+COMP "vgaGreen<1>" LOCATE = SITE "T6" LEVEL 1;
+COMP "vgaGreen<2>" LOCATE = SITE "V6" LEVEL 1;
+COMP "an<0>" LOCATE = SITE "N16" LEVEL 1;
+COMP "an<1>" LOCATE = SITE "N15" LEVEL 1;
+COMP "an<2>" LOCATE = SITE "P18" LEVEL 1;
+COMP "an<3>" LOCATE = SITE "P17" LEVEL 1;
+COMP "Hsync" LOCATE = SITE "N6" LEVEL 1;
+COMP "btnLeft" LOCATE = SITE "C4" LEVEL 1;
+COMP "Vsync" LOCATE = SITE "P7" LEVEL 1;
+COMP "vgaRed<0>" LOCATE = SITE "U7" LEVEL 1;
+COMP "vgaRed<1>" LOCATE = SITE "V7" LEVEL 1;
+COMP "vgaRed<2>" LOCATE = SITE "N7" LEVEL 1;
+COMP "btnRight" LOCATE = SITE "D9" LEVEL 1;
+COMP "btnShoot" LOCATE = SITE "A8" LEVEL 1;
+COMP "seg<0>" LOCATE = SITE "T17" LEVEL 1;
+COMP "seg<1>" LOCATE = SITE "T18" LEVEL 1;
+COMP "seg<2>" LOCATE = SITE "U17" LEVEL 1;
+COMP "seg<3>" LOCATE = SITE "U18" LEVEL 1;
+COMP "seg<4>" LOCATE = SITE "M14" LEVEL 1;
+COMP "seg<5>" LOCATE = SITE "N14" LEVEL 1;
+COMP "seg<6>" LOCATE = SITE "L14" LEVEL 1;
+COMP "seg<7>" LOCATE = SITE "M13" LEVEL 1;
+COMP "vgaBlue<0>" LOCATE = SITE "R7" LEVEL 1;
+COMP "vgaBlue<1>" LOCATE = SITE "T7" LEVEL 1;
+TIMEGRP sys_clk_pin = BEL "gen_clkVga/clk_out" BEL
+        "gen_pulseCycleStep/clk_out" BEL "gen_pulseBossProjSpeed/clk_out" BEL
+        "gen_clkVga/counter_1" BEL "gen_pulseCycleStep/counter_0" BEL
+        "gen_pulseCycleStep/counter_3" BEL "gen_pulseCycleStep/counter_1" BEL
+        "gen_pulseCycleStep/counter_2" BEL "gen_pulseCycleStep/counter_6" BEL
+        "gen_pulseCycleStep/counter_4" BEL "gen_pulseCycleStep/counter_5" BEL
+        "gen_pulseCycleStep/counter_9" BEL "gen_pulseCycleStep/counter_7" BEL
+        "gen_pulseCycleStep/counter_8" BEL "gen_pulseCycleStep/counter_12" BEL
+        "gen_pulseCycleStep/counter_10" BEL "gen_pulseCycleStep/counter_11"
+        BEL "gen_pulseCycleStep/counter_15" BEL
+        "gen_pulseCycleStep/counter_13" BEL "gen_pulseCycleStep/counter_14"
+        BEL "gen_pulseCycleStep/counter_18" BEL
+        "gen_pulseCycleStep/counter_16" BEL "gen_pulseCycleStep/counter_17"
+        BEL "gen_pulseCycleStep/counter_21" BEL
+        "gen_pulseCycleStep/counter_19" BEL "gen_pulseCycleStep/counter_20"
+        BEL "gen_pulseCycleStep/counter_24" BEL
+        "gen_pulseCycleStep/counter_22" BEL "gen_pulseCycleStep/counter_23"
+        BEL "gen_pulseCycleStep/counter_27" BEL
+        "gen_pulseCycleStep/counter_25" BEL "gen_pulseCycleStep/counter_26"
+        BEL "gen_pulseCycleStep/counter_30" BEL
+        "gen_pulseCycleStep/counter_28" BEL "gen_pulseCycleStep/counter_29"
+        BEL "gen_pulseCycleStep/counter_31" BEL
+        "gen_pulseBossProjSpeed/counter_7" BEL
+        "gen_pulseBossProjSpeed/counter_6" BEL
+        "gen_pulseBossProjSpeed/counter_10" BEL
+        "gen_pulseBossProjSpeed/counter_8" BEL
+        "gen_pulseBossProjSpeed/counter_9" BEL
+        "gen_pulseBossProjSpeed/counter_13" BEL
+        "gen_pulseBossProjSpeed/counter_11" BEL
+        "gen_pulseBossProjSpeed/counter_12" BEL
+        "gen_pulseBossProjSpeed/counter_16" BEL
+        "gen_pulseBossProjSpeed/counter_14" BEL
+        "gen_pulseBossProjSpeed/counter_15" BEL
+        "gen_pulseBossProjSpeed/counter_19" BEL
+        "gen_pulseBossProjSpeed/counter_17" BEL
+        "gen_pulseBossProjSpeed/counter_18" BEL
+        "gen_pulseBossProjSpeed/counter_22" BEL
+        "gen_pulseBossProjSpeed/counter_20" BEL
+        "gen_pulseBossProjSpeed/counter_21" BEL
+        "gen_pulseBossProjSpeed/counter_25" BEL
+        "gen_pulseBossProjSpeed/counter_23" BEL
+        "gen_pulseBossProjSpeed/counter_24" BEL
+        "gen_pulseBossProjSpeed/counter_28" BEL
+        "gen_pulseBossProjSpeed/counter_26" BEL
+        "gen_pulseBossProjSpeed/counter_27" BEL
+        "gen_pulseBossProjSpeed/counter_31" BEL
+        "gen_pulseBossProjSpeed/counter_29" BEL
+        "gen_pulseBossProjSpeed/counter_30" BEL "bossCtrl/timer_30" BEL
+        "bossCtrl/timer_29" BEL "bossCtrl/timer_31" BEL "bossCtrl/timer_28"
+        BEL "bossCtrl/timer_27" BEL "bossCtrl/timer_26" BEL
+        "bossCtrl/timer_25" BEL "bossCtrl/timer_24" BEL "bossCtrl/timer_23"
+        BEL "bossCtrl/timer_22" BEL "bossCtrl/timer_21" BEL
+        "bossCtrl/timer_20" BEL "bossCtrl/timer_19" BEL "bossCtrl/timer_18"
+        BEL "bossCtrl/timer_17" BEL "bossCtrl/timer_16" BEL
+        "bossCtrl/timer_15" BEL "bossCtrl/timer_14" BEL "bossCtrl/timer_13"
+        BEL "bossCtrl/timer_12" BEL "bossCtrl/timer_11" BEL
+        "bossCtrl/timer_10" BEL "bossCtrl/timer_9" BEL "bossCtrl/timer_8" BEL
+        "bossCtrl/timer_7" BEL "bossCtrl/timer_6" BEL "bossCtrl/timer_5" BEL
+        "bossCtrl/timer_4" BEL "bossCtrl/timer_3" BEL "bossCtrl/timer_2" BEL
+        "bossCtrl/timer_1" BEL "bossCtrl/timer_0" BEL "bossCtrl/state_2" BEL
+        "bossCtrl/state_1" BEL "bossCtrl/state_0" BEL "bossCtrl/attackType_1"
+        BEL "bossCtrl/projH_8" BEL "bossCtrl/projH_3" BEL "bossCtrl/projH_2"
+        BEL "bossCtrl/proj5X_0" BEL "bossCtrl/proj3X_9" BEL
+        "bossCtrl/proj3X_4" BEL "bossCtrl/proj3X_2" BEL "bossCtrl/proj3X_1"
+        BEL "bossCtrl/proj2X_8" BEL "bossCtrl/proj2X_5" BEL
+        "bossCtrl/proj2X_4" BEL "bossCtrl/proj2X_2" BEL "bossCtrl/proj2X_1"
+        BEL "bossCtrl/proj1X_7" BEL "bossCtrl/proj1X_6" BEL
+        "bossCtrl/proj1X_5" BEL "bossCtrl/proj1X_4" BEL "bossCtrl/proj1X_3"
+        BEL "bossCtrl/proj1X_2" BEL "bossCtrl/proj1X_1" BEL
+        "bossCtrl/proj1X_0" BEL "bossCtrl/waitSignal" BEL "bossProj/timer_26"
+        BEL "bossProj/timer_25" BEL "bossProj/timer_24" BEL
+        "bossProj/timer_23" BEL "bossProj/timer_22" BEL "bossProj/timer_21"
+        BEL "bossProj/timer_20" BEL "bossProj/timer_19" BEL
+        "bossProj/timer_18" BEL "bossProj/timer_17" BEL "bossProj/timer_16"
+        BEL "bossProj/timer_15" BEL "bossProj/timer_14" BEL
+        "bossProj/timer_13" BEL "bossProj/timer_12" BEL "bossProj/timer_11"
+        BEL "bossProj/timer_10" BEL "bossProj/timer_9" BEL "bossProj/timer_8"
+        BEL "bossProj/timer_7" BEL "bossProj/timer_6" BEL "bossProj/timer_5"
+        BEL "bossProj/timer_4" BEL "bossProj/timer_3" BEL "bossProj/timer_2"
+        BEL "bossProj/timer_1" BEL "bossProj/timer_0" BEL
+        "bossProj/proj4Y_out_8" BEL "bossProj/proj4Y_out_7" BEL
+        "bossProj/proj4Y_out_6" BEL "bossProj/proj4Y_out_5" BEL
+        "bossProj/proj4Y_out_4" BEL "bossProj/proj4Y_out_3" BEL
+        "bossProj/proj4Y_out_2" BEL "bossProj/proj4Y_out_1" BEL
+        "bossProj/proj4Y_out_0" BEL "bossProj/proj3Y_out_8" BEL
+        "bossProj/proj3Y_out_7" BEL "bossProj/proj3Y_out_6" BEL
+        "bossProj/proj3Y_out_5" BEL "bossProj/proj3Y_out_4" BEL
+        "bossProj/proj3Y_out_3" BEL "bossProj/proj3Y_out_2" BEL
+        "bossProj/proj3Y_out_1" BEL "bossProj/proj3Y_out_0" BEL
+        "bossProj/proj5Y_out_8" BEL "bossProj/proj5Y_out_7" BEL
+        "bossProj/proj5Y_out_6" BEL "bossProj/proj5Y_out_5" BEL
+        "bossProj/proj5Y_out_4" BEL "bossProj/proj5Y_out_3" BEL
+        "bossProj/proj5Y_out_2" BEL "bossProj/proj5Y_out_1" BEL
+        "bossProj/proj5Y_out_0" BEL "bossProj/proj2Y_out_8" BEL
+        "bossProj/proj2Y_out_7" BEL "bossProj/proj2Y_out_6" BEL
+        "bossProj/proj2Y_out_5" BEL "bossProj/proj2Y_out_4" BEL
+        "bossProj/proj2Y_out_3" BEL "bossProj/proj2Y_out_2" BEL
+        "bossProj/proj2Y_out_1" BEL "bossProj/proj2Y_out_0" BEL
+        "bossProj/proj2X_out_9" BEL "bossProj/proj2X_out_8" BEL
+        "bossProj/proj2X_out_7" BEL "bossProj/proj2X_out_6" BEL
+        "bossProj/proj2X_out_5" BEL "bossProj/proj2X_out_4" BEL
+        "bossProj/proj2X_out_3" BEL "bossProj/proj2X_out_2" BEL
+        "bossProj/proj2X_out_1" BEL "bossProj/proj2X_out_0" BEL
+        "bossProj/proj1X_out_9" BEL "bossProj/proj1X_out_8" BEL
+        "bossProj/proj1X_out_7" BEL "bossProj/proj1X_out_6" BEL
+        "bossProj/proj1X_out_5" BEL "bossProj/proj1X_out_4" BEL
+        "bossProj/proj1X_out_3" BEL "bossProj/proj1X_out_2" BEL
+        "bossProj/proj1X_out_1" BEL "bossProj/proj1X_out_0" BEL
+        "bossProj/turnOffBeam" BEL "bossProj/proj5X_out_9" BEL
+        "bossProj/proj4X_out_9" BEL "bossProj/proj4X_out_6" BEL
+        "bossProj/proj3X_out_9" BEL "bossProj/proj3X_out_7" BEL
+        "bossProj/proj3X_out_4" BEL "bossProj/proj3X_out_1" BEL
+        "gen_clkVga/counter_0" BEL "bossCtrl/indicate1" BEL
+        "bossCtrl/bossShoot" BEL "bossCtrl/indicate2" BEL
+        "bossProj/waitSignal" BEL "bossCtrl/bossShoot_1" BEL "clk_BUFGP/BUFG";
+TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 100 MHz HIGH 50%;
+SCHEMATIC END;
+

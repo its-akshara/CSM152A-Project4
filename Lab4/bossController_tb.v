@@ -50,7 +50,7 @@ module bossController_tb;
 	wire [8:0] projH;
 	wire [9:0] bossHP;
 	wire bossShoot;
-	wire attackType;
+	wire [1:0] attackType;
 	wire indicate1;
 	wire indicate2;
 	

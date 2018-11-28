@@ -106,7 +106,18 @@ module bossController(clk_master, pulse_cycleStep, rst, bossHit, delay,
 			indicate2 <= 0;
 		end
 		else begin
-			if (pulse_cycleStep) begin
+            if (waitSignal) begin
+                timer <= timer + 1;
+                if (timer == delay) begin
+                    indicate1 <= 0;
+                    indicate2 <= 0;
+                    bossShoot <= 1;
+                    waitSignal <= 0;
+                end
+                else
+                    bossShoot <= 0;
+            end
+			else if (pulse_cycleStep) begin
 				case (state)
 					0: begin
 						waitSignal <= 0;
@@ -200,7 +211,7 @@ module bossController(clk_master, pulse_cycleStep, rst, bossHit, delay,
 						projH <= ATK5_PROJ_H;
 						attackType <= diagAtk;
 						bossShoot <= 1;
-						state <= 0;
+						state <= 1;
 					end
 				endcase
 			end
@@ -208,7 +219,7 @@ module bossController(clk_master, pulse_cycleStep, rst, bossHit, delay,
 				bossShoot <= 0;
 		end
 	end
-	
+	/*
 	always @ (posedge clk_master) begin
 		if (waitSignal) begin
 			timer <= timer + 1;
@@ -222,7 +233,7 @@ module bossController(clk_master, pulse_cycleStep, rst, bossHit, delay,
 				bossShoot <= 0;
 		end
 	end
-	
+	*/
 	parameter BOSS_HP = 540;
 	parameter HIT_DMG = 20;
 	reg [9:0] bossHP = BOSS_HP;

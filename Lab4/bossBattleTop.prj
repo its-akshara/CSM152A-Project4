@@ -1,0 +1,7 @@
+verilog work "vga640x480.v"
+verilog work "debouncer.v"
+verilog work "clockPulser.v"
+verilog work "ClockDivider.v"
+verilog work "bossProjHandler.v"
+verilog work "bossController.v"
+verilog work "bossBattleTop.v"

@@ -80,7 +80,7 @@ parameter vfp = 511; 	// beginning of vertical front porch
 
 parameter bossHP_Y = 56;
 parameter bossHP_H = 50;
-parameter bossHP_X = 50;
+parameter bossHP_X = 144 + 50;
 
 parameter PX_PER_BLOCK = 15;
 parameter VICTORY_Y = 233;
@@ -191,29 +191,25 @@ begin
 			end
 			
 			// draw indicators
-			else if (indicate1) begin
-				if (vc >= INDIC_Y && vc <= INDIC_Y + INDIC_H &&
+			else if (indicate1 && vc >= INDIC_Y && vc <= INDIC_Y + INDIC_H &&
 					((hc >= INDIC1_1X && hc <= INDIC1_1X + INDIC_W) ||
 					(hc >= INDIC1_2X && hc <= INDIC1_2X + INDIC_W)))
-				begin
-					red = 3'b111;
-					green = 3'b111;
-					blue = 2'b00;
-				end
+			begin
+				red = 3'b111;
+				green = 3'b111;
+				blue = 2'b00;
 			end
-			
-			else if (indicate2) begin
-				if (vc >= INDIC_Y && vc <= INDIC_Y + INDIC_H &&
+						
+			else if (indicate2 && vc >= INDIC_Y && vc <= INDIC_Y + INDIC_H &&
 					((hc >= INDIC2_1X && hc <= INDIC2_1X + INDIC_W) ||
 					(hc >= INDIC2_2X && hc <= INDIC2_2X + INDIC_W) ||
 					(hc >= INDIC2_3X && hc <= INDIC2_3X + INDIC_W)))
-				begin
-					red = 3'b111;
-					green = 3'b111;
-					blue = 2'b00;
-				end
+			begin
+				red = 3'b111;
+				green = 3'b111;
+				blue = 2'b00;
 			end
-			
+						
 			// draw boss projectile 1
 			else if (bossProj1X > 0 && bossProj1Y > 0 &&
 				vc >= bossProj1Y && vc <= bossProj1Y + bossProjH &&
@@ -515,6 +511,14 @@ begin
 				green = 3'b111;
 				blue = 2'b00;
 			end
+            
+            else if (vc >= VICTORY_Y + (4*PX_PER_BLOCK) && vc <= VICTORY_Y + (5*PX_PER_BLOCK) &&
+                hc >= VICTORY_X + (35*PX_PER_BLOCK) && hc <= VICTORY_X + (36*PX_PER_BLOCK))
+            begin
+                red = 3'b000;
+                green = 3'b111;
+                blue = 2'b00;
+            end
 			
 			else
 			begin
@@ -536,7 +540,7 @@ begin
 				blue = 2'b11;
 			end
 			
-			else if (vc >= GAMEOVER_Y + PX_PER_BLOCK && vc <= GAMEOVER_Y + (3*PX_PER_BLOCK) &&
+			else if (vc >= GAMEOVER_Y + PX_PER_BLOCK && vc <= GAMEOVER_Y + (4*PX_PER_BLOCK) &&
 				hc >= GAMEOVER_X && hc <= GAMEOVER_X + PX_PER_BLOCK)
 			begin
 				red = 3'b111;
