@@ -29,6 +29,8 @@ module bossCollisionDetector(clk, bossX, bossY, bossW, bossH,
 	output bossHit, projHit;
 	output [1:0] collidedProj;
 	
+	parameter BORDER = 31;
+	
 	always @ (posedge clk) begin
 		if ((playerProj1Y < (bossY + bossH)) &&
 			(((bossX >= playerProj1X) && (bossX < (playerProj1X + projW))) ||
@@ -52,15 +54,15 @@ module bossCollisionDetector(clk, bossX, bossY, bossW, bossH,
 			projHit <= 1;
 			collidedProj <= 3;
 		end
-		else if (playerProj1Y < 0) begin
+		else if (playerProj1Y < BORDER) begin
 			projHit <= 1;
 			collidedProj <= 1;
 		end
-		else if (playerProj2Y < 0) begin
+		else if (playerProj2Y < BORDER) begin
 			projHit <= 1;
 			collidedProj <= 2;
 		end
-		else if (playerProj3Y < 0) begin
+		else if (playerProj3Y < BORDER) begin
 			projHit <= 1;
 			collidedProj <= 3;
 		end

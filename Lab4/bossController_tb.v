@@ -26,9 +26,10 @@ module bossController_tb;
 
 	// Inputs
 	reg clk_master;
-	wire pulse_stepCycle;
+	wire pulse_cycleStep;
 	reg rst;
 	reg bossHit;
+	reg [31:0] delay;
 
 	// Outputs
 	wire [9:0] bossLocX;
@@ -49,18 +50,21 @@ module bossController_tb;
 	wire [8:0] projH;
 	wire [9:0] bossHP;
 	wire bossShoot;
-	wire [1:0] attackType;
+	wire attackType;
+	wire indicate1;
+	wire indicate2;
 	
 	always #0.5 clk_master = ~clk_master;
 	
-	clockPulser pulseGen(clk_master, rst, 4, pulse_stepCycle);
+	clockPulser pulseGen(clk_master, rst, 4, pulse_cycleStep);
 
 	// Instantiate the Unit Under Test (UUT)
 	bossController uut (
 		.clk_master(clk_master), 
-		.pulse_stepCycle(pulse_stepCycle), 
+		.pulse_cycleStep(pulse_cycleStep), 
 		.rst(rst), 
 		.bossHit(bossHit), 
+		.delay(delay),
 		.bossLocX(bossLocX), 
 		.bossLocY(bossLocY), 
 		.bossWidth(bossWidth), 
@@ -79,7 +83,9 @@ module bossController_tb;
 		.projH(projH), 
 		.bossHP(bossHP), 
 		.bossShoot(bossShoot), 
-		.attackType(attackType)
+		.attackType(attackType),
+		.indicate1(indicate1),
+		.indicate2(indicate2)
 	);
 
 	initial begin
@@ -87,6 +93,7 @@ module bossController_tb;
 		clk_master = 1;
 		rst = 0;
 		bossHit = 0;
+		delay = 2;
 
 	end
       

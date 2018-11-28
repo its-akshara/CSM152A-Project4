@@ -20,10 +20,10 @@
 //////////////////////////////////////////////////////////////////////////////////
 module clockPulser(clk, rst, maxValue, clk_out);
 	input clk, rst;
-	input [27:0] maxValue;
+	input [31:0] maxValue;
 	output reg clk_out=0;
 	
-	reg [27:0] counter = 1;
+	reg [31:0] counter = 1;
 	
 	always @(posedge clk) begin
 		if (rst) begin

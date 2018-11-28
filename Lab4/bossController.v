@@ -18,7 +18,7 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module bossController(clk_master, pulse_stepCycle, rst, bossHit, /*delay,*/
+module bossController(clk_master, pulse_cycleStep, rst, bossHit, delay,
 	bossLocX, bossLocY, bossWidth, bossHeight,
 	proj1X, proj1Y,
 	proj2X, proj2Y,
@@ -26,9 +26,11 @@ module bossController(clk_master, pulse_stepCycle, rst, bossHit, /*delay,*/
 	proj4X, proj4Y,
 	proj5X, proj5Y,
 	projW, projH,
-	bossHP, bossShoot, attackType
+	bossHP, bossShoot, attackType,
+	indicate1, indicate2
     );
-	input clk_master, pulse_stepCycle, rst, bossHit;
+	input clk_master, pulse_cycleStep, rst, bossHit;
+	input [31:0] delay;
 	output wire [9:0] bossLocX, bossWidth;
 	output wire [8:0] bossLocY, bossHeight;
 	output reg [9:0] proj1X, proj2X, proj3X, proj4X, proj5X,
@@ -38,15 +40,17 @@ module bossController(clk_master, pulse_stepCycle, rst, bossHit, /*delay,*/
 	output reg bossShoot;
 	output reg [1:0] attackType;
 	output bossHP;
+	output reg indicate1 = 0, indicate2 = 0;
 	
 	parameter projAtk = 2'b00;
 	parameter beamAtk = 2'b01;
+	parameter diagAtk = 2'b10;
 	
 	//BOSS LOCATION, SIZE CONSTANTS
-	parameter BOSS_X = 150;
-	parameter BOSS_Y = 50;
-	parameter BOSS_W = 340;
-	parameter BOSS_H = 150;
+	parameter BOSS_X = 264;
+	parameter BOSS_Y = 131;
+	parameter BOSS_W = 400;
+	parameter BOSS_H = 100;
 	
 	assign bossLocX = BOSS_X;
 	assign bossLocY = BOSS_Y;
@@ -73,31 +77,39 @@ module bossController(clk_master, pulse_stepCycle, rst, bossHit, /*delay,*/
 	parameter ATK2_PROJ4_X = ATK2_PROJ3_X + PROJ_OFFSET;
 	
 	//ATTACK 3 CONSTANTS
-	//parameter ATK3_PROJ1_X = <SOMETHING>
-	//parameter ATK3_PROJ2_X = <SOMETHING>
-	//parameter BEAM_W = 50;
-	//parameter BEAM_H = 240;
+	parameter BEAM_W = 60;
+	parameter BEAM_H = 280;
+	parameter ATK3_PROJ1_X = BOSS_X - (BEAM_W / 2);
+	parameter ATK3_PROJ2_X = BOSS_X + BOSS_W - (BEAM_W / 2);
 	
 	//ATTACK 4 CONSTANTS
-	//parameter ATK4_PROJ1_X = <SOMETHING>
-	//parameter ATK4_PROJ2_X = <SOMETHING>
-	//parameter ATK4_PROJ3_X = <SOMETHING>
+	parameter ATK4_PROJ1_X = 144;
+	parameter ATK4_PROJ2_X = 464 - (BEAM_W / 2);
+	parameter ATK4_PROJ3_X = 783 - BEAM_W;
+	
+	//ATTACK 5 CONSTANTS
+	parameter ATK5_PROJ_W = 20;
+	parameter ATK5_PROJ_H = 20;
+	parameter ATK5_PROJ1_X = BOSS_X - ATK5_PROJ_W;
+	parameter ATK5_PROJ2_X = BOSS_X + BOSS_W + ATK5_PROJ_W;
 	
 	reg [2:0] state = 0;
-	//reg [27:0] timer = 1;
-	//reg waitSignal;
+	reg [31:0] timer = 1;
+	reg waitSignal = 0;
 	
 	always @ (posedge clk_master) begin
 		if (rst) begin
 			state <= 0;
 			bossShoot <= 0;
-			//waitSignal <= 0;
+			waitSignal <= 0;
+			indicate1 <= 0;
+			indicate2 <= 0;
 		end
 		else begin
-			if (pulse_stepCycle) begin
+			if (pulse_cycleStep) begin
 				case (state)
 					0: begin
-						//waitSignal <= 0;
+						waitSignal <= 0;
 						state <= state + 1;
 					end
 					1, 3: begin
@@ -134,7 +146,7 @@ module bossController(clk_master, pulse_stepCycle, rst, bossHit, /*delay,*/
 						bossShoot <= 1;
 						state <= state + 1;
 					end
-					5: /*begin
+					5: begin
 						proj1X <= ATK3_PROJ1_X;
 						proj1Y <= PROJ_Y;
 						proj2X <= ATK3_PROJ2_X;
@@ -148,13 +160,13 @@ module bossController(clk_master, pulse_stepCycle, rst, bossHit, /*delay,*/
 						projW <= BEAM_W;
 						projH <= BEAM_H;
 						attackType <= beamAtk;
+						indicate1 <= 1;
 						timer <= 1;
 						waitSignal <= 1;
 						state <= state + 1;
 					end
-					*/
-					state <= 0;
-					6: /*begin
+					//state <= 0;
+					6: begin
 						proj1X <= ATK4_PROJ1_X;
 						proj1Y <= PROJ_Y;
 						proj2X <= ATK4_PROJ2_X;
@@ -168,31 +180,51 @@ module bossController(clk_master, pulse_stepCycle, rst, bossHit, /*delay,*/
 						projW <= BEAM_W;
 						projH <= BEAM_H;
 						attackType <= beamAtk;
+						indicate2 <= 1;
 						timer <= 1;
 						waitSignal <= 1;
+						state <= state + 1;
+					end
+					7: begin
+						proj1X <= ATK5_PROJ1_X;
+						proj1Y <= PROJ_Y;
+						proj2X <= ATK5_PROJ2_X;
+						proj2Y <= PROJ_Y;
+						proj3X <= 0;
+						proj3Y <= 0;
+						proj4X <= 0;
+						proj4Y <= 0;
+						proj5X <= 0;
+						proj5Y <= 0;
+						projW <= ATK5_PROJ_W;
+						projH <= ATK5_PROJ_H;
+						attackType <= diagAtk;
+						bossShoot <= 1;
 						state <= 0;
 					end
-					*/
-					state <= 0;
 				endcase
 			end
 			else
 				bossShoot <= 0;
 		end
 	end
-	/*
+	
 	always @ (posedge clk_master) begin
 		if (waitSignal) begin
 			timer <= timer + 1;
-			if (timer == delay)
+			if (timer == delay) begin
+				indicate1 <= 0;
+				indicate2 <= 0;
 				bossShoot <= 1;
+				waitSignal <= 0;
+			end
 			else
 				bossShoot <= 0;
 		end
 	end
-	*/
-	parameter BOSS_HP = 300;
-	parameter HIT_DMG = 5;
+	
+	parameter BOSS_HP = 540;
+	parameter HIT_DMG = 20;
 	reg [9:0] bossHP = BOSS_HP;
 	
 	always @ (posedge clk_master) begin
