@@ -34,12 +34,12 @@ module playerProjHandler_tb;
 	reg [9:0] playerX;
 	reg [8:0] playerY;
 	reg [9:0] playerW;
-	reg [9:0] i_proj1X;
+	/*reg [9:0] i_proj1X;
 	reg [8:0] i_proj1Y;
 	reg [9:0] i_proj2X;
 	reg [8:0] i_proj2Y;
 	reg [9:0] i_proj3X;
-	reg [8:0] i_proj3Y;
+	reg [8:0] i_proj3Y;*/
 
 	// Outputs
 	wire [9:0] o_proj1X;
@@ -60,12 +60,12 @@ module playerProjHandler_tb;
 		.playerX(playerX), 
 		.playerY(playerY), 
 		.playerW(playerW), 
-		.i_proj1X(i_proj1X), 
+		/*.i_proj1X(i_proj1X), 
 		.i_proj1Y(i_proj1Y), 
 		.i_proj2X(i_proj2X), 
 		.i_proj2Y(i_proj2Y), 
 		.i_proj3X(i_proj3X), 
-		.i_proj3Y(i_proj3Y), 
+		.i_proj3Y(i_proj3Y), */
 		.o_proj1X(o_proj1X), 
 		.o_proj1Y(o_proj1Y), 
 		.o_proj2X(o_proj2X), 
@@ -78,12 +78,12 @@ module playerProjHandler_tb;
 	//always #1 pulse_projSpeed = ~pulse_projSpeed;
 	clockPulser pulseGen(clk, rst, 2, pulse_projSpeed);
 	
-	always #0.5 i_proj1X=o_proj1X;
+	/*always #0.5 i_proj1X=o_proj1X;
 	always #0.5 i_proj1Y=o_proj1Y;
 	always #0.5 i_proj2X=o_proj2X;
 	always #0.5 i_proj2Y=o_proj2Y;
 	always #0.5 i_proj3X = o_proj3X;
-	always #0.5 i_proj3Y=o_proj3Y;
+	always #0.5 i_proj3Y=o_proj3Y;*/
 	
 
 	initial begin
@@ -97,12 +97,11 @@ module playerProjHandler_tb;
 		playerX = 449;
 		playerY = 450;
 		playerW = 30;
-		i_proj1X = 0;
-		i_proj1Y = 0;
-		i_proj2X = 0;
-		i_proj2Y = 0;
-		i_proj3X = 0;
-		i_proj3Y = 0;
+		//i_proj1X = 0;
+	//	i_proj1Y = 0;
+//		i_proj2X = 0;
+	//	i_proj2Y = 0;
+//i_proj3X = 0;//i_proj3Y = 0;
 		
 		#5;
       shoot = 1;

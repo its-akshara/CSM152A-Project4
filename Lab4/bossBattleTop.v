@@ -70,8 +70,8 @@ module bossBattleTop(clk, sw, btnLeft, btnRight, btnShoot,
         bossProj2Y_out, bossProj3X_out, bossProj3Y_out, bossProj4X_out, bossProj4Y_out, bossProj5X_out,
         bossProj5Y_out);
     
-	 wire [9:0] playerX, playerW, playerProj1X, playerProj2X, playerProj3X, playerProjW;
-	 wire [8:0] playerY, playerH, playerProj1Y, playerProj2Y, playerProj3Y,playerProjH;
+	 wire [9:0] playerX, playerW, playerProjW;
+	 wire [8:0] playerY, playerH, playerProjH;
 	 wire playerHit;
 	 wire [1:0] playerHP;
 	 playerController playerCtrl(clk, pulse_cycleStep, sw, mvLeft, mvRight, playerHit,
@@ -84,7 +84,6 @@ module bossBattleTop(clk, sw, btnLeft, btnRight, btnShoot,
     wire [8:0] playerProj1Y_out, playerProj2Y_out, playerProj3Y_out;
 	 playerProjHandler playerProj(clk,sw, pulse_playerProjSpeed, shoot, playerProjHit, playerCollidedProj,
 								playerX, playerY, playerW,
-								playerProj1X, playerProj1Y, playerProj2X, playerProj2Y, playerProj3X, playerProj3Y,
 								playerProj1X_out, playerProj1Y_out, playerProj2X_out, playerProj2Y_out, playerProj3X_out, playerProj3Y_out
 								);
 	 playerCollisionDetector playerCollisions(clk, playerX, playerY, playerW, playerH,

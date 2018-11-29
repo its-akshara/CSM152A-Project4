@@ -20,15 +20,15 @@
 //////////////////////////////////////////////////////////////////////////////////
 module playerProjHandler(clk, rst, pulse_projSpeed, shoot, projHit, collidedProj,
 	playerX, playerY, playerW,
-	i_proj1X, i_proj1Y, i_proj2X, i_proj2Y, i_proj3X, i_proj3Y,
+//	i_proj1X, i_proj1Y, i_proj2X, i_proj2Y, i_proj3X, i_proj3Y,
 	o_proj1X, o_proj1Y, o_proj2X, o_proj2Y, o_proj3X, o_proj3Y
     );
 	input clk, rst, pulse_projSpeed, shoot, projHit;
 	input [1:0] collidedProj;
 	input [9:0] playerX, playerW;
 	input [8:0] playerY;
-	input [9:0] i_proj1X, i_proj2X, i_proj3X;
-	input [8:0] i_proj1Y, i_proj2Y, i_proj3Y;
+	//input [9:0] i_proj1X, i_proj2X, i_proj3X;
+	//input [8:0] i_proj1Y, i_proj2Y, i_proj3Y;
 	output reg [9:0] o_proj1X=0, o_proj2X=0, o_proj3X=0;
 	output reg [8:0] o_proj1Y=0, o_proj2Y=0, o_proj3Y=0;
 	
@@ -50,17 +50,17 @@ module playerProjHandler(clk, rst, pulse_projSpeed, shoot, projHit, collidedProj
 		end
 		else if(shoot) //create a new projectile only if space available
 		begin
-			if(i_proj1X==0 && i_proj1Y ==0)
+			if(o_proj1X==0 && o_proj1Y ==0)
 			begin
 				o_proj1X <= playerX + playerW>>1;//PROJ_X_OFFSET;
 				o_proj1Y <= playerY - playerW;//PROJ_Y_OFFSET;
 			end
-			else if(i_proj2X==0 && i_proj2Y ==0)
+			else if(o_proj2X==0 && o_proj2Y ==0)
 			begin
 				o_proj2X <= playerX + playerW>>1;
 				o_proj2Y <= playerY - playerW;
 			end
-			else if(i_proj3X==0 && i_proj3Y ==0)
+			else if(o_proj3X==0 && o_proj3Y ==0)
 			begin
 				o_proj3X <= playerX + playerW>>1;
 				o_proj3Y <= playerY - playerW;
@@ -68,35 +68,35 @@ module playerProjHandler(clk, rst, pulse_projSpeed, shoot, projHit, collidedProj
 		end //NOTE check logic here!!
 		if(pulse_projSpeed) // update location and check for collision
 		begin
-			if(((i_proj1Y+STEP)<=TOP_BOUNDARY || (projHit && collidedProj==2'b01) || (i_proj1X==0 && i_proj1Y==0))) 
+			if(((o_proj1Y+STEP)<=TOP_BOUNDARY || (projHit && collidedProj==2'b01) || (o_proj1X==0 && o_proj1Y==0))) 
 			begin
 				o_proj1X <= 0;
 				o_proj1Y <= 0;
 			end
 			else
 			begin
-				o_proj1X <= i_proj1X;
-				o_proj1Y <= i_proj1Y-STEP;
+				o_proj1X <= o_proj1X;
+				o_proj1Y <= o_proj1Y-STEP;
 			end // NOTE consider adding !shoot in if
-			if(((i_proj2Y+STEP)<=TOP_BOUNDARY || (projHit && collidedProj==2'b10) || (i_proj2X==0 && i_proj2Y==0))) 
+			if(((o_proj2Y+STEP)<=TOP_BOUNDARY || (projHit && collidedProj==2'b10) || (o_proj2X==0 && o_proj2Y==0))) 
 			begin
 				o_proj2X <= 0;
 				o_proj2Y <= 0;
 			end
 			else
 			begin
-				o_proj2X <= i_proj2X;
-				o_proj2Y <= i_proj2Y-STEP;
+				o_proj2X <= o_proj2X;
+				o_proj2Y <= o_proj2Y-STEP;
 			end
-			if(((i_proj3Y+STEP)<=TOP_BOUNDARY || (projHit && collidedProj==2'b11) || (i_proj3X==0 && i_proj3Y==0))) 
+			if(((o_proj3Y+STEP)<=TOP_BOUNDARY || (projHit && collidedProj==2'b11) || (o_proj3X==0 && o_proj3Y==0))) 
 			begin
 				o_proj3X <= 0;
 				o_proj3Y <= 0;
 			end
 			else
 			begin
-				o_proj3X <= i_proj3X;
-				o_proj3Y <= i_proj3Y-STEP;
+				o_proj3X <= o_proj3X;
+				o_proj3Y <= o_proj3Y-STEP;
 			end
 		end
 		
