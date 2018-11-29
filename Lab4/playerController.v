@@ -42,7 +42,7 @@ module playerController(clk_master, pulse_stepCycle, rst, mvLeft, mvRight, playe
 	output wire [8:0] playerY;
 	output wire [9:0] playerW, projW;
 	output wire [8:0] playerH, projH;
-	output reg [2:0] playerHP= MAX_HEALTH;
+	output reg [1:0] playerHP= MAX_HEALTH;
 	
 	assign playerW = PLAYER_W;
 	assign playerH = PLAYER_H;

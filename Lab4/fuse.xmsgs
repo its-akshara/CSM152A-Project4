@@ -5,7 +5,13 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="329" delta="unknown" >"/home/ise/Labs/CSM152A-Project4/Lab4/playerProjHandler_tb.v" Line 79: Target &lt;<arg fmt="%s" index="1">pulse_projSpeed</arg>&gt; of concurrent assignment or output port connection should be a net type.
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"/home/ise/Labs/CSM152A-Project4/Lab4/bossBattleTop.v" Line 35: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">maxValue</arg>&gt;. Formal port size is <arg fmt="%d" index="2">26</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"/home/ise/Labs/CSM152A-Project4/Lab4/bossBattleTop.v" Line 79: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">playerHP</arg>&gt;. Formal port size is <arg fmt="%d" index="2">3</arg>-bit while actual signal size is <arg fmt="%d" index="1">2</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"/home/ise/Labs/CSM152A-Project4/Lab4/bossBattleTop.v" Line 93: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">collidedProj</arg>&gt;. Formal port size is <arg fmt="%d" index="2">3</arg>-bit while actual signal size is <arg fmt="%d" index="1">2</arg>-bit.
 </msg>
 
 </messages>

@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "/home/ise/Labs/CSM152A-Project4/Lab4/playerProjHandler_tb_isim_beh.exe" -prj "/home/ise/Labs/CSM152A-Project4/Lab4/playerProjHandler_tb_beh.prj" "work.playerProjHandler_tb" "work.glbl" 
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "/home/ise/Labs/CSM152A-Project4/Lab4/bossBattleTop_isim_beh.exe" -prj "/home/ise/Labs/CSM152A-Project4/Lab4/bossBattleTop_beh.prj" "work.bossBattleTop" "work.glbl" 

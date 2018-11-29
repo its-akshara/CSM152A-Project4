@@ -32,7 +32,7 @@ module bossBattleTop(clk, sw, btnLeft, btnRight, btnShoot,
 	parameter CYCLES_PER_BOSS_ATTACK = 300000000;
 	
 	wire clk_vga;
-	clockDivider gen_clkVga(clk, sw, 2, clk_vga);
+	clockDivider gen_clkVga(clk, sw, 2'b10, clk_vga);
 	
 	wire pulse_bossProjSpeed;
 	clockPulser gen_pulseBossProjSpeed(clk, sw, 1000000, pulse_bossProjSpeed);
