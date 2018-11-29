@@ -26,8 +26,8 @@ module bossCollisionDetector(clk, bossX, bossY, bossW, bossH,
 	input clk;
 	input [9:0] bossX, bossW, playerProj1X, playerProj2X, playerProj3X, projW;
 	input [8:0] bossY, bossH, playerProj1Y, playerProj2Y, playerProj3Y;
-	output bossHit, projHit;
-	output [1:0] collidedProj;
+	output reg bossHit, projHit;
+	output reg [1:0] collidedProj;
 	
 	parameter BORDER = 31;
 	

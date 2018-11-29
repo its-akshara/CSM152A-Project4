@@ -27,15 +27,12 @@ module playerProjHandler(clk, rst, pulse_projSpeed, shoot, projHit, collidedProj
 	input [1:0] collidedProj;
 	input [9:0] playerX, playerW;
 	input [8:0] playerY;
-	//input [9:0] i_proj1X, i_proj2X, i_proj3X;
-	//input [8:0] i_proj1Y, i_proj2Y, i_proj3Y;
+	
 	output reg [9:0] o_proj1X=0, o_proj2X=0, o_proj3X=0;
 	output reg [8:0] o_proj1Y=0, o_proj2Y=0, o_proj3Y=0;
 	
 	parameter TOP_BOUNDARY = 31;
 	parameter STEP = 1;
-	// parameter PROJ_X_OFFSET = playerW/2;
-	//parameter PROJ_Y_OFFSET = playerW;
 
 	always @(posedge clk)
 	begin
@@ -52,8 +49,8 @@ module playerProjHandler(clk, rst, pulse_projSpeed, shoot, projHit, collidedProj
 		begin
 			if(o_proj1X==0 && o_proj1Y ==0)
 			begin
-				o_proj1X <= playerX + playerW>>1;//PROJ_X_OFFSET;
-				o_proj1Y <= playerY - playerW;//PROJ_Y_OFFSET;
+				o_proj1X <= playerX + playerW>>1;
+				o_proj1Y <= playerY - playerW;
 			end
 			else if(o_proj2X==0 && o_proj2Y ==0)
 			begin

@@ -33,7 +33,7 @@ module bossProjHandler(clk, rst, pulse_projSpeed, bossShoot, projHit, collidedPr
 	output reg [9:0] proj1X_out, proj2X_out, proj3X_out, proj4X_out, proj5X_out;
 	output reg [8:0] proj1Y_out, proj2Y_out, proj3Y_out, proj4Y_out, proj5Y_out;
 	
-	parameter STEP = 1;
+	parameter STEP = 1'b1;
 	reg [31:0] timer = 1;
     reg waitSignal = 0;
     reg turnOffBeam = 0;
