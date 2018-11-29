@@ -31,12 +31,12 @@ module playerController(clk_master, pulse_stepCycle, rst, mvLeft, mvRight, playe
 	parameter PLAYER_H = 30;
 	parameter PROJ_W = 10;
 	parameter PROJ_H = 10;
-	parameter STEP = 1;
+	parameter STEP = 1'b1;
 	parameter LEFT_BOUNDARY = 144;
 	parameter RIGHT_BOUNDARY = 784;
 	parameter MAX_HEALTH = 2'b11;
 	parameter MIN_HEALTH = 0;
-	parameter HEALTH_LOSS = 1;
+	parameter HEALTH_LOSS = 1'b1;
 	
 	output reg [9:0] playerX = PLAYER_START_X;
 	output wire [8:0] playerY;

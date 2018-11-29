@@ -37,6 +37,9 @@ module bossBattleTop(clk, sw, btnLeft, btnRight, btnShoot,
 	wire pulse_bossProjSpeed;
 	clockPulser gen_pulseBossProjSpeed(clk, sw, 1000000, pulse_bossProjSpeed);
 	
+	wire pulse_playerProjSpeed;
+	clockPulser gen_pulsePlayerProjSpeed(clk, sw, 1050000, pulse_playerProjSpeed);
+	
 	wire pulse_cycleStep;
 	clockPulser gen_pulseCycleStep(clk, sw, CYCLES_PER_BOSS_ATTACK, pulse_cycleStep);
 	
@@ -67,15 +70,40 @@ module bossBattleTop(clk, sw, btnLeft, btnRight, btnShoot,
         bossProj2Y_out, bossProj3X_out, bossProj3Y_out, bossProj4X_out, bossProj4Y_out, bossProj5X_out,
         bossProj5Y_out);
     
-	// Display Player Lives on Seven Segment Display 
-	wire clk_display;
-	clockDivider clkDisplay(clk, 1'b0, 26'b00000000111101000010010000, clk_display);
-	sevenSegmentDisplayController playerHealthDisplay(3,clk_display,seg,an);
+	 wire [9:0] playerX, playerW, playerProj1X, playerProj2X, playerProj3X, playerProjW;
+	 wire [8:0] playerY, playerH, playerProj1Y, playerProj2Y, playerProj3Y,playerProjH;
+	 wire playerHit;
+	 wire [1:0] playerHP;
+	 playerController playerCtrl(clk, pulse_cycleStep, sw, mvLeft, mvRight, playerHit,
+								playerX, playerY, playerW, playerH, playerProjW, playerProjH,
+								playerHP);
+																
+	 wire playerProjHit;
+    wire [1:0] playerCollidedProj;
+    wire [9:0] playerProj1X_out, playerProj2X_out, playerProj3X_out;
+    wire [8:0] playerProj1Y_out, playerProj2Y_out, playerProj3Y_out;
+	 playerProjHandler playerProj(clk,sw, pulse_playerProjSpeed, shoot, playerProjHit, playerCollidedProj,
+								playerX, playerY, playerW,
+								playerProj1X, playerProj1Y, playerProj2X, playerProj2Y, playerProj3X, playerProj3Y,
+								playerProj1X_out, playerProj1Y_out, playerProj2X_out, playerProj2Y_out, playerProj3X_out, playerProj3Y_out
+								);
+	 playerCollisionDetector playerCollisions(clk, playerX, playerY, playerW, playerH,
+								bossProj1X_out, bossProj1Y_out, bossProj2X_out, bossProj2Y_out, 
+								bossProj3X_out, bossProj3Y_out, bossProj4X_out, bossProj4Y_out, bossProj5X_out, bossProj5Y_out,
+								bossProjW, playerHit, playerProjHit, playerCollidedProj);
+
+	 wire clk_display;
+	 clockDivider clkDisplay(clk, 1'b0, 26'b00000000111101000010010000, clk_display);
+	 sevenSegmentDisplayController playerHealthDisplay(playerHP,clk_display,seg,an);
+	 
+	 wire [1:0] gameState;
+	 gameStateHandler state(clk, sw, bossHP, playerHP, gameState);
 	 
     vga640x480 vgaController(clk_vga, sw, bossX, bossY, bossW, bossH, indicate1, indicate2, bossProj1X_out,
         bossProj1Y_out, bossProj2X_out, bossProj2Y_out, bossProj3X_out, bossProj3Y_out, bossProj4X_out,
         bossProj4Y_out,	bossProj5X_out, bossProj5Y_out, bossProjW, bossProjH, bossHP,
-        244, 331, 40, 40, 0, 0, 0, 0, 0, 0, 0, 0, 2'b00,
+        playerX, playerY, playerW, playerH, playerProj1X_out, playerProj1Y_out, playerProj2X_out, playerProj2Y_out, playerProj3X_out, playerProj3Y_out,
+		  playerProjW, playerProjH, gameState,
         Hsync, Vsync, vgaRed, vgaGreen, vgaBlue);
 
 endmodule
