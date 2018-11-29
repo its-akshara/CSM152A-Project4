@@ -37,12 +37,7 @@ module playerController_tb;
 	wire [9:0] playerX;
 	wire [9:0] playerW;
 	wire [8:0] playerH;
-	wire [9:0] proj1X;
-	wire [8:0] proj1Y;
-	wire [9:0] proj2X;
-	wire [8:0] proj2Y;
-	wire [9:0] proj3X;
-	wire [8:0] proj3Y;
+	wire [8:0] playerY;
 	wire [9:0] projW;
 	wire [8:0] projH;
 	wire [2:0] playerHP;
@@ -55,16 +50,10 @@ module playerController_tb;
 		.mvLeft(mvLeft), 
 		.mvRight(mvRight), 
 		.playerHit(playerHit), 
-		.currPlayerHP(currPlayerHP), 
-		.playerX(playerX),  
+		.playerX(playerX), 
+		.playerY(playerY),
 		.playerW(playerW), 
 		.playerH(playerH), 
-		.proj1X(proj1X), 
-		.proj1Y(proj1Y), 
-		.proj2X(proj2X), 
-		.proj2Y(proj2Y), 
-		.proj3X(proj3X), 
-		.proj3Y(proj3Y), 
 		.projW(projW), 
 		.projH(projH), 
 		.playerHP(playerHP)
@@ -82,7 +71,12 @@ module playerController_tb;
 		mvLeft = 0;
 		mvRight = 0;
 		playerHit = 0;
-		currPlayerHP = 2'b11;
+		
+		#5
+		playerHit = 1;
+		
+		#1
+		playerHit = 0;
 		
 		#5
 		playerHit = 1;
@@ -95,6 +89,18 @@ module playerController_tb;
 		
 		#5
 		rst = 0;
+		
+		#5
+		mvLeft = 1;
+		
+		#5
+		mvLeft = 0;
+		
+		#5
+		mvRight = 1;
+		
+		#5
+		mvRight = 0;
         
 
 	end

@@ -19,34 +19,34 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module playerController(clk_master, pulse_stepCycle, rst, mvLeft, mvRight, playerHit,
-	currPlayerHP,
-	playerX, playerW, playerH,
-	// proj1X, proj1Y, proj2X, proj2Y, proj3X, proj3Y,
+	playerX, playerY, playerW, playerH,
 	projW, projH,
 	playerHP
     );
 	input clk_master, pulse_stepCycle, rst, mvLeft, mvRight, playerHit;
-	input [1:0] currPlayerHP;
-	input [9:0] currPlayerX;
-
-	output reg [9:0] playerX, proj1X, proj2X, proj3X;
-	// output reg [8:0] proj1Y, proj2Y, proj3Y;
+	
+	parameter PLAYER_START_X = 449;
+	parameter PLAYER_Y = 450;
+	parameter PLAYER_W = 30;
+	parameter PLAYER_H = 30;
+	parameter PROJ_W = 10;
+	parameter PROJ_H = 10;
+	parameter STEP = 1;
+	parameter LEFT_BOUNDARY = 144;
+	parameter RIGHT_BOUNDARY = 784;
+	parameter MAX_HEALTH = 2'b11;
+	parameter MIN_HEALTH = 0;
+	parameter HEALTH_LOSS = 1;
+	
+	output reg [9:0] playerX = PLAYER_START_X;
+	output wire [8:0] playerY;
 	output wire [9:0] playerW, projW;
 	output wire [8:0] playerH, projH;
-	output reg [2:0] playerHP;
-	
-	parameter PLAYER_START_X = 1;
-	parameter PLAYER_Y = 1;
-	parameter PLAYER_W = 1;
-	parameter PLAYER_H = 1;
-	// parameter PROJ_W = 1;
-	// parameter PROJ_H = 1;
-	parameter STEP = 1;
-	parameter LEFT_BOUNDARY = 0;
-	parameter RIGHT_BOUNDARY = 400;
+	output reg [2:0] playerHP = MAX_HEALTH;
 	
 	assign playerW = PLAYER_W;
 	assign playerH = PLAYER_H;
+	assign playerY = PLAYER_Y;
 	assign projW = PROJ_W;
 	assign projH = PROJ_H;
 	
@@ -55,35 +55,33 @@ module playerController(clk_master, pulse_stepCycle, rst, mvLeft, mvRight, playe
 		if (rst)
 		begin
 			playerX <= PLAYER_START_X;
-			// playerY <= PLAYER_START_Y;
-			playerHP <= 2'b11; //set back to three lives
+			playerHP <= MAX_HEALTH; //set back to three lives
 		end
 		else if(playerHit)
 		begin
-			if(currPlayerHP > 0)
+			if(playerHP > MIN_HEALTH)
 			begin
-				playerHP <= currPlayerHP-1;
+				playerHP <= playerHP-HEALTH_LOSS;
 			end
 			else
 			begin
-				playerHP <= 0; //handle game over here
+				playerHP <= MIN_HEALTH; //handle game over here
 			end
 		end
-		else if(pulse_stepCycle) //start handling updating position
+		else if(mvLeft || mvRight) //start handling updating position
 		begin
 			if(mvLeft && playerX > LEFT_BOUNDARY)
 			begin
-				playerX <= currPlayerX - STEP;
+				playerX <= playerX - STEP;
 			end
 			else if(mvRight && playerX < RIGHT_BOUNDARY)
 			begin
-				playerX <= currPlayerX + STEP;
+				playerX <= playerX + STEP;
 			end
-			else
-			begin
-				playerX <= currPlayerX;
-			end
-			
+		end
+		else
+		begin
+			playerX <= playerX;
 		end
 	end
 
