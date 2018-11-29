@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2018-11-29T10:34:09</DateModified>
+  <DateModified>2018-11-29T10:40:03</DateModified>
   <ModuleName>bossBattleTop</ModuleName>
-  <SummaryTimeStamp>2018-11-29T10:33:59</SummaryTimeStamp>
+  <SummaryTimeStamp>2018-11-29T10:39:46</SummaryTimeStamp>
   <SavedFilePath>/home/ise/Labs/CSM152A-Project4/Lab4/iseconfig/bossBattleTop.xreport</SavedFilePath>
   <ImplementationReportsDirectory>/home/ise/Labs/CSM152A-Project4/Lab4/</ImplementationReportsDirectory>
   <DateInitialized>2018-11-25T19:56:59</DateInitialized>

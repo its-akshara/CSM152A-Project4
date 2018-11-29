@@ -28,8 +28,6 @@ module bossBattleTop(clk, sw, btnLeft, btnRight, btnShoot,
 	output [1:0] vgaBlue;
 	output Hsync, Vsync;
     
-    assign seg = 0;
-    assign an = 0;
 	
 	parameter CYCLES_PER_BOSS_ATTACK = 300000000;
 	
@@ -68,7 +66,12 @@ module bossBattleTop(clk, sw, btnLeft, btnRight, btnShoot,
         bossProj4X, bossProj4Y,	bossProj5X, bossProj5Y, bossProj1X_out, bossProj1Y_out, bossProj2X_out,
         bossProj2Y_out, bossProj3X_out, bossProj3Y_out, bossProj4X_out, bossProj4Y_out, bossProj5X_out,
         bossProj5Y_out);
-        
+    
+	// Display Player Lives on Seven Segment Display 
+	wire clk_display;
+	clockDivider clkDisplay(clk, 1'b0, 26'b00000000111101000010010000, clk_display);
+	sevenSegmentDisplayController playerHealthDisplay(3,clk_display,seg,an);
+	 
     vga640x480 vgaController(clk_vga, sw, bossX, bossY, bossW, bossH, indicate1, indicate2, bossProj1X_out,
         bossProj1Y_out, bossProj2X_out, bossProj2Y_out, bossProj3X_out, bossProj3Y_out, bossProj4X_out,
         bossProj4Y_out,	bossProj5X_out, bossProj5Y_out, bossProjW, bossProjH, bossHP,

@@ -9,13 +9,13 @@
          <ClosedNodesVersion>2</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>sevenSegmentDisplayController (/home/ise/Labs/CSM152A-Project4/Lab4/sevenSegmentDisplayController.v)</SelectedItem>
+         <SelectedItem>bossBattleTop (/home/ise/Labs/CSM152A-Project4/Lab4/bossBattleTop.v)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >11</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000201000000020000000000000000000000000200000064ffffffff000000810000000300000002000002010000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>sevenSegmentDisplayController (/home/ise/Labs/CSM152A-Project4/Lab4/sevenSegmentDisplayController.v)</CurrentItem>
+      <CurrentItem>bossBattleTop (/home/ise/Labs/CSM152A-Project4/Lab4/bossBattleTop.v)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -37,7 +37,7 @@
       <SelectedItems/>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000000000000001000000000000000000000000000000000000025f000000040101000100000000000000000000000064ffffffff000000810000000000000004000000b20000000100000000000000290000000100000000000000840000000100000000000001000000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000250000000040101000100000000000000000000000064ffffffff000000810000000000000004000000b20000000100000000000000290000000100000000000000840000000100000000000000f10000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem>bossBattleTop.v</CurrentItem>
    </ItemView>
@@ -66,7 +66,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000139000000010000000100000000000000000000000064ffffffff000000810000000000000001000001390000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000012a000000010000000100000000000000000000000064ffffffff0000008100000000000000010000012a0000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem></CurrentItem>
    </ItemView>
@@ -91,13 +91,13 @@
          <ClosedNodesVersion>2</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>playerController_tb (/home/ise/Labs/CSM152A-Project4/Lab4/playerController_tb.v)</SelectedItem>
+         <SelectedItem>bossBattleTop (/home/ise/Labs/CSM152A-Project4/Lab4/bossBattleTop.v)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >17</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001b4000000020000000000000000000000000200000064ffffffff000000810000000300000002000001b40000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000201000000020000000000000000000000000200000064ffffffff000000810000000300000002000002010000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>playerController_tb (/home/ise/Labs/CSM152A-Project4/Lab4/playerController_tb.v)</CurrentItem>
+      <CurrentItem>bossBattleTop (/home/ise/Labs/CSM152A-Project4/Lab4/bossBattleTop.v)</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
       <ClosedNodes>
