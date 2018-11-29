@@ -39,7 +39,7 @@ module playerController_tb;
 	wire [8:0] playerY;
 	wire [9:0] projW;
 	wire [8:0] projH;
-	wire [2:0] playerHP;
+	wire [1:0] playerHP;
 
 	// Instantiate the Unit Under Test (UUT)
 	playerController uut (
