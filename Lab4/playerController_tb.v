@@ -31,7 +31,6 @@ module playerController_tb;
 	reg mvLeft;
 	reg mvRight;
 	reg playerHit;
-	reg [1:0] currPlayerHP;
 
 	// Outputs
 	wire [9:0] playerX;
@@ -60,8 +59,8 @@ module playerController_tb;
 	);
 	
 	always #0.5 clk_master = ~clk_master;
-	
 	clockPulser pulseGen(clk_master, rst, 4, pulse_stepCycle);
+
 
 	initial begin
 		// Initialize Inputs
@@ -71,6 +70,12 @@ module playerController_tb;
 		mvLeft = 0;
 		mvRight = 0;
 		playerHit = 0;
+		
+		#0.5
+		rst = 1;
+		
+		#2
+		rst = 0;
 		
 		#5
 		playerHit = 1;
