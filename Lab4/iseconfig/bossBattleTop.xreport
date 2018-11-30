@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2018-11-29T21:20:08</DateModified>
+  <DateModified>2018-11-30T06:07:43</DateModified>
   <ModuleName>bossBattleTop</ModuleName>
   <SummaryTimeStamp>2018-11-29T20:34:50</SummaryTimeStamp>
-  <SavedFilePath>/home/ise/Labs/CSM152A-Project4/Lab4/iseconfig/bossBattleTop.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/home/ise/Labs/CSM152A-Project4/Lab4/</ImplementationReportsDirectory>
+  <SavedFilePath>/home/ise/VM_Share_Dir/CSM152A-Project4/Lab4/iseconfig/bossBattleTop.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>/home/ise/VM_Share_Dir/CSM152A-Project4/Lab4/</ImplementationReportsDirectory>
   <DateInitialized>2018-11-25T19:56:59</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
