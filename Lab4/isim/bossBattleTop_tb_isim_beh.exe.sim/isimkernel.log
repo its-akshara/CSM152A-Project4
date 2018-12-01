@@ -1,0 +1,28 @@
+Command line:
+   bossBattleTop_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  50852
+
+Fri Nov 30 17:19:08 2018
+
+
+ Elaboration Time: 0.078 sec
+
+ Current Memory Usage: 828.51 Meg
+
+ Total Signals          : 242
+ Total Nets             : 741
+ Total Signal Drivers   : 93
+ Total Blocks           : 21
+ Total Primitive Blocks : 18
+ Total Processes        : 122
+ Total Traceable Variables  : 192
+ Total Scalar Nets and Variables : 3753
+
+ Total Simulation Time: 103.881 sec
+
+ Current Memory Usage: 671.224 Meg
+
+Fri Nov 30 17:40:29 2018
+
