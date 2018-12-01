@@ -22,9 +22,280 @@
   <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="Lab4.xise"/>
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="_ngo"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/bitgen.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/map.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/par.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/trce.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="bossBattleTop.bld"/>
+    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="bossBattleTop.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="bossBattleTop.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NCD" xil_pn:name="bossBattleTop.ncd" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="bossBattleTop.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGD" xil_pn:name="bossBattleTop.ngd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="bossBattleTop.ngr"/>
+    <file xil_pn:fileType="FILE_PAD_MISC" xil_pn:name="bossBattleTop.pad"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAR_REPORT" xil_pn:name="bossBattleTop.par" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PCF" xil_pn:name="bossBattleTop.pcf" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="bossBattleTop.prj"/>
+    <file xil_pn:fileType="FILE_TRCE_MISC" xil_pn:name="bossBattleTop.ptwx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="bossBattleTop.stx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="bossBattleTop.syr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_TIMING_TXT_REPORT" xil_pn:name="bossBattleTop.twr" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_TIMING_XML_REPORT" xil_pn:name="bossBattleTop.twx" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_UNROUTES" xil_pn:name="bossBattleTop.unroutes" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_REPORT" xil_pn:name="bossBattleTop.ut" xil_pn:subbranch="FPGAConfiguration"/>
+    <file xil_pn:fileType="FILE_XPI" xil_pn:name="bossBattleTop.xpi"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="bossBattleTop.xst"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="bossBattleTop_envsettings.html"/>
     <file xil_pn:fileType="FILE_NCD" xil_pn:name="bossBattleTop_guide.ncd" xil_pn:origination="imported"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="bossBattleTop_map.map" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="bossBattleTop_map.mrp" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NCD" xil_pn:name="bossBattleTop_map.ncd" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGM" xil_pn:name="bossBattleTop_map.ngm" xil_pn:subbranch="Map"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="bossBattleTop_map.xrpt"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="bossBattleTop_ngdbuild.xrpt"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAD_EXCEL_REPORT" xil_pn:name="bossBattleTop_pad.csv" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAD_TXT_REPORT" xil_pn:name="bossBattleTop_pad.txt" xil_pn:subbranch="Par"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="bossBattleTop_par.xrpt"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="bossBattleTop_summary.html"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="bossBattleTop_summary.xml"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="bossBattleTop_tb_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="bossBattleTop_tb_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="bossBattleTop_tb_isim_beh.wdb"/>
+    <file xil_pn:fileType="FILE_WEBTALK" xil_pn:name="bossBattleTop_usage.xml"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="bossBattleTop_xst.xrpt"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_REPORT" xil_pn:name="bossbattletop.bgn" xil_pn:subbranch="FPGAConfiguration"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BIT" xil_pn:name="bossbattletop.bit" xil_pn:subbranch="FPGAConfiguration"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_DRC" xil_pn:name="bossbattletop.drc" xil_pn:subbranch="FPGAConfiguration"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="usage_statistics_webtalk.html"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="webtalk.log"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xlnx_auto_0_xdb"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
 
-  <transforms xmlns="http://www.xilinx.com/XMLSchema"/>
+  <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1543622548" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1543622548">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1543626417" xil_pn:in_ck="-2329920414823915799" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1543626417">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="ClockDivider.v"/>
+      <outfile xil_pn:name="bossBattleTop.v"/>
+      <outfile xil_pn:name="bossBattleTop_tb.v"/>
+      <outfile xil_pn:name="bossCollisionDetector.v"/>
+      <outfile xil_pn:name="bossCollisionDetector_tb.v"/>
+      <outfile xil_pn:name="bossController.v"/>
+      <outfile xil_pn:name="bossController_tb.v"/>
+      <outfile xil_pn:name="bossProjHandler.v"/>
+      <outfile xil_pn:name="bossProjHandler_tb.v"/>
+      <outfile xil_pn:name="clockPulser.v"/>
+      <outfile xil_pn:name="debouncer.v"/>
+      <outfile xil_pn:name="gameStateHandler.v"/>
+      <outfile xil_pn:name="gameStateHandler_tb.v"/>
+      <outfile xil_pn:name="playerCollisionDetector.v"/>
+      <outfile xil_pn:name="playerCollisionDetector_tb.v"/>
+      <outfile xil_pn:name="playerController.v"/>
+      <outfile xil_pn:name="playerController_tb.v"/>
+      <outfile xil_pn:name="playerProjHandler.v"/>
+      <outfile xil_pn:name="playerProjHandler_tb.v"/>
+      <outfile xil_pn:name="sevenSegmentDisplayController.v"/>
+      <outfile xil_pn:name="vga640x480.v"/>
+    </transform>
+    <transform xil_pn:end_ts="1543622548" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-7759808504478475598" xil_pn:start_ts="1543622548">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1543622548" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="7734365874746726000" xil_pn:start_ts="1543622548">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1543622548" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="3075492126650263977" xil_pn:start_ts="1543622548">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1543626417" xil_pn:in_ck="-2329920414823915799" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1543626417">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="ClockDivider.v"/>
+      <outfile xil_pn:name="bossBattleTop.v"/>
+      <outfile xil_pn:name="bossBattleTop_tb.v"/>
+      <outfile xil_pn:name="bossCollisionDetector.v"/>
+      <outfile xil_pn:name="bossCollisionDetector_tb.v"/>
+      <outfile xil_pn:name="bossController.v"/>
+      <outfile xil_pn:name="bossController_tb.v"/>
+      <outfile xil_pn:name="bossProjHandler.v"/>
+      <outfile xil_pn:name="bossProjHandler_tb.v"/>
+      <outfile xil_pn:name="clockPulser.v"/>
+      <outfile xil_pn:name="debouncer.v"/>
+      <outfile xil_pn:name="gameStateHandler.v"/>
+      <outfile xil_pn:name="gameStateHandler_tb.v"/>
+      <outfile xil_pn:name="playerCollisionDetector.v"/>
+      <outfile xil_pn:name="playerCollisionDetector_tb.v"/>
+      <outfile xil_pn:name="playerController.v"/>
+      <outfile xil_pn:name="playerController_tb.v"/>
+      <outfile xil_pn:name="playerProjHandler.v"/>
+      <outfile xil_pn:name="playerProjHandler_tb.v"/>
+      <outfile xil_pn:name="sevenSegmentDisplayController.v"/>
+      <outfile xil_pn:name="vga640x480.v"/>
+    </transform>
+    <transform xil_pn:end_ts="1543626426" xil_pn:in_ck="-2329920414823915799" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="938032358285925699" xil_pn:start_ts="1543626417">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="bossBattleTop_tb_beh.prj"/>
+      <outfile xil_pn:name="bossBattleTop_tb_isim_beh.exe"/>
+      <outfile xil_pn:name="fuse.log"/>
+      <outfile xil_pn:name="isim"/>
+      <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="xilinxsim.ini"/>
+    </transform>
+    <transform xil_pn:end_ts="1543627146" xil_pn:in_ck="-3046800849185659702" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="6449943326333033254" xil_pn:start_ts="1543627146">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="bossBattleTop_tb_isim_beh.wdb"/>
+      <outfile xil_pn:name="isim.cmd"/>
+      <outfile xil_pn:name="isim.log"/>
+    </transform>
+    <transform xil_pn:end_ts="1543616593" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1543616592">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1543616593" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="-6918789285971883141" xil_pn:start_ts="1543616593">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1543616593" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="3075492126650263977" xil_pn:start_ts="1543616593">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1543616593" xil_pn:name="TRAN_SubProjectAbstractToPreProxy" xil_pn:start_ts="1543616593">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1543616593" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="5796843918369652413" xil_pn:start_ts="1543616593">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1543616593" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="1106364426758808884" xil_pn:start_ts="1543616593">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1543616593" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="5235235653375999219" xil_pn:start_ts="1543616593">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1543628126" xil_pn:in_ck="6557520728584079632" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="6051684145262480856" xil_pn:start_ts="1543628105">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
+      <outfile xil_pn:name="bossBattleTop.lso"/>
+      <outfile xil_pn:name="bossBattleTop.ngc"/>
+      <outfile xil_pn:name="bossBattleTop.ngr"/>
+      <outfile xil_pn:name="bossBattleTop.prj"/>
+      <outfile xil_pn:name="bossBattleTop.stx"/>
+      <outfile xil_pn:name="bossBattleTop.syr"/>
+      <outfile xil_pn:name="bossBattleTop.xst"/>
+      <outfile xil_pn:name="bossBattleTop_tb_beh.prj"/>
+      <outfile xil_pn:name="bossBattleTop_xst.xrpt"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
+      <outfile xil_pn:name="xst"/>
+    </transform>
+    <transform xil_pn:end_ts="1543624715" xil_pn:in_ck="5252585598274710" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="-5139474554957938200" xil_pn:start_ts="1543624715">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1543628135" xil_pn:in_ck="-5322182169593112382" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="6048046013819320874" xil_pn:start_ts="1543628126">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="_ngo"/>
+      <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+      <outfile xil_pn:name="bossBattleTop.bld"/>
+      <outfile xil_pn:name="bossBattleTop.ngd"/>
+      <outfile xil_pn:name="bossBattleTop_ngdbuild.xrpt"/>
+    </transform>
+    <transform xil_pn:end_ts="1543628154" xil_pn:in_ck="-5320650590607847933" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="-3180699873896808002" xil_pn:start_ts="1543628135">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
+      <outfile xil_pn:name="bossBattleTop.pcf"/>
+      <outfile xil_pn:name="bossBattleTop_map.map"/>
+      <outfile xil_pn:name="bossBattleTop_map.mrp"/>
+      <outfile xil_pn:name="bossBattleTop_map.ncd"/>
+      <outfile xil_pn:name="bossBattleTop_map.ngm"/>
+      <outfile xil_pn:name="bossBattleTop_map.xrpt"/>
+      <outfile xil_pn:name="bossBattleTop_summary.xml"/>
+      <outfile xil_pn:name="bossBattleTop_usage.xml"/>
+    </transform>
+    <transform xil_pn:end_ts="1543628178" xil_pn:in_ck="-6316336190407115044" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="-1178055513630676559" xil_pn:start_ts="1543628154">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
+      <outfile xil_pn:name="bossBattleTop.ncd"/>
+      <outfile xil_pn:name="bossBattleTop.pad"/>
+      <outfile xil_pn:name="bossBattleTop.par"/>
+      <outfile xil_pn:name="bossBattleTop.ptwx"/>
+      <outfile xil_pn:name="bossBattleTop.unroutes"/>
+      <outfile xil_pn:name="bossBattleTop.xpi"/>
+      <outfile xil_pn:name="bossBattleTop_pad.csv"/>
+      <outfile xil_pn:name="bossBattleTop_pad.txt"/>
+      <outfile xil_pn:name="bossBattleTop_par.xrpt"/>
+    </transform>
+    <transform xil_pn:end_ts="1543628195" xil_pn:in_ck="5478232802106139817" xil_pn:name="TRANEXT_bitFile_spartan6" xil_pn:prop_ck="396117104113915555" xil_pn:start_ts="1543628178">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="_xmsgs/bitgen.xmsgs"/>
+      <outfile xil_pn:name="bossBattleTop.ut"/>
+      <outfile xil_pn:name="bossbattletop.bgn"/>
+      <outfile xil_pn:name="bossbattletop.bit"/>
+      <outfile xil_pn:name="bossbattletop.drc"/>
+      <outfile xil_pn:name="usage_statistics_webtalk.html"/>
+      <outfile xil_pn:name="webtalk.log"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
+    </transform>
+    <transform xil_pn:end_ts="1543620613" xil_pn:in_ck="3510465100799965875" xil_pn:name="TRAN_configureTargetDevice" xil_pn:prop_ck="8482462020707587906" xil_pn:start_ts="1543620612">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputChanged"/>
+    </transform>
+    <transform xil_pn:end_ts="1543628178" xil_pn:in_ck="-5522819016662755201" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416184" xil_pn:start_ts="1543628170">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>
+      <outfile xil_pn:name="bossBattleTop.twr"/>
+      <outfile xil_pn:name="bossBattleTop.twx"/>
+    </transform>
+  </transforms>
 
 </generated_project>

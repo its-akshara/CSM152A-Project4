@@ -29,6 +29,10 @@ module bossController(clk_master, pulse_cycleStep, rst, bossHit, delay,
 	bossHP, bossShoot, attackType,
 	indicate1, indicate2
     );
+
+	parameter BOSS_HP = 150;
+	parameter HIT_DMG = 50;
+	
 	input clk_master, pulse_cycleStep, rst, bossHit;
 	input [31:0] delay;
 	output wire [9:0] bossLocX, bossWidth;
@@ -39,7 +43,7 @@ module bossController(clk_master, pulse_cycleStep, rst, bossHit, delay,
 		projH;
 	output reg bossShoot;
 	output reg [1:0] attackType;
-	output bossHP;
+	output reg [9:0] bossHP = BOSS_HP;
 	output reg indicate1 = 0, indicate2 = 0;
 	
 	parameter projAtk = 2'b00;
@@ -104,8 +108,15 @@ module bossController(clk_master, pulse_cycleStep, rst, bossHit, delay,
 			waitSignal <= 0;
 			indicate1 <= 0;
 			indicate2 <= 0;
+			bossHP <= BOSS_HP;
 		end
 		else begin
+			if (bossHit) begin
+				if (bossHP - HIT_DMG > 0)
+					bossHP <= bossHP - HIT_DMG;
+				else
+					bossHP <= 0;
+			end
             if (waitSignal) begin
                 timer <= timer + 1;
                 if (timer == delay) begin
@@ -234,8 +245,9 @@ module bossController(clk_master, pulse_cycleStep, rst, bossHit, delay,
 		end
 	end
 	*/
-	parameter BOSS_HP = 540;
-	parameter HIT_DMG = 20;
+	/*
+	parameter BOSS_HP = 150;
+	parameter HIT_DMG = 50;
 	reg [9:0] bossHP = BOSS_HP;
 	
 	always @ (posedge clk_master) begin
@@ -246,5 +258,5 @@ module bossController(clk_master, pulse_cycleStep, rst, bossHit, delay,
 			bossHP <= bossHP - HIT_DMG;
 		end
 	end
-	
+	*/
 endmodule

@@ -29,9 +29,9 @@ module gameStateHandler(clk, rst, bossHP, playerHP, gameState
 	always @ (posedge clk) begin
 		if (rst)
 			gameState <= 2'b00;
-		else if (bossHP == 0)
+		else if (bossHP <= 0)
 			gameState <= 2'b01;
-		else if (playerHP == 0)
+		else if (playerHP <= 0)
 			gameState <= 2'b10;
 		else
 			gameState <= 2'b00;

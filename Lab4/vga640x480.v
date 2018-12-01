@@ -153,7 +153,7 @@ assign vsync = (vc < vpulse) ? 0:1;
 // is automatically included in the sensitivty list.  In this case, it would be
 // equivalent to the following: always @(hc, vc)
 // Assignment statements can only be used on type "reg" and should be of the "blocking" type: =
-always @(*)
+always @(hc,vc)
 begin
 	// first check if we're within vertical active video range
 	if (vc >= vbp && vc < vfp)
@@ -170,14 +170,15 @@ begin
 			end
 			
 			// draw boss HP meter
-			else if (vc >= bossHP_Y && vc <= bossHP_Y + bossHP_H &&
-				hc >= bossHP_X && hc <= bossHP_X + bossHP)
+			else if (vc >= bossHP_Y && vc <= (bossHP_Y + bossHP_H) &&
+				hc >= bossHP_X && hc <= (bossHP_X + bossHP))
 			begin
-				if (bossHP > 360) begin
+				//if (bossHP > 360) begin
 					red = 3'b000;
 					green = 3'b111;
 					blue = 2'b00;
-				end
+				//end
+				/*
 				else if (bossHP > 180) begin
 					red = 3'b111;
 					green = 3'b111;
@@ -188,6 +189,7 @@ begin
 					green = 3'b000;
 					blue = 2'b00;
 				end
+				*/
 			end
 			
 			// draw indicators
@@ -211,7 +213,7 @@ begin
 			end
 						
 			// draw boss projectile 1
-			else if (bossProj1X > 0 && bossProj1Y > 0 &&
+			else if (bossProj1X >= 144 && bossProj1Y >= 31 &&
 				vc >= bossProj1Y && vc <= bossProj1Y + bossProjH &&
 				hc >= bossProj1X && hc <= bossProj1X + bossProjW)
 			begin
@@ -221,7 +223,7 @@ begin
 			end
 			
 			// draw boss projectile 2
-			else if (bossProj2X > 0 && bossProj2Y > 0 &&
+			else if (bossProj2X >= 144 && bossProj2Y >= 31 &&
 				vc >= bossProj2Y && vc <= bossProj2Y + bossProjH &&
 				hc >= bossProj2X && hc <= bossProj2X + bossProjW)
 			begin
@@ -231,7 +233,7 @@ begin
 			end
 			
 			// draw boss projectile 3
-			else if (bossProj3X > 0 && bossProj3Y > 0 &&
+			else if (bossProj3X >= 144 && bossProj3Y >= 31 &&
 				vc >= bossProj3Y && vc <= bossProj3Y + bossProjH &&
 				hc >= bossProj3X && hc <= bossProj3X + bossProjW)
 			begin
@@ -241,7 +243,7 @@ begin
 			end
 			
 			// draw boss projectile 4
-			else if (bossProj4X > 0 && bossProj4Y > 0 &&
+			else if (bossProj4X >= 144 && bossProj4Y >= 31 &&
 				vc >= bossProj4Y && vc <= bossProj4Y + bossProjH &&
 				hc >= bossProj4X && hc <= bossProj4X + bossProjW)
 			begin
@@ -251,7 +253,7 @@ begin
 			end
 			
 			// draw boss projectile 5
-			else if (bossProj5X > 0 && bossProj5Y > 0 &&
+			else if (bossProj5X >= 144 && bossProj5Y >= 31 &&
 				vc >= bossProj5Y && vc <= bossProj5Y + bossProjH &&
 				hc >= bossProj5X && hc <= bossProj5X + bossProjW)
 			begin
@@ -270,7 +272,7 @@ begin
 			end
 			
 			// draw player projectile 1
-			else if (playerProj1X > 0 && playerProj1Y > 0 &&
+			else if (playerProj1X >= 144 && playerProj1Y >= 31 &&
 				vc >= playerProj1Y && vc <= playerProj1Y + playerProjH &&
 				hc >= playerProj1X && hc <= playerProj1X + playerProjW)
 			begin
@@ -280,7 +282,7 @@ begin
 			end
 			
 			// draw player projectile 2
-			else if (playerProj2X > 0 && playerProj2Y > 0 &&
+			else if (playerProj2X >= 144 && playerProj2Y >= 31 &&
 				vc >= playerProj2Y && vc <= playerProj2Y + playerProjH &&
 				hc >= playerProj2X && hc <= playerProj2X + playerProjW)
 			begin
@@ -290,7 +292,7 @@ begin
 			end
 			
 			// draw player projectile 3
-			else if (playerProj3X > 0 && playerProj3Y > 0 &&
+			else if (playerProj3X >= 144 && playerProj3Y >= 31 &&
 				vc >= playerProj3Y && vc <= playerProj3Y + playerProjH &&
 				hc >= playerProj3X && hc <= playerProj3X + playerProjW)
 			begin

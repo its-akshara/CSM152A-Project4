@@ -49,17 +49,17 @@ module playerProjHandler(clk, rst, pulse_projSpeed, shoot, projHit, collidedProj
 		begin
 			if(o_proj1X==0 && o_proj1Y ==0)
 			begin
-				o_proj1X <= playerX + playerW>>1;
+				o_proj1X <= playerX + playerW/4;
 				o_proj1Y <= playerY - playerW;
 			end
 			else if(o_proj2X==0 && o_proj2Y ==0)
 			begin
-				o_proj2X <= playerX + playerW>>1;
+				o_proj2X <= playerX + playerW/4;
 				o_proj2Y <= playerY - playerW;
 			end
 			else if(o_proj3X==0 && o_proj3Y ==0)
 			begin
-				o_proj3X <= playerX + playerW>>1;
+				o_proj3X <= playerX + playerW/4;
 				o_proj3Y <= playerY - playerW;
 			end
 		end //NOTE check logic here!!

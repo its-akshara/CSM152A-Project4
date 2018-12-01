@@ -18,12 +18,13 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module playerController(clk_master, pulse_stepCycle, rst, mvLeft, mvRight, playerHit,
+module playerController(clk_master, pulse_stepCycle, rst, mvLeft, mvRight, playerHit, delay,
 	playerX, playerY, playerW, playerH,
 	projW, projH,
 	playerHP
     );
 	input clk_master, pulse_stepCycle, rst, mvLeft, mvRight, playerHit;
+	input [31:0] delay;
 	
 	parameter PLAYER_START_X = 449;
 	parameter PLAYER_Y = 450;
@@ -31,7 +32,7 @@ module playerController(clk_master, pulse_stepCycle, rst, mvLeft, mvRight, playe
 	parameter PLAYER_H = 30;
 	parameter PROJ_W = 10;
 	parameter PROJ_H = 10;
-	parameter STEP = 1'b1;
+	parameter STEP = 15;
 	parameter LEFT_BOUNDARY = 144;
 	parameter RIGHT_BOUNDARY = 784;
 	parameter MAX_HEALTH = 2'b11;
@@ -50,38 +51,54 @@ module playerController(clk_master, pulse_stepCycle, rst, mvLeft, mvRight, playe
 	assign projW = PROJ_W;
 	assign projH = PROJ_H;
 	
+	reg immune = 0;
+	reg [31:0] timer = 1;
+	
 	always @(posedge clk_master)
 	begin
 		if (rst)
 		begin
 			playerX <= PLAYER_START_X;
 			playerHP <= MAX_HEALTH; //set back to three lives
-		end
-		else if(playerHit)
-		begin
-			if(playerHP > MIN_HEALTH)
-			begin
-				playerHP <= playerHP-HEALTH_LOSS;
-			end
-			else
-			begin
-				playerHP <= MIN_HEALTH; //handle game over here
-			end
-		end
-		else if(mvLeft || mvRight) //start handling updating position
-		begin
-			if(mvLeft && playerX > LEFT_BOUNDARY)
-			begin
-				playerX <= playerX - STEP;
-			end
-			else if(mvRight && playerX < RIGHT_BOUNDARY)
-			begin
-				playerX <= playerX + STEP;
-			end
+			immune <= 0;
 		end
 		else
 		begin
-			playerX <= playerX;
+			if (immune) begin
+                timer <= timer + 1;
+                if (timer == delay) begin
+                    immune <= 0;
+                end
+            end
+			else if(playerHit)
+			begin
+				if(playerHP > MIN_HEALTH)
+				begin
+					playerHP <= playerHP-HEALTH_LOSS;
+					timer <= 1;
+					immune <= 1;
+				end
+				else
+				begin
+					playerHP <= MIN_HEALTH; //handle game over here
+				end
+			end
+			
+			if(mvLeft || mvRight) //start handling updating position
+			begin
+				if(mvLeft && playerX > (STEP+LEFT_BOUNDARY))
+				begin
+					playerX <= playerX - STEP;
+				end
+				else if(mvRight && playerX < (RIGHT_BOUNDARY-STEP-PLAYER_W))
+				begin
+					playerX <= playerX + STEP;
+				end
+			end
+			else
+			begin
+				playerX <= playerX;
+			end
 		end
 	end
 

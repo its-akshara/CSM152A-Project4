@@ -1,0 +1,1415 @@
+Release 14.6 - xst P.68d (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.13 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.13 secs
+ 
+--> Reading design: bossBattleTop.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "bossBattleTop.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "bossBattleTop"
+Output Format                      : NGC
+Target Device                      : xc6slx16-2-csg324
+
+---- Source Options
+Top Module Name                    : bossBattleTop
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "C:\Users\152\Documents\CSM152A-Project4\Lab4\vga640x480.v" into library work
+Parsing module <vga640x480>.
+Analyzing Verilog file "C:\Users\152\Documents\CSM152A-Project4\Lab4\sevenSegmentDisplayController.v" into library work
+Parsing module <sevenSegmentDisplayController>.
+Analyzing Verilog file "C:\Users\152\Documents\CSM152A-Project4\Lab4\playerProjHandler.v" into library work
+Parsing module <playerProjHandler>.
+Analyzing Verilog file "C:\Users\152\Documents\CSM152A-Project4\Lab4\playerController.v" into library work
+Parsing module <playerController>.
+Analyzing Verilog file "C:\Users\152\Documents\CSM152A-Project4\Lab4\playerCollisionDetector.v" into library work
+Parsing module <playerCollisionDetector>.
+Analyzing Verilog file "C:\Users\152\Documents\CSM152A-Project4\Lab4\gameStateHandler.v" into library work
+Parsing module <gameStateHandler>.
+Analyzing Verilog file "C:\Users\152\Documents\CSM152A-Project4\Lab4\debouncer.v" into library work
+Parsing module <debouncer>.
+Analyzing Verilog file "C:\Users\152\Documents\CSM152A-Project4\Lab4\clockPulser.v" into library work
+Parsing module <clockPulser>.
+Analyzing Verilog file "C:\Users\152\Documents\CSM152A-Project4\Lab4\ClockDivider.v" into library work
+Parsing module <clockDivider>.
+Analyzing Verilog file "C:\Users\152\Documents\CSM152A-Project4\Lab4\bossProjHandler.v" into library work
+Parsing module <bossProjHandler>.
+Analyzing Verilog file "C:\Users\152\Documents\CSM152A-Project4\Lab4\bossController.v" into library work
+Parsing module <bossController>.
+Analyzing Verilog file "C:\Users\152\Documents\CSM152A-Project4\Lab4\bossBattleTop.v" into library work
+Parsing module <bossBattleTop>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <bossBattleTop>.
+
+Elaborating module <clockDivider>.
+
+Elaborating module <clockPulser>.
+
+Elaborating module <debouncer>.
+
+Elaborating module <bossController>.
+WARNING:HDLCompiler:413 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\bossController.v" Line 116: Result of 32-bit expression is truncated to fit in 10-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\bossController.v" Line 135: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\bossController.v" Line 144: Result of 11-bit expression is truncated to fit in 10-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\bossController.v" Line 146: Result of 11-bit expression is truncated to fit in 10-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\bossController.v" Line 152: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\bossController.v" Line 161: Result of 11-bit expression is truncated to fit in 10-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\bossController.v" Line 169: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\bossController.v" Line 174: Result of 11-bit expression is truncated to fit in 10-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\bossController.v" Line 188: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\bossController.v" Line 208: Result of 4-bit expression is truncated to fit in 3-bit target.
+
+Elaborating module <bossProjHandler>.
+
+Elaborating module <playerController>.
+WARNING:HDLCompiler:413 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\playerController.v" Line 91: Result of 32-bit expression is truncated to fit in 10-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\playerController.v" Line 95: Result of 11-bit expression is truncated to fit in 10-bit target.
+
+Elaborating module <playerProjHandler>.
+WARNING:HDLCompiler:413 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\playerProjHandler.v" Line 52: Result of 11-bit expression is truncated to fit in 10-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\playerProjHandler.v" Line 53: Result of 10-bit expression is truncated to fit in 9-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\playerProjHandler.v" Line 57: Result of 11-bit expression is truncated to fit in 10-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\playerProjHandler.v" Line 58: Result of 10-bit expression is truncated to fit in 9-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\playerProjHandler.v" Line 62: Result of 11-bit expression is truncated to fit in 10-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\playerProjHandler.v" Line 63: Result of 10-bit expression is truncated to fit in 9-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\playerProjHandler.v" Line 76: Result of 32-bit expression is truncated to fit in 9-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\playerProjHandler.v" Line 86: Result of 32-bit expression is truncated to fit in 9-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\playerProjHandler.v" Line 96: Result of 32-bit expression is truncated to fit in 9-bit target.
+
+Elaborating module <playerCollisionDetector>.
+
+Elaborating module <sevenSegmentDisplayController>.
+WARNING:HDLCompiler:413 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\sevenSegmentDisplayController.v" Line 63: Result of 3-bit expression is truncated to fit in 2-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\sevenSegmentDisplayController.v" Line 65: Result of 3-bit expression is truncated to fit in 2-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\sevenSegmentDisplayController.v" Line 67: Result of 3-bit expression is truncated to fit in 2-bit target.
+
+Elaborating module <gameStateHandler>.
+
+Elaborating module <vga640x480>.
+WARNING:HDLCompiler:413 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\vga640x480.v" Line 124: Result of 11-bit expression is truncated to fit in 10-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\vga640x480.v" Line 133: Result of 11-bit expression is truncated to fit in 10-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\vga640x480.v" Line 145: Result of 32-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\vga640x480.v" Line 146: Result of 32-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:91 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\vga640x480.v" Line 162: Signal <gameState> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\vga640x480.v" Line 164: Signal <bossY> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\vga640x480.v" Line 165: Signal <bossX> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\vga640x480.v" Line 174: Signal <bossHP> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\vga640x480.v" Line 196: Signal <indicate1> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\vga640x480.v" Line 205: Signal <indicate2> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\vga640x480.v" Line 216: Signal <bossProj1X> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\vga640x480.v" Line 217: Signal <bossProj1Y> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\vga640x480.v" Line 218: Signal <bossProj1X> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\vga640x480.v" Line 226: Signal <bossProj2X> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\vga640x480.v" Line 227: Signal <bossProj2Y> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\vga640x480.v" Line 228: Signal <bossProj2X> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\vga640x480.v" Line 236: Signal <bossProj3X> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\vga640x480.v" Line 237: Signal <bossProj3Y> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\vga640x480.v" Line 238: Signal <bossProj3X> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\vga640x480.v" Line 246: Signal <bossProj4X> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\vga640x480.v" Line 247: Signal <bossProj4Y> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\vga640x480.v" Line 248: Signal <bossProj4X> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\vga640x480.v" Line 256: Signal <bossProj5X> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\vga640x480.v" Line 257: Signal <bossProj5Y> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\vga640x480.v" Line 258: Signal <bossProj5X> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\vga640x480.v" Line 266: Signal <playerY> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\vga640x480.v" Line 267: Signal <playerX> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\vga640x480.v" Line 275: Signal <playerProj1X> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\vga640x480.v" Line 276: Signal <playerProj1Y> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\vga640x480.v" Line 277: Signal <playerProj1X> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\vga640x480.v" Line 285: Signal <playerProj2X> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\vga640x480.v" Line 286: Signal <playerProj2Y> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\vga640x480.v" Line 287: Signal <playerProj2X> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\vga640x480.v" Line 295: Signal <playerProj3X> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\vga640x480.v" Line 296: Signal <playerProj3Y> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\vga640x480.v" Line 297: Signal <playerProj3X> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\vga640x480.v" Line 313: Signal <gameState> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\vga640x480.v" Line 534: Signal <gameState> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:634 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\bossBattleTop.v" Line 70: Net <bossHit> does not have a driver.
+WARNING:HDLCompiler:634 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\bossBattleTop.v" Line 96: Net <playerProjHit> does not have a driver.
+WARNING:HDLCompiler:634 - "C:\Users\152\Documents\CSM152A-Project4\Lab4\bossBattleTop.v" Line 97: Net <playerCollidedProj[1]> does not have a driver.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <bossBattleTop>.
+    Related source file is "C:\Users\152\Documents\CSM152A-Project4\Lab4\bossBattleTop.v".
+        CYCLES_PER_BOSS_ATTACK = 300000000
+        IMMUNE_CYCLES = 600000000
+WARNING:Xst:653 - Signal <playerCollidedProj> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <bossHit> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <playerProjHit> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Found 2-bit register for signal <arst_ff>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+Unit <bossBattleTop> synthesized.
+
+Synthesizing Unit <clockDivider>.
+    Related source file is "C:\Users\152\Documents\CSM152A-Project4\Lab4\ClockDivider.v".
+    Found 1-bit register for signal <clk_out>.
+    Found 26-bit register for signal <counter>.
+    Found 26-bit adder for signal <counter[25]_GND_2_o_add_1_OUT> created at line 34.
+    Found 26-bit comparator equal for signal <counter[25]_maxValue[25]_equal_3_o> created at line 35
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  27 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   1 Multiplexer(s).
+Unit <clockDivider> synthesized.
+
+Synthesizing Unit <clockPulser>.
+    Related source file is "C:\Users\152\Documents\CSM152A-Project4\Lab4\clockPulser.v".
+    Found 1-bit register for signal <clk_out>.
+    Found 32-bit register for signal <counter>.
+    Found 32-bit adder for signal <counter[31]_GND_3_o_add_1_OUT> created at line 34.
+    Found 32-bit comparator equal for signal <counter[31]_maxValue[31]_equal_3_o> created at line 35
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  33 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   1 Multiplexer(s).
+Unit <clockPulser> synthesized.
+
+Synthesizing Unit <debouncer>.
+    Related source file is "C:\Users\152\Documents\CSM152A-Project4\Lab4\debouncer.v".
+    Found 1-bit register for signal <clk_en>.
+    Found 1-bit register for signal <clk_en_d>.
+    Found 3-bit register for signal <step_btn>.
+    Found 1-bit register for signal <btn_signal>.
+    Found 17-bit register for signal <clk_dv>.
+    Found 18-bit adder for signal <n0023> created at line 33.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  23 D-type flip-flop(s).
+Unit <debouncer> synthesized.
+
+Synthesizing Unit <bossController>.
+    Related source file is "C:\Users\152\Documents\CSM152A-Project4\Lab4\bossController.v".
+        BOSS_HP = 150
+        HIT_DMG = 50
+        projAtk = 2'b00
+        beamAtk = 2'b01
+        diagAtk = 2'b10
+        BOSS_X = 264
+        BOSS_Y = 131
+        BOSS_W = 400
+        BOSS_H = 100
+        PROJ_OFFSET = 100
+        PROJ_Y = 231
+        PROJ_W = 10
+        PROJ_H = 15
+        ATK1_PROJ1_X = 259
+        ATK1_PROJ2_X = 359
+        ATK1_PROJ3_X = 459
+        ATK1_PROJ4_X = 559
+        ATK1_PROJ5_X = 659
+        ATK2_PROJ1_X = 309
+        ATK2_PROJ2_X = 409
+        ATK2_PROJ3_X = 509
+        ATK2_PROJ4_X = 609
+        BEAM_W = 60
+        BEAM_H = 280
+        ATK3_PROJ1_X = 234
+        ATK3_PROJ2_X = 634
+        ATK4_PROJ1_X = 144
+        ATK4_PROJ2_X = 434
+        ATK4_PROJ3_X = 723
+        ATK5_PROJ_W = 20
+        ATK5_PROJ_H = 20
+        ATK5_PROJ1_X = 244
+        ATK5_PROJ2_X = 684
+    Found 1-bit register for signal <bossShoot>.
+    Found 1-bit register for signal <waitSignal>.
+    Found 1-bit register for signal <indicate1>.
+    Found 1-bit register for signal <indicate2>.
+    Found 10-bit register for signal <bossHP>.
+    Found 32-bit register for signal <timer>.
+    Found 10-bit register for signal <proj1X>.
+    Found 9-bit register for signal <proj1Y>.
+    Found 10-bit register for signal <proj2X>.
+    Found 9-bit register for signal <proj2Y>.
+    Found 10-bit register for signal <proj3X>.
+    Found 9-bit register for signal <proj3Y>.
+    Found 10-bit register for signal <proj4X>.
+    Found 9-bit register for signal <proj4Y>.
+    Found 10-bit register for signal <proj5X>.
+    Found 9-bit register for signal <proj5Y>.
+    Found 10-bit register for signal <projW>.
+    Found 9-bit register for signal <projH>.
+    Found 2-bit register for signal <attackType>.
+    Found 3-bit register for signal <state>.
+    Found 32-bit adder for signal <timer[31]_GND_5_o_add_10_OUT> created at line 121.
+    Found 3-bit adder for signal <state[2]_GND_5_o_add_16_OUT> created at line 208.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred 165 D-type flip-flop(s).
+	inferred  32 Multiplexer(s).
+Unit <bossController> synthesized.
+
+Synthesizing Unit <bossProjHandler>.
+    Related source file is "C:\Users\152\Documents\CSM152A-Project4\Lab4\bossProjHandler.v".
+        STEP = 1'b1
+    Found 10-bit register for signal <proj1X_out>.
+    Found 9-bit register for signal <proj1Y_out>.
+    Found 10-bit register for signal <proj2X_out>.
+    Found 9-bit register for signal <proj2Y_out>.
+    Found 10-bit register for signal <proj3X_out>.
+    Found 9-bit register for signal <proj3Y_out>.
+    Found 10-bit register for signal <proj4X_out>.
+    Found 9-bit register for signal <proj4Y_out>.
+    Found 10-bit register for signal <proj5X_out>.
+    Found 9-bit register for signal <proj5Y_out>.
+    Found 1-bit register for signal <waitSignal>.
+    Found 32-bit register for signal <timer>.
+    Found 1-bit register for signal <turnOffBeam>.
+    Found 10-bit subtractor for signal <proj2X_out[9]_GND_6_o_sub_31_OUT> created at line 92.
+    Found 32-bit adder for signal <timer[31]_GND_6_o_add_2_OUT> created at line 58.
+    Found 9-bit adder for signal <proj3Y_out[8]_GND_6_o_add_14_OUT> created at line 85.
+    Found 9-bit adder for signal <proj4Y_out[8]_GND_6_o_add_17_OUT> created at line 86.
+    Found 9-bit adder for signal <proj5Y_out[8]_GND_6_o_add_20_OUT> created at line 87.
+    Found 10-bit adder for signal <proj1X_out[9]_GND_6_o_add_24_OUT> created at line 90.
+    Found 9-bit adder for signal <proj1Y_out[8]_GND_6_o_add_27_OUT> created at line 91.
+    Found 9-bit adder for signal <proj2Y_out[8]_GND_6_o_add_33_OUT> created at line 93.
+    Summary:
+	inferred   8 Adder/Subtractor(s).
+	inferred 129 D-type flip-flop(s).
+	inferred  21 Multiplexer(s).
+Unit <bossProjHandler> synthesized.
+
+Synthesizing Unit <playerController>.
+    Related source file is "C:\Users\152\Documents\CSM152A-Project4\Lab4\playerController.v".
+        PLAYER_START_X = 449
+        PLAYER_Y = 450
+        PLAYER_W = 30
+        PLAYER_H = 30
+        PROJ_W = 10
+        PROJ_H = 10
+        STEP = 15
+        LEFT_BOUNDARY = 144
+        RIGHT_BOUNDARY = 784
+        MAX_HEALTH = 2'b11
+        MIN_HEALTH = 0
+        HEALTH_LOSS = 1'b1
+WARNING:Xst:647 - Input <pulse_stepCycle> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 2-bit register for signal <playerHP>.
+    Found 1-bit register for signal <immune>.
+    Found 32-bit register for signal <timer>.
+    Found 10-bit register for signal <playerX>.
+    Found 2-bit subtractor for signal <playerHP[1]_GND_7_o_sub_10_OUT> created at line 77.
+    Found 32-bit adder for signal <timer[31]_GND_7_o_add_6_OUT> created at line 68.
+    Found 10-bit adder for signal <playerX[9]_GND_7_o_add_19_OUT> created at line 95.
+    Found 10-bit subtractor for signal <GND_7_o_GND_7_o_sub_18_OUT<9:0>> created at line 91.
+    Found 10-bit comparator greater for signal <GND_7_o_playerX[9]_LessThan_17_o> created at line 89
+    Found 10-bit comparator greater for signal <playerX[9]_PWR_9_o_LessThan_19_o> created at line 93
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+	inferred  45 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred   3 Multiplexer(s).
+Unit <playerController> synthesized.
+
+Synthesizing Unit <playerProjHandler>.
+    Related source file is "C:\Users\152\Documents\CSM152A-Project4\Lab4\playerProjHandler.v".
+        TOP_BOUNDARY = 31
+        STEP = 1
+    Found 9-bit register for signal <o_proj1Y>.
+    Found 10-bit register for signal <o_proj2X>.
+    Found 9-bit register for signal <o_proj2Y>.
+    Found 10-bit register for signal <o_proj3X>.
+    Found 9-bit register for signal <o_proj3Y>.
+    Found 10-bit register for signal <o_proj1X>.
+    Found 10-bit adder for signal <playerX[9]_GND_8_o_add_3_OUT> created at line 52.
+    Found 10-bit adder for signal <n0139> created at line 68.
+    Found 10-bit adder for signal <n0141> created at line 78.
+    Found 10-bit adder for signal <n0143> created at line 88.
+    Found 9-bit subtractor for signal <GND_8_o_playerW[9]_sub_5_OUT<8:0>> created at line 53.
+    Found 9-bit subtractor for signal <GND_8_o_GND_8_o_sub_43_OUT<8:0>> created at line 76.
+    Found 9-bit subtractor for signal <GND_8_o_GND_8_o_sub_51_OUT<8:0>> created at line 86.
+    Found 9-bit subtractor for signal <GND_8_o_GND_8_o_sub_59_OUT<8:0>> created at line 96.
+    Found 10-bit comparator lessequal for signal <n0036> created at line 68
+    Found 10-bit comparator lessequal for signal <n0046> created at line 78
+    Found 10-bit comparator lessequal for signal <n0056> created at line 88
+    Summary:
+	inferred   7 Adder/Subtractor(s).
+	inferred  57 D-type flip-flop(s).
+	inferred   3 Comparator(s).
+	inferred   6 Multiplexer(s).
+Unit <playerProjHandler> synthesized.
+
+Synthesizing Unit <playerCollisionDetector>.
+    Related source file is "C:\Users\152\Documents\CSM152A-Project4\Lab4\playerCollisionDetector.v".
+WARNING:Xst:647 - Input <playerH> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Register <playerHit> equivalent to <projHit> has been removed
+    Found 1-bit register for signal <projHit>.
+    Found 3-bit register for signal <collidedProj>.
+    Found 9-bit adder for signal <bossProj1Y[8]_projH[8]_add_1_OUT> created at line 33.
+    Found 10-bit adder for signal <bossProj1X[9]_projW[9]_add_4_OUT> created at line 34.
+    Found 9-bit adder for signal <bossProj2Y[8]_projH[8]_add_9_OUT> created at line 41.
+    Found 10-bit adder for signal <bossProj2X[9]_projW[9]_add_12_OUT> created at line 42.
+    Found 9-bit adder for signal <bossProj3Y[8]_projH[8]_add_17_OUT> created at line 49.
+    Found 10-bit adder for signal <bossProj3X[9]_projW[9]_add_20_OUT> created at line 50.
+    Found 9-bit adder for signal <bossProj4Y[8]_projH[8]_add_25_OUT> created at line 57.
+    Found 10-bit adder for signal <bossProj4X[9]_projW[9]_add_28_OUT> created at line 58.
+    Found 9-bit adder for signal <bossProj5Y[8]_projH[8]_add_33_OUT> created at line 65.
+    Found 10-bit adder for signal <bossProj5X[9]_projW[9]_add_36_OUT> created at line 66.
+    Found 10-bit adder for signal <playerX[9]_playerW[9]_add_39_OUT> created at line 67.
+    Found 9-bit comparator greater for signal <playerY[8]_bossProj1Y[8]_LessThan_3_o> created at line 33
+    Found 10-bit comparator greater for signal <n0002> created at line 34
+    Found 10-bit comparator greater for signal <playerX[9]_bossProj1X[9]_LessThan_6_o> created at line 34
+    Found 10-bit comparator greater for signal <bossProj1X[9]_playerX[9]_LessThan_9_o> created at line 35
+    Found 9-bit comparator greater for signal <playerY[8]_bossProj2Y[8]_LessThan_11_o> created at line 41
+    Found 10-bit comparator greater for signal <n0014> created at line 42
+    Found 10-bit comparator greater for signal <playerX[9]_bossProj2X[9]_LessThan_14_o> created at line 42
+    Found 10-bit comparator greater for signal <bossProj2X[9]_playerX[9]_LessThan_17_o> created at line 43
+    Found 9-bit comparator greater for signal <playerY[8]_bossProj3Y[8]_LessThan_19_o> created at line 49
+    Found 10-bit comparator greater for signal <n0026> created at line 50
+    Found 10-bit comparator greater for signal <playerX[9]_bossProj3X[9]_LessThan_22_o> created at line 50
+    Found 10-bit comparator greater for signal <bossProj3X[9]_playerX[9]_LessThan_25_o> created at line 51
+    Found 9-bit comparator greater for signal <playerY[8]_bossProj4Y[8]_LessThan_27_o> created at line 57
+    Found 10-bit comparator greater for signal <n0038> created at line 58
+    Found 10-bit comparator greater for signal <playerX[9]_bossProj4X[9]_LessThan_30_o> created at line 58
+    Found 10-bit comparator greater for signal <bossProj4X[9]_playerX[9]_LessThan_33_o> created at line 59
+    Found 9-bit comparator greater for signal <playerY[8]_bossProj5Y[8]_LessThan_35_o> created at line 65
+    Found 10-bit comparator greater for signal <n0050> created at line 66
+    Found 10-bit comparator greater for signal <playerX[9]_bossProj5X[9]_LessThan_38_o> created at line 66
+    Found 10-bit comparator greater for signal <bossProj5X[9]_playerX[9]_LessThan_41_o> created at line 67
+    Summary:
+	inferred  11 Adder/Subtractor(s).
+	inferred   4 D-type flip-flop(s).
+	inferred  20 Comparator(s).
+	inferred   6 Multiplexer(s).
+Unit <playerCollisionDetector> synthesized.
+
+Synthesizing Unit <sevenSegmentDisplayController>.
+    Related source file is "C:\Users\152\Documents\CSM152A-Project4\Lab4\sevenSegmentDisplayController.v".
+        stFirst = 2'b00
+        stSecond = 2'b01
+        stThird = 2'b10
+        stFourth = 2'b11
+        fstSeg = 4'b0111
+        sndSeg = 4'b1011
+        thrdSeg = 4'b1101
+        frthSeg = 4'b1110
+    Found 2-bit register for signal <state>.
+    Found 2-bit adder for signal <state[1]_GND_10_o_add_3_OUT> created at line 67.
+    Found 4x4-bit Read Only RAM for signal <an>
+    Summary:
+	inferred   1 RAM(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   2 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <sevenSegmentDisplayController> synthesized.
+
+Synthesizing Unit <gameStateHandler>.
+    Related source file is "C:\Users\152\Documents\CSM152A-Project4\Lab4\gameStateHandler.v".
+    Found 2-bit register for signal <gameState>.
+    Found 10-bit comparator lessequal for signal <n0000> created at line 32
+    Found 2-bit comparator lessequal for signal <n0002> created at line 34
+    Summary:
+	inferred   2 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred   1 Multiplexer(s).
+Unit <gameStateHandler> synthesized.
+
+Synthesizing Unit <vga640x480>.
+    Related source file is "C:\Users\152\Documents\CSM152A-Project4\Lab4\vga640x480.v".
+        hpixels = 800
+        vlines = 521
+        hpulse = 96
+        vpulse = 2
+        hbp = 144
+        hfp = 784
+        vbp = 31
+        vfp = 511
+        bossHP_Y = 56
+        bossHP_H = 50
+        bossHP_X = 194
+        PX_PER_BLOCK = 15
+        VICTORY_Y = 233
+        VICTORY_X = 179
+        GAMEOVER_X = 314
+        GAMEOVER_Y = 189
+        INDIC_W = 10
+        INDIC_H = 15
+        INDIC_Y = 231
+        INDIC1_1X = 264
+        INDIC1_2X = 664
+        INDIC2_1X = 174
+        INDIC2_2X = 464
+        INDIC2_3X = 753
+    Found 10-bit register for signal <vc>.
+    Found 10-bit register for signal <hc>.
+    Found 10-bit adder for signal <hc[9]_GND_12_o_add_2_OUT> created at line 124.
+    Found 10-bit adder for signal <vc[9]_GND_12_o_add_4_OUT> created at line 133.
+    Found 10-bit adder for signal <n0942> created at line 164.
+    Found 10-bit adder for signal <bossX[9]_bossW[9]_add_21_OUT> created at line 165.
+    Found 11-bit adder for signal <n0944> created at line 174.
+    Found 10-bit adder for signal <n0946> created at line 217.
+    Found 10-bit adder for signal <bossProj1X[9]_bossProjW[9]_add_48_OUT> created at line 218.
+    Found 10-bit adder for signal <n0948> created at line 227.
+    Found 10-bit adder for signal <bossProj2X[9]_bossProjW[9]_add_56_OUT> created at line 228.
+    Found 10-bit adder for signal <n0950> created at line 237.
+    Found 10-bit adder for signal <bossProj3X[9]_bossProjW[9]_add_64_OUT> created at line 238.
+    Found 10-bit adder for signal <n0952> created at line 247.
+    Found 10-bit adder for signal <bossProj4X[9]_bossProjW[9]_add_72_OUT> created at line 248.
+    Found 10-bit adder for signal <n0954> created at line 257.
+    Found 10-bit adder for signal <bossProj5X[9]_bossProjW[9]_add_80_OUT> created at line 258.
+    Found 10-bit adder for signal <n0956> created at line 266.
+    Found 10-bit adder for signal <playerX[9]_playerW[9]_add_86_OUT> created at line 267.
+    Found 10-bit adder for signal <n0958> created at line 276.
+    Found 10-bit adder for signal <playerProj1X[9]_playerProjW[9]_add_94_OUT> created at line 277.
+    Found 10-bit adder for signal <n0960> created at line 286.
+    Found 10-bit adder for signal <playerProj2X[9]_playerProjW[9]_add_102_OUT> created at line 287.
+    Found 10-bit adder for signal <n0962> created at line 296.
+    Found 10-bit adder for signal <playerProj3X[9]_playerProjW[9]_add_110_OUT> created at line 297.
+    Found 1-bit 3-to-1 multiplexer for signal <red[2]_GND_12_o_MUX_219_o> created at line 313.
+    Found 1-bit 3-to-1 multiplexer for signal <red[2]_GND_12_o_MUX_222_o> created at line 313.
+    Found 1-bit 3-to-1 multiplexer for signal <red[2]_GND_12_o_MUX_225_o> created at line 313.
+    Found 1-bit 3-to-1 multiplexer for signal <green[2]_GND_12_o_MUX_228_o> created at line 313.
+    Found 1-bit 3-to-1 multiplexer for signal <green[2]_GND_12_o_MUX_231_o> created at line 313.
+    Found 1-bit 3-to-1 multiplexer for signal <green[2]_GND_12_o_MUX_234_o> created at line 313.
+    Found 1-bit 3-to-1 multiplexer for signal <blue[1]_GND_12_o_MUX_237_o> created at line 313.
+    Found 1-bit 3-to-1 multiplexer for signal <blue[1]_GND_12_o_MUX_240_o> created at line 313.
+WARNING:Xst:737 - Found 1-bit latch for signal <red<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <red<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <red<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <green<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <green<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <green<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <blue<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <blue<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 10-bit comparator greater for signal <hc[9]_PWR_15_o_LessThan_2_o> created at line 123
+    Found 10-bit comparator greater for signal <vc[9]_PWR_15_o_LessThan_4_o> created at line 132
+    Found 10-bit comparator greater for signal <hc[9]_GND_12_o_LessThan_11_o> created at line 145
+    Found 10-bit comparator greater for signal <vc[9]_GND_12_o_LessThan_13_o> created at line 146
+    Found 10-bit comparator lessequal for signal <n0014> created at line 159
+    Found 10-bit comparator greater for signal <vc[9]_GND_12_o_LessThan_16_o> created at line 159
+    Found 10-bit comparator lessequal for signal <n0019> created at line 164
+    Found 10-bit comparator lessequal for signal <n0022> created at line 164
+    Found 10-bit comparator lessequal for signal <n0025> created at line 165
+    Found 10-bit comparator lessequal for signal <n0029> created at line 165
+    Found 10-bit comparator lessequal for signal <n0032> created at line 173
+    Found 10-bit comparator lessequal for signal <n0034> created at line 173
+    Found 10-bit comparator lessequal for signal <n0037> created at line 174
+    Found 11-bit comparator lessequal for signal <n0041> created at line 174
+    Found 10-bit comparator lessequal for signal <n0046> created at line 197
+    Found 10-bit comparator lessequal for signal <n0048> created at line 197
+    Found 10-bit comparator lessequal for signal <n0051> created at line 198
+    Found 10-bit comparator lessequal for signal <n0053> created at line 198
+    Found 10-bit comparator lessequal for signal <n0058> created at line 205
+    Found 10-bit comparator lessequal for signal <n0061> created at line 205
+    Found 10-bit comparator lessequal for signal <n0064> created at line 206
+    Found 10-bit comparator lessequal for signal <n0066> created at line 206
+    Found 10-bit comparator lessequal for signal <n0069> created at line 207
+    Found 10-bit comparator lessequal for signal <n0073> created at line 208
+    Found 10-bit comparator lessequal for signal <n0075> created at line 208
+    Found 10-bit comparator lessequal for signal <n0080> created at line 216
+    Found 9-bit comparator lessequal for signal <n0082> created at line 216
+    Found 10-bit comparator lessequal for signal <n0085> created at line 217
+    Found 10-bit comparator lessequal for signal <n0089> created at line 217
+    Found 10-bit comparator lessequal for signal <n0092> created at line 218
+    Found 10-bit comparator lessequal for signal <n0096> created at line 218
+    Found 10-bit comparator lessequal for signal <n0099> created at line 226
+    Found 9-bit comparator lessequal for signal <n0101> created at line 226
+    Found 10-bit comparator lessequal for signal <n0104> created at line 227
+    Found 10-bit comparator lessequal for signal <n0108> created at line 227
+    Found 10-bit comparator lessequal for signal <n0111> created at line 228
+    Found 10-bit comparator lessequal for signal <n0115> created at line 228
+    Found 10-bit comparator lessequal for signal <n0118> created at line 236
+    Found 9-bit comparator lessequal for signal <n0120> created at line 236
+    Found 10-bit comparator lessequal for signal <n0123> created at line 237
+    Found 10-bit comparator lessequal for signal <n0127> created at line 237
+    Found 10-bit comparator lessequal for signal <n0130> created at line 238
+    Found 10-bit comparator lessequal for signal <n0134> created at line 238
+    Found 10-bit comparator lessequal for signal <n0137> created at line 246
+    Found 9-bit comparator lessequal for signal <n0139> created at line 246
+    Found 10-bit comparator lessequal for signal <n0142> created at line 247
+    Found 10-bit comparator lessequal for signal <n0146> created at line 247
+    Found 10-bit comparator lessequal for signal <n0149> created at line 248
+    Found 10-bit comparator lessequal for signal <n0153> created at line 248
+    Found 10-bit comparator lessequal for signal <n0156> created at line 256
+    Found 9-bit comparator lessequal for signal <n0158> created at line 256
+    Found 10-bit comparator lessequal for signal <n0161> created at line 257
+    Found 10-bit comparator lessequal for signal <n0165> created at line 257
+    Found 10-bit comparator lessequal for signal <n0168> created at line 258
+    Found 10-bit comparator lessequal for signal <n0172> created at line 258
+    Found 10-bit comparator lessequal for signal <n0175> created at line 266
+    Found 10-bit comparator lessequal for signal <n0178> created at line 266
+    Found 10-bit comparator lessequal for signal <n0181> created at line 267
+    Found 10-bit comparator lessequal for signal <n0185> created at line 267
+    Found 10-bit comparator lessequal for signal <n0188> created at line 275
+    Found 9-bit comparator lessequal for signal <n0190> created at line 275
+    Found 10-bit comparator lessequal for signal <n0193> created at line 276
+    Found 10-bit comparator lessequal for signal <n0197> created at line 276
+    Found 10-bit comparator lessequal for signal <n0200> created at line 277
+    Found 10-bit comparator lessequal for signal <n0204> created at line 277
+    Found 10-bit comparator lessequal for signal <n0207> created at line 285
+    Found 9-bit comparator lessequal for signal <n0209> created at line 285
+    Found 10-bit comparator lessequal for signal <n0212> created at line 286
+    Found 10-bit comparator lessequal for signal <n0216> created at line 286
+    Found 10-bit comparator lessequal for signal <n0219> created at line 287
+    Found 10-bit comparator lessequal for signal <n0223> created at line 287
+    Found 10-bit comparator lessequal for signal <n0226> created at line 295
+    Found 9-bit comparator lessequal for signal <n0228> created at line 295
+    Found 10-bit comparator lessequal for signal <n0231> created at line 296
+    Found 10-bit comparator lessequal for signal <n0235> created at line 296
+    Found 10-bit comparator lessequal for signal <n0238> created at line 297
+    Found 10-bit comparator lessequal for signal <n0242> created at line 297
+    Found 10-bit comparator lessequal for signal <n0281> created at line 316
+    Found 10-bit comparator lessequal for signal <n0284> created at line 316
+    Found 10-bit comparator lessequal for signal <n0287> created at line 324
+    Found 10-bit comparator lessequal for signal <n0290> created at line 324
+    Found 10-bit comparator lessequal for signal <n0293> created at line 332
+    Found 10-bit comparator lessequal for signal <n0296> created at line 333
+    Found 10-bit comparator lessequal for signal <n0298> created at line 333
+    Found 10-bit comparator lessequal for signal <n0303> created at line 341
+    Found 10-bit comparator lessequal for signal <n0306> created at line 341
+    Found 10-bit comparator lessequal for signal <n0309> created at line 350
+    Found 10-bit comparator lessequal for signal <n0312> created at line 350
+    Found 10-bit comparator lessequal for signal <n0318> created at line 367
+    Found 10-bit comparator lessequal for signal <n0321> created at line 375
+    Found 10-bit comparator lessequal for signal <n0325> created at line 384
+    Found 10-bit comparator lessequal for signal <n0344> created at line 442
+    Found 10-bit comparator lessequal for signal <n0348> created at line 450
+    Found 10-bit comparator lessequal for signal <n0354> created at line 465
+    Found 10-bit comparator lessequal for signal <n0356> created at line 465
+    Found 10-bit comparator lessequal for signal <n0360> created at line 466
+    Found 10-bit comparator lessequal for signal <n0365> created at line 482
+    Found 10-bit comparator lessequal for signal <n0368> created at line 483
+    Found 10-bit comparator lessequal for signal <n0370> created at line 483
+    Found 10-bit comparator lessequal for signal <n0373> created at line 484
+    Found 10-bit comparator lessequal for signal <n0375> created at line 484
+    Found 10-bit comparator lessequal for signal <n0380> created at line 491
+    Found 10-bit comparator lessequal for signal <n0382> created at line 491
+    Found 10-bit comparator lessequal for signal <n0385> created at line 492
+    Found 10-bit comparator lessequal for signal <n0387> created at line 492
+    Found 10-bit comparator lessequal for signal <n0390> created at line 493
+    Found 10-bit comparator lessequal for signal <n0395> created at line 500
+    Found 10-bit comparator lessequal for signal <n0398> created at line 501
+    Found 10-bit comparator lessequal for signal <n0401> created at line 501
+    Found 10-bit comparator lessequal for signal <n0404> created at line 509
+    Found 10-bit comparator lessequal for signal <n0406> created at line 509
+    Found 10-bit comparator lessequal for signal <n0411> created at line 517
+    Found 10-bit comparator lessequal for signal <n0413> created at line 517
+    Found 10-bit comparator lessequal for signal <n0416> created at line 518
+    Found 10-bit comparator lessequal for signal <n0419> created at line 518
+    Found 10-bit comparator lessequal for signal <n0450> created at line 545
+    Found 10-bit comparator lessequal for signal <n0460> created at line 570
+    Found 10-bit comparator lessequal for signal <n0473> created at line 612
+    Found 10-bit comparator lessequal for signal <n0476> created at line 612
+    Found 10-bit comparator lessequal for signal <n0482> created at line 628
+    Found 10-bit comparator lessequal for signal <n0485> created at line 635
+    Found 10-bit comparator lessequal for signal <n0487> created at line 635
+    Found 10-bit comparator lessequal for signal <n0490> created at line 636
+    Found 10-bit comparator lessequal for signal <n0494> created at line 644
+    Found 10-bit comparator lessequal for signal <n0498> created at line 652
+    Found 10-bit comparator lessequal for signal <n0503> created at line 660
+    Found 10-bit comparator lessequal for signal <n0505> created at line 660
+    Found 10-bit comparator lessequal for signal <n0510> created at line 668
+    Found 10-bit comparator lessequal for signal <n0515> created at line 676
+    Found 10-bit comparator lessequal for signal <n0517> created at line 676
+    Found 10-bit comparator lessequal for signal <n0524> created at line 694
+    Found 10-bit comparator lessequal for signal <n0527> created at line 694
+    Found 10-bit comparator lessequal for signal <n0531> created at line 702
+    Found 10-bit comparator lessequal for signal <n0534> created at line 702
+    Found 10-bit comparator lessequal for signal <n0537> created at line 710
+    Found 10-bit comparator lessequal for signal <n0540> created at line 710
+    Found 10-bit comparator lessequal for signal <n0543> created at line 719
+    Found 10-bit comparator lessequal for signal <n0546> created at line 719
+    Found 10-bit comparator lessequal for signal <n0550> created at line 727
+    Found 10-bit comparator lessequal for signal <n0553> created at line 727
+    Found 10-bit comparator lessequal for signal <n0556> created at line 735
+    Found 10-bit comparator lessequal for signal <n0559> created at line 735
+    Found 10-bit comparator lessequal for signal <n0562> created at line 743
+    Found 10-bit comparator lessequal for signal <n0565> created at line 743
+    Found 10-bit comparator lessequal for signal <n0568> created at line 751
+    Found 10-bit comparator lessequal for signal <n0571> created at line 751
+    Found 10-bit comparator lessequal for signal <n0574> created at line 760
+    Found 10-bit comparator lessequal for signal <n0577> created at line 760
+    Found 10-bit comparator lessequal for signal <n0583> created at line 776
+    Found 10-bit comparator lessequal for signal <n0586> created at line 784
+    Found 10-bit comparator lessequal for signal <n0589> created at line 784
+    Found 10-bit comparator lessequal for signal <n0593> created at line 793
+    Found 10-bit comparator lessequal for signal <n0596> created at line 793
+    Found 10-bit comparator lessequal for signal <n0599> created at line 800
+    Found 10-bit comparator lessequal for signal <n0601> created at line 800
+    Found 10-bit comparator lessequal for signal <n0606> created at line 808
+    Found 10-bit comparator lessequal for signal <n0608> created at line 808
+    Found 10-bit comparator lessequal for signal <n0611> created at line 809
+    Found 10-bit comparator lessequal for signal <n0615> created at line 816
+    Found 10-bit comparator lessequal for signal <n0617> created at line 816
+    Found 10-bit comparator lessequal for signal <n0622> created at line 824
+    Found 10-bit comparator lessequal for signal <n0624> created at line 824
+    Found 10-bit comparator lessequal for signal <n0627> created at line 825
+    Found 10-bit comparator lessequal for signal <n0630> created at line 825
+    Found 10-bit comparator lessequal for signal <n0633> created at line 832
+    Found 10-bit comparator lessequal for signal <n0635> created at line 832
+    Found 10-bit comparator lessequal for signal <n0638> created at line 833
+    Found 10-bit comparator lessequal for signal <n0641> created at line 833
+    Summary:
+	inferred  23 Adder/Subtractor(s).
+	inferred  20 D-type flip-flop(s).
+	inferred   8 Latch(s).
+	inferred 168 Comparator(s).
+	inferred 198 Multiplexer(s).
+Unit <vga640x480> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 4x4-bit single-port Read Only RAM                     : 1
+# Adders/Subtractors                                   : 63
+ 10-bit adder                                          : 33
+ 10-bit addsub                                         : 1
+ 10-bit subtractor                                     : 1
+ 11-bit adder                                          : 1
+ 18-bit adder                                          : 3
+ 2-bit adder                                           : 1
+ 2-bit subtractor                                      : 1
+ 26-bit adder                                          : 2
+ 3-bit adder                                           : 1
+ 32-bit adder                                          : 6
+ 9-bit adder                                           : 10
+ 9-bit subtractor                                      : 3
+# Registers                                            : 72
+ 1-bit register                                        : 19
+ 10-bit register                                       : 18
+ 18-bit register                                       : 3
+ 2-bit register                                        : 5
+ 26-bit register                                       : 2
+ 3-bit register                                        : 5
+ 32-bit register                                       : 6
+ 9-bit register                                        : 14
+# Latches                                              : 8
+ 1-bit latch                                           : 8
+# Comparators                                          : 200
+ 10-bit comparator greater                             : 22
+ 10-bit comparator lessequal                           : 158
+ 11-bit comparator lessequal                           : 1
+ 2-bit comparator lessequal                            : 1
+ 26-bit comparator equal                               : 2
+ 32-bit comparator equal                               : 3
+ 9-bit comparator greater                              : 5
+ 9-bit comparator lessequal                            : 8
+# Multiplexers                                         : 273
+ 1-bit 2-to-1 multiplexer                              : 105
+ 1-bit 3-to-1 multiplexer                              : 8
+ 10-bit 2-to-1 multiplexer                             : 26
+ 2-bit 2-to-1 multiplexer                              : 39
+ 26-bit 2-to-1 multiplexer                             : 2
+ 3-bit 2-to-1 multiplexer                              : 60
+ 32-bit 2-to-1 multiplexer                             : 6
+ 8-bit 2-to-1 multiplexer                              : 1
+ 9-bit 2-to-1 multiplexer                              : 26
+
+=========================================================================
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+INFO:Xst:2261 - The FF/Latch <proj1Y_0> in Unit <bossCtrl> is equivalent to the following 11 FFs/Latches, which will be removed : <proj1Y_1> <proj1Y_2> <proj1Y_5> <proj1Y_6> <proj1Y_7> <proj2Y_0> <proj2Y_1> <proj2Y_2> <proj2Y_5> <proj2Y_6> <proj2Y_7> 
+INFO:Xst:2261 - The FF/Latch <proj1Y_3> in Unit <bossCtrl> is equivalent to the following 5 FFs/Latches, which will be removed : <proj1Y_4> <proj1Y_8> <proj2Y_3> <proj2Y_4> <proj2Y_8> 
+WARNING:Xst:1293 - FF/Latch <bossHP_0> has a constant value of 0 in block <bossCtrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bossHP_1> has a constant value of 1 in block <bossCtrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bossHP_2> has a constant value of 1 in block <bossCtrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bossHP_3> has a constant value of 0 in block <bossCtrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bossHP_4> has a constant value of 1 in block <bossCtrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bossHP_5> has a constant value of 0 in block <bossCtrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bossHP_6> has a constant value of 0 in block <bossCtrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bossHP_7> has a constant value of 1 in block <bossCtrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bossHP_8> has a constant value of 0 in block <bossCtrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bossHP_9> has a constant value of 0 in block <bossCtrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <proj1Y_0> (without init value) has a constant value of 1 in block <bossCtrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <proj1Y_3> (without init value) has a constant value of 0 in block <bossCtrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2404 -  FFs/Latches <proj1Y<8:8>> (without init value) have a constant value of 0 in block <bossController>.
+WARNING:Xst:2404 -  FFs/Latches <proj2Y<8:8>> (without init value) have a constant value of 0 in block <bossController>.
+
+Synthesizing (advanced) Unit <bossController>.
+The following registers are absorbed into counter <state>: 1 register on signal <state>.
+The following registers are absorbed into counter <timer>: 1 register on signal <timer>.
+Unit <bossController> synthesized (advanced).
+
+Synthesizing (advanced) Unit <bossProjHandler>.
+The following registers are absorbed into counter <timer>: 1 register on signal <timer>.
+Unit <bossProjHandler> synthesized (advanced).
+
+Synthesizing (advanced) Unit <clockDivider>.
+The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
+Unit <clockDivider> synthesized (advanced).
+
+Synthesizing (advanced) Unit <clockPulser>.
+The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
+Unit <clockPulser> synthesized (advanced).
+
+Synthesizing (advanced) Unit <playerController>.
+The following registers are absorbed into counter <timer>: 1 register on signal <timer>.
+The following registers are absorbed into counter <playerHP>: 1 register on signal <playerHP>.
+Unit <playerController> synthesized (advanced).
+
+Synthesizing (advanced) Unit <sevenSegmentDisplayController>.
+The following registers are absorbed into counter <state>: 1 register on signal <state>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_an> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 4-word x 4-bit                      |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <state>         |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <an>            |          |
+    -----------------------------------------------------------------------
+Unit <sevenSegmentDisplayController> synthesized (advanced).
+
+Synthesizing (advanced) Unit <vga640x480>.
+The following registers are absorbed into counter <hc>: 1 register on signal <hc>.
+The following registers are absorbed into counter <vc>: 1 register on signal <vc>.
+Unit <vga640x480> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 4x4-bit single-port distributed Read Only RAM         : 1
+# Adders/Subtractors                                   : 50
+ 10-bit adder                                          : 31
+ 10-bit addsub                                         : 1
+ 10-bit subtractor                                     : 1
+ 11-bit adder                                          : 1
+ 18-bit adder                                          : 3
+ 9-bit adder                                           : 10
+ 9-bit subtractor                                      : 3
+# Counters                                             : 13
+ 10-bit up counter                                     : 2
+ 2-bit down counter                                    : 1
+ 2-bit up counter                                      : 1
+ 26-bit up counter                                     : 2
+ 3-bit up counter                                      : 1
+ 32-bit up counter                                     : 6
+# Registers                                            : 375
+ Flip-Flops                                            : 375
+# Comparators                                          : 200
+ 10-bit comparator greater                             : 22
+ 10-bit comparator lessequal                           : 158
+ 11-bit comparator lessequal                           : 1
+ 2-bit comparator lessequal                            : 1
+ 26-bit comparator equal                               : 2
+ 32-bit comparator equal                               : 3
+ 9-bit comparator greater                              : 5
+ 9-bit comparator lessequal                            : 8
+# Multiplexers                                         : 261
+ 1-bit 2-to-1 multiplexer                              : 105
+ 1-bit 3-to-1 multiplexer                              : 8
+ 10-bit 2-to-1 multiplexer                             : 24
+ 2-bit 2-to-1 multiplexer                              : 38
+ 3-bit 2-to-1 multiplexer                              : 59
+ 8-bit 2-to-1 multiplexer                              : 1
+ 9-bit 2-to-1 multiplexer                              : 26
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <proj2Y_7> (without init value) has a constant value of 1 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proj2Y_6> (without init value) has a constant value of 1 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proj2Y_5> (without init value) has a constant value of 1 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proj2Y_4> (without init value) has a constant value of 0 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proj2Y_3> (without init value) has a constant value of 0 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proj2Y_2> (without init value) has a constant value of 1 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proj2Y_1> (without init value) has a constant value of 1 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proj2Y_0> (without init value) has a constant value of 1 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proj1Y_7> (without init value) has a constant value of 1 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proj1Y_6> (without init value) has a constant value of 1 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proj1Y_5> (without init value) has a constant value of 1 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proj1Y_4> (without init value) has a constant value of 0 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proj1Y_3> (without init value) has a constant value of 0 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proj1Y_2> (without init value) has a constant value of 1 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proj1Y_1> (without init value) has a constant value of 1 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proj1Y_0> (without init value) has a constant value of 1 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <bossHP_9> has a constant value of 0 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <bossHP_8> has a constant value of 0 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <bossHP_7> has a constant value of 1 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <bossHP_6> has a constant value of 0 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <bossHP_5> has a constant value of 0 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <bossHP_4> has a constant value of 1 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <bossHP_3> has a constant value of 0 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <bossHP_2> has a constant value of 1 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <bossHP_1> has a constant value of 1 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <bossHP_0> has a constant value of 0 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <projH_7> (without init value) has a constant value of 0 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <projH_6> (without init value) has a constant value of 0 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <projH_5> (without init value) has a constant value of 0 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proj5Y_8> (without init value) has a constant value of 0 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proj5Y_4> (without init value) has a constant value of 0 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proj5Y_3> (without init value) has a constant value of 0 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proj5X_8> (without init value) has a constant value of 0 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proj5X_6> (without init value) has a constant value of 0 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proj5X_5> (without init value) has a constant value of 0 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proj5X_3> (without init value) has a constant value of 0 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proj5X_2> (without init value) has a constant value of 0 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <projW_9> (without init value) has a constant value of 0 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <projW_8> (without init value) has a constant value of 0 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <projW_7> (without init value) has a constant value of 0 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <projW_6> (without init value) has a constant value of 0 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <projW_0> (without init value) has a constant value of 0 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proj4X_8> (without init value) has a constant value of 0 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proj4X_7> (without init value) has a constant value of 0 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proj4X_4> (without init value) has a constant value of 0 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proj3Y_8> (without init value) has a constant value of 0 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proj3Y_4> (without init value) has a constant value of 0 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proj3Y_3> (without init value) has a constant value of 0 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proj4Y_8> (without init value) has a constant value of 0 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proj4Y_4> (without init value) has a constant value of 0 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proj4Y_3> (without init value) has a constant value of 0 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proj1X_9> (without init value) has a constant value of 0 in block <bossController>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <vgaController/red_0> in Unit <bossBattleTop> is equivalent to the following 2 FFs/Latches, which will be removed : <vgaController/red_1> <vgaController/red_2> 
+INFO:Xst:2261 - The FF/Latch <proj4X_1> in Unit <bossController> is equivalent to the following 13 FFs/Latches, which will be removed : <proj4X_2> <proj4X_3> <proj5X_0> <proj5X_1> <proj5X_4> <proj5X_7> <proj5X_9> <proj5Y_0> <proj5Y_1> <proj5Y_2> <proj5Y_5> <proj5Y_6> <proj5Y_7> 
+INFO:Xst:2261 - The FF/Latch <proj2X_0> in Unit <bossController> is equivalent to the following 9 FFs/Latches, which will be removed : <proj4Y_0> <proj4Y_1> <proj4Y_2> <proj4Y_5> <proj4Y_6> <proj4Y_7> <projW_1> <projH_0> <projH_1> 
+INFO:Xst:2261 - The FF/Latch <projW_3> in Unit <bossController> is equivalent to the following FF/Latch, which will be removed : <projH_3> 
+INFO:Xst:2261 - The FF/Latch <projW_5> in Unit <bossController> is equivalent to the following 2 FFs/Latches, which will be removed : <projH_8> <attackType_0> 
+INFO:Xst:2261 - The FF/Latch <projW_2> in Unit <bossController> is equivalent to the following 2 FFs/Latches, which will be removed : <projW_4> <projH_4> 
+INFO:Xst:2261 - The FF/Latch <proj2X_8> in Unit <bossController> is equivalent to the following 9 FFs/Latches, which will be removed : <proj3X_0> <proj3X_6> <proj3X_7> <proj3Y_0> <proj3Y_1> <proj3Y_2> <proj3Y_5> <proj3Y_6> <proj3Y_7> 
+INFO:Xst:2261 - The FF/Latch <proj3X_2> in Unit <bossController> is equivalent to the following FF/Latch, which will be removed : <proj3X_5> 
+INFO:Xst:2261 - The FF/Latch <proj1X_0> in Unit <bossController> is equivalent to the following FF/Latch, which will be removed : <proj1X_8> 
+INFO:Xst:2261 - The FF/Latch <proj3X_3> in Unit <bossController> is equivalent to the following 4 FFs/Latches, which will be removed : <proj3X_8> <proj4X_0> <proj4X_5> <proj4X_9> 
+
+Optimizing unit <bossBattleTop> ...
+INFO:Xst:2261 - The FF/Latch <vgaController/green_0> in Unit <bossBattleTop> is equivalent to the following 2 FFs/Latches, which will be removed : <vgaController/green_1> <vgaController/green_2> 
+INFO:Xst:2261 - The FF/Latch <vgaController/blue_0> in Unit <bossBattleTop> is equivalent to the following FF/Latch, which will be removed : <vgaController/blue_1> 
+
+Optimizing unit <debouncer> ...
+
+Optimizing unit <bossController> ...
+INFO:Xst:2261 - The FF/Latch <proj3X_2> in Unit <bossController> is equivalent to the following FF/Latch, which will be removed : <proj4X_6> 
+INFO:Xst:2261 - The FF/Latch <proj1X_0> in Unit <bossController> is equivalent to the following FF/Latch, which will be removed : <proj2X_0> 
+INFO:Xst:2261 - The FF/Latch <proj1X_1> in Unit <bossController> is equivalent to the following FF/Latch, which will be removed : <proj2X_6> 
+INFO:Xst:2261 - The FF/Latch <proj1X_4> in Unit <bossController> is equivalent to the following FF/Latch, which will be removed : <proj2X_7> 
+INFO:Xst:2261 - The FF/Latch <proj1X_5> in Unit <bossController> is equivalent to the following FF/Latch, which will be removed : <proj2X_3> 
+INFO:Xst:2261 - The FF/Latch <proj1X_6> in Unit <bossController> is equivalent to the following FF/Latch, which will be removed : <proj2X_9> 
+INFO:Xst:2261 - The FF/Latch <proj1X_7> in Unit <bossController> is equivalent to the following FF/Latch, which will be removed : <projW_2> 
+INFO:Xst:2261 - The FF/Latch <proj1X_1> in Unit <bossController> is equivalent to the following FF/Latch, which will be removed : <proj2X_6> 
+INFO:Xst:2261 - The FF/Latch <proj1X_4> in Unit <bossController> is equivalent to the following FF/Latch, which will be removed : <proj2X_7> 
+INFO:Xst:2261 - The FF/Latch <proj1X_5> in Unit <bossController> is equivalent to the following FF/Latch, which will be removed : <proj2X_3> 
+INFO:Xst:2261 - The FF/Latch <proj1X_6> in Unit <bossController> is equivalent to the following FF/Latch, which will be removed : <proj2X_9> 
+INFO:Xst:2261 - The FF/Latch <proj1X_7> in Unit <bossController> is equivalent to the following FF/Latch, which will be removed : <projW_2> 
+INFO:Xst:2261 - The FF/Latch <proj1X_0> in Unit <bossController> is equivalent to the following 2 FFs/Latches, which will be removed : <proj2X_0> <proj3X_3> 
+
+Optimizing unit <bossProjHandler> ...
+
+Optimizing unit <playerController> ...
+
+Optimizing unit <playerCollisionDetector> ...
+
+Optimizing unit <sevenSegmentDisplayController> ...
+WARNING:Xst:1710 - FF/Latch <state/gameState_0> (without init value) has a constant value of 0 in block <bossBattleTop>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <bossProj/proj5X_out_8> (without init value) has a constant value of 0 in block <bossBattleTop>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <bossProj/proj5X_out_6> (without init value) has a constant value of 0 in block <bossBattleTop>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <bossProj/proj5X_out_5> (without init value) has a constant value of 0 in block <bossBattleTop>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <bossProj/proj5X_out_3> (without init value) has a constant value of 0 in block <bossBattleTop>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <bossProj/proj5X_out_2> (without init value) has a constant value of 0 in block <bossBattleTop>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <bossProj/proj4X_out_8> (without init value) has a constant value of 0 in block <bossBattleTop>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <bossProj/proj4X_out_7> (without init value) has a constant value of 0 in block <bossBattleTop>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <bossProj/proj4X_out_4> (without init value) has a constant value of 0 in block <bossBattleTop>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <bossProj/proj5X_out_9> in Unit <bossBattleTop> is equivalent to the following 4 FFs/Latches, which will be removed : <bossProj/proj5X_out_7> <bossProj/proj5X_out_4> <bossProj/proj5X_out_1> <bossProj/proj5X_out_0> 
+INFO:Xst:2261 - The FF/Latch <db_btnS/clk_en_d> in Unit <bossBattleTop> is equivalent to the following 2 FFs/Latches, which will be removed : <db_btnR/clk_en_d> <db_btnL/clk_en_d> 
+INFO:Xst:2261 - The FF/Latch <bossProj/proj4X_out_3> in Unit <bossBattleTop> is equivalent to the following 2 FFs/Latches, which will be removed : <bossProj/proj4X_out_2> <bossProj/proj4X_out_1> 
+INFO:Xst:2261 - The FF/Latch <bossProj/proj4X_out_9> in Unit <bossBattleTop> is equivalent to the following 2 FFs/Latches, which will be removed : <bossProj/proj4X_out_5> <bossProj/proj4X_out_0> 
+INFO:Xst:2261 - The FF/Latch <db_btnS/clk_dv_0> in Unit <bossBattleTop> is equivalent to the following 2 FFs/Latches, which will be removed : <db_btnR/clk_dv_0> <db_btnL/clk_dv_0> 
+INFO:Xst:2261 - The FF/Latch <db_btnS/clk_dv_1> in Unit <bossBattleTop> is equivalent to the following 2 FFs/Latches, which will be removed : <db_btnR/clk_dv_1> <db_btnL/clk_dv_1> 
+INFO:Xst:2261 - The FF/Latch <db_btnS/clk_dv_2> in Unit <bossBattleTop> is equivalent to the following 2 FFs/Latches, which will be removed : <db_btnR/clk_dv_2> <db_btnL/clk_dv_2> 
+INFO:Xst:2261 - The FF/Latch <db_btnS/clk_dv_3> in Unit <bossBattleTop> is equivalent to the following 2 FFs/Latches, which will be removed : <db_btnR/clk_dv_3> <db_btnL/clk_dv_3> 
+INFO:Xst:2261 - The FF/Latch <db_btnS/clk_dv_4> in Unit <bossBattleTop> is equivalent to the following 2 FFs/Latches, which will be removed : <db_btnR/clk_dv_4> <db_btnL/clk_dv_4> 
+INFO:Xst:2261 - The FF/Latch <db_btnS/clk_dv_5> in Unit <bossBattleTop> is equivalent to the following 2 FFs/Latches, which will be removed : <db_btnR/clk_dv_5> <db_btnL/clk_dv_5> 
+INFO:Xst:2261 - The FF/Latch <db_btnS/clk_dv_6> in Unit <bossBattleTop> is equivalent to the following 2 FFs/Latches, which will be removed : <db_btnR/clk_dv_6> <db_btnL/clk_dv_6> 
+INFO:Xst:2261 - The FF/Latch <db_btnS/clk_dv_7> in Unit <bossBattleTop> is equivalent to the following 2 FFs/Latches, which will be removed : <db_btnR/clk_dv_7> <db_btnL/clk_dv_7> 
+INFO:Xst:2261 - The FF/Latch <db_btnS/clk_dv_8> in Unit <bossBattleTop> is equivalent to the following 2 FFs/Latches, which will be removed : <db_btnR/clk_dv_8> <db_btnL/clk_dv_8> 
+INFO:Xst:2261 - The FF/Latch <db_btnS/clk_dv_9> in Unit <bossBattleTop> is equivalent to the following 2 FFs/Latches, which will be removed : <db_btnR/clk_dv_9> <db_btnL/clk_dv_9> 
+INFO:Xst:2261 - The FF/Latch <gen_pulseCycleStep/counter_0> in Unit <bossBattleTop> is equivalent to the following 2 FFs/Latches, which will be removed : <gen_pulsePlayerProjSpeed/counter_0> <gen_pulseBossProjSpeed/counter_0> 
+INFO:Xst:2261 - The FF/Latch <gen_pulseCycleStep/counter_1> in Unit <bossBattleTop> is equivalent to the following 2 FFs/Latches, which will be removed : <gen_pulsePlayerProjSpeed/counter_1> <gen_pulseBossProjSpeed/counter_1> 
+INFO:Xst:2261 - The FF/Latch <bossProj/proj3X_out_5> in Unit <bossBattleTop> is equivalent to the following FF/Latch, which will be removed : <bossProj/proj3X_out_2> 
+INFO:Xst:2261 - The FF/Latch <gen_pulseCycleStep/counter_2> in Unit <bossBattleTop> is equivalent to the following 2 FFs/Latches, which will be removed : <gen_pulsePlayerProjSpeed/counter_2> <gen_pulseBossProjSpeed/counter_2> 
+INFO:Xst:2261 - The FF/Latch <gen_pulseCycleStep/counter_3> in Unit <bossBattleTop> is equivalent to the following 2 FFs/Latches, which will be removed : <gen_pulsePlayerProjSpeed/counter_3> <gen_pulseBossProjSpeed/counter_3> 
+INFO:Xst:2261 - The FF/Latch <bossProj/proj3X_out_7> in Unit <bossBattleTop> is equivalent to the following 2 FFs/Latches, which will be removed : <bossProj/proj3X_out_6> <bossProj/proj3X_out_0> 
+INFO:Xst:2261 - The FF/Latch <gen_pulseCycleStep/counter_4> in Unit <bossBattleTop> is equivalent to the following 2 FFs/Latches, which will be removed : <gen_pulsePlayerProjSpeed/counter_4> <gen_pulseBossProjSpeed/counter_4> 
+INFO:Xst:2261 - The FF/Latch <bossProj/proj3X_out_8> in Unit <bossBattleTop> is equivalent to the following FF/Latch, which will be removed : <bossProj/proj3X_out_3> 
+INFO:Xst:2261 - The FF/Latch <gen_pulseCycleStep/counter_5> in Unit <bossBattleTop> is equivalent to the following FF/Latch, which will be removed : <gen_pulseBossProjSpeed/counter_5> 
+INFO:Xst:2261 - The FF/Latch <db_btnS/clk_dv_10> in Unit <bossBattleTop> is equivalent to the following 2 FFs/Latches, which will be removed : <db_btnR/clk_dv_10> <db_btnL/clk_dv_10> 
+INFO:Xst:2261 - The FF/Latch <db_btnS/clk_dv_11> in Unit <bossBattleTop> is equivalent to the following 2 FFs/Latches, which will be removed : <db_btnR/clk_dv_11> <db_btnL/clk_dv_11> 
+INFO:Xst:2261 - The FF/Latch <db_btnS/clk_dv_12> in Unit <bossBattleTop> is equivalent to the following 2 FFs/Latches, which will be removed : <db_btnR/clk_dv_12> <db_btnL/clk_dv_12> 
+INFO:Xst:2261 - The FF/Latch <db_btnS/clk_dv_13> in Unit <bossBattleTop> is equivalent to the following 2 FFs/Latches, which will be removed : <db_btnR/clk_dv_13> <db_btnL/clk_dv_13> 
+INFO:Xst:2261 - The FF/Latch <db_btnS/clk_dv_14> in Unit <bossBattleTop> is equivalent to the following 2 FFs/Latches, which will be removed : <db_btnR/clk_dv_14> <db_btnL/clk_dv_14> 
+INFO:Xst:2261 - The FF/Latch <db_btnS/clk_dv_15> in Unit <bossBattleTop> is equivalent to the following 2 FFs/Latches, which will be removed : <db_btnR/clk_dv_15> <db_btnL/clk_dv_15> 
+INFO:Xst:2261 - The FF/Latch <db_btnS/clk_dv_16> in Unit <bossBattleTop> is equivalent to the following 2 FFs/Latches, which will be removed : <db_btnR/clk_dv_16> <db_btnL/clk_dv_16> 
+INFO:Xst:3203 - The FF/Latch <gen_pulseCycleStep/counter_0> in Unit <bossBattleTop> is the opposite to the following 3 FFs/Latches, which will be removed : <db_btnS/clk_en> <db_btnR/clk_en> <db_btnL/clk_en> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block bossBattleTop, actual ratio is 23.
+FlipFlop bossCtrl/proj1X_0 has been replicated 1 time(s)
+FlipFlop bossCtrl/proj1X_7 has been replicated 1 time(s)
+FlipFlop bossCtrl/projW_3 has been replicated 1 time(s)
+FlipFlop bossCtrl/projW_5 has been replicated 2 time(s)
+FlipFlop bossProj/proj4X_out_9 has been replicated 1 time(s)
+FlipFlop bossProj/proj5X_out_9 has been replicated 2 time(s)
+FlipFlop playerCtrl/playerX_0 has been replicated 1 time(s)
+FlipFlop playerCtrl/playerX_1 has been replicated 1 time(s)
+FlipFlop playerCtrl/playerX_2 has been replicated 1 time(s)
+FlipFlop playerCtrl/playerX_3 has been replicated 1 time(s)
+FlipFlop playerCtrl/playerX_4 has been replicated 1 time(s)
+FlipFlop playerCtrl/playerX_5 has been replicated 1 time(s)
+FlipFlop playerCtrl/playerX_6 has been replicated 1 time(s)
+FlipFlop playerCtrl/playerX_7 has been replicated 1 time(s)
+FlipFlop playerCtrl/playerX_8 has been replicated 1 time(s)
+FlipFlop playerCtrl/playerX_9 has been replicated 1 time(s)
+Latch vgaController/red_0 has been replicated 2 time(s) to handle iob=true attribute.
+Latch vgaController/green_0 has been replicated 2 time(s) to handle iob=true attribute.
+Latch vgaController/blue_0 has been replicated 1 time(s) to handle iob=true attribute.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 491
+ Flip-Flops                                            : 491
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : bossBattleTop.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 3087
+#      GND                         : 1
+#      INV                         : 48
+#      LUT1                        : 229
+#      LUT2                        : 338
+#      LUT3                        : 236
+#      LUT4                        : 470
+#      LUT5                        : 95
+#      LUT6                        : 257
+#      MUXCY                       : 838
+#      MUXF7                       : 3
+#      VCC                         : 1
+#      XORCY                       : 571
+# FlipFlops/Latches                : 499
+#      FD                          : 3
+#      FDC                         : 10
+#      FDCE                        : 10
+#      FDE                         : 114
+#      FDP                         : 2
+#      FDR                         : 166
+#      FDRE                        : 182
+#      FDS                         : 3
+#      FDSE                        : 1
+#      LDC                         : 8
+# Clock Buffers                    : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 26
+#      IBUF                        : 4
+#      OBUF                        : 22
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             491  out of  18224     2%  
+ Number of Slice LUTs:                 1673  out of   9112    18%  
+    Number used as Logic:              1673  out of   9112    18%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   1734
+   Number with an unused Flip Flop:    1243  out of   1734    71%  
+   Number with an unused LUT:            61  out of   1734     3%  
+   Number of fully used LUT-FF pairs:   430  out of   1734    24%  
+   Number of unique control sets:        38
+
+IO Utilization: 
+ Number of IOs:                          27
+ Number of bonded IOBs:                  27  out of    232    11%  
+    IOB Flip Flops/Latches:               8
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------------------------+----------------------------------+-------+
+Clock Signal                                         | Clock buffer(FF name)            | Load  |
+-----------------------------------------------------+----------------------------------+-------+
+clk                                                  | BUFGP                            | 469   |
+vgaController/Madd_bossX[9]_bossW[9]_add_21_OUT_cy<8>| NONE(vgaController/green_0)      | 8     |
+gen_clkVga/clk_out                                   | BUFG                             | 20    |
+clkDisplay/clk_out                                   | NONE(playerHealthDisplay/state_1)| 2     |
+-----------------------------------------------------+----------------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 7.542ns (Maximum Frequency: 132.595MHz)
+   Minimum input arrival time before clock: 2.512ns
+   Maximum output required time after clock: 8.087ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 7.542ns (frequency: 132.595MHz)
+  Total number of paths / destination ports: 106540 / 1086
+-------------------------------------------------------------------------
+Delay:               7.542ns (Levels of Logic = 14)
+  Source:            bossProj/proj1X_out_0 (FF)
+  Destination:       playerCollisions/collidedProj_2 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: bossProj/proj1X_out_0 to playerCollisions/collidedProj_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q            16   0.525   1.182  bossProj/proj1X_out_0 (bossProj/proj1X_out_0)
+     LUT1:I0->O            1   0.254   0.000  playerCollisions/Madd_bossProj1X[9]_projW[9]_add_4_OUT_cy<0>_rt (playerCollisions/Madd_bossProj1X[9]_projW[9]_add_4_OUT_cy<0>_rt)
+     MUXCY:S->O            1   0.215   0.000  playerCollisions/Madd_bossProj1X[9]_projW[9]_add_4_OUT_cy<0> (playerCollisions/Madd_bossProj1X[9]_projW[9]_add_4_OUT_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  playerCollisions/Madd_bossProj1X[9]_projW[9]_add_4_OUT_cy<1> (playerCollisions/Madd_bossProj1X[9]_projW[9]_add_4_OUT_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  playerCollisions/Madd_bossProj1X[9]_projW[9]_add_4_OUT_cy<2> (playerCollisions/Madd_bossProj1X[9]_projW[9]_add_4_OUT_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  playerCollisions/Madd_bossProj1X[9]_projW[9]_add_4_OUT_cy<3> (playerCollisions/Madd_bossProj1X[9]_projW[9]_add_4_OUT_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  playerCollisions/Madd_bossProj1X[9]_projW[9]_add_4_OUT_cy<4> (playerCollisions/Madd_bossProj1X[9]_projW[9]_add_4_OUT_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  playerCollisions/Madd_bossProj1X[9]_projW[9]_add_4_OUT_cy<5> (playerCollisions/Madd_bossProj1X[9]_projW[9]_add_4_OUT_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  playerCollisions/Madd_bossProj1X[9]_projW[9]_add_4_OUT_cy<6> (playerCollisions/Madd_bossProj1X[9]_projW[9]_add_4_OUT_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  playerCollisions/Madd_bossProj1X[9]_projW[9]_add_4_OUT_cy<7> (playerCollisions/Madd_bossProj1X[9]_projW[9]_add_4_OUT_cy<7>)
+     XORCY:CI->O           2   0.206   1.002  playerCollisions/Madd_bossProj1X[9]_projW[9]_add_4_OUT_xor<8> (playerCollisions/bossProj1X[9]_projW[9]_add_4_OUT<8>)
+     LUT4:I0->O            1   0.254   0.000  playerCollisions/Mcompar_playerX[9]_bossProj1X[9]_LessThan_6_o_lut<4> (playerCollisions/Mcompar_playerX[9]_bossProj1X[9]_LessThan_6_o_lut<4>)
+     MUXCY:S->O            3   0.427   0.766  playerCollisions/Mcompar_playerX[9]_bossProj1X[9]_LessThan_6_o_cy<4> (playerCollisions/Mcompar_playerX[9]_bossProj1X[9]_LessThan_6_o_cy<4>)
+     LUT4:I3->O            2   0.254   0.954  playerCollisions/playerY[8]_bossProj1X[9]_AND_18_o1 (playerCollisions/playerY[8]_bossProj1X[9]_AND_18_o)
+     LUT6:I3->O            4   0.235   0.803  playerCollisions/_n0147_inv1 (playerCollisions/projHit_glue_set)
+     FDE:CE                    0.302          playerCollisions/collidedProj_0
+    ----------------------------------------
+    Total                      7.542ns (2.835ns logic, 4.707ns route)
+                                       (37.6% logic, 62.4% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'gen_clkVga/clk_out'
+  Clock period: 6.045ns (frequency: 165.413MHz)
+  Total number of paths / destination ports: 1260 / 30
+-------------------------------------------------------------------------
+Delay:               6.045ns (Levels of Logic = 13)
+  Source:            vgaController/hc_6 (FF)
+  Destination:       vgaController/hc_9 (FF)
+  Source Clock:      gen_clkVga/clk_out rising
+  Destination Clock: gen_clkVga/clk_out rising
+
+  Data Path: vgaController/hc_6 to vgaController/hc_9
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             73   0.525   2.227  vgaController/hc_6 (vgaController/hc_6)
+     LUT3:I0->O            2   0.235   0.834  vgaController/hc[9]_PWR_15_o_LessThan_2_o_inv_inv1_SW0 (N6)
+     LUT6:I4->O           11   0.250   1.039  vgaController/hc[9]_PWR_15_o_LessThan_2_o_inv_inv1 (vgaController/hc[9]_PWR_15_o_LessThan_2_o_inv_inv)
+     LUT2:I1->O            1   0.254   0.000  vgaController/Mcount_hc_lut<0> (vgaController/Mcount_hc_lut<0>)
+     MUXCY:S->O            1   0.215   0.000  vgaController/Mcount_hc_cy<0> (vgaController/Mcount_hc_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  vgaController/Mcount_hc_cy<1> (vgaController/Mcount_hc_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  vgaController/Mcount_hc_cy<2> (vgaController/Mcount_hc_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  vgaController/Mcount_hc_cy<3> (vgaController/Mcount_hc_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  vgaController/Mcount_hc_cy<4> (vgaController/Mcount_hc_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  vgaController/Mcount_hc_cy<5> (vgaController/Mcount_hc_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  vgaController/Mcount_hc_cy<6> (vgaController/Mcount_hc_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  vgaController/Mcount_hc_cy<7> (vgaController/Mcount_hc_cy<7>)
+     MUXCY:CI->O           0   0.023   0.000  vgaController/Mcount_hc_cy<8> (vgaController/Mcount_hc_cy<8>)
+     XORCY:CI->O           1   0.206   0.000  vgaController/Mcount_hc_xor<9> (vgaController/Mcount_hc9)
+     FDC:D                     0.074          vgaController/hc_9
+    ----------------------------------------
+    Total                      6.045ns (1.945ns logic, 4.100ns route)
+                                       (32.2% logic, 67.8% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clkDisplay/clk_out'
+  Clock period: 3.106ns (frequency: 321.958MHz)
+  Total number of paths / destination ports: 7 / 4
+-------------------------------------------------------------------------
+Delay:               3.106ns (Levels of Logic = 1)
+  Source:            playerHealthDisplay/state_1 (FF)
+  Destination:       playerHealthDisplay/state_1 (FF)
+  Source Clock:      clkDisplay/clk_out rising
+  Destination Clock: clkDisplay/clk_out rising
+
+  Data Path: playerHealthDisplay/state_1 to playerHealthDisplay/state_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q             11   0.525   1.147  playerHealthDisplay/state_1 (playerHealthDisplay/state_1)
+     LUT2:I0->O            2   0.250   0.725  playerHealthDisplay/_n0015<1>1 (playerHealthDisplay/_n0015)
+     FDR:R                     0.459          playerHealthDisplay/state_0
+    ----------------------------------------
+    Total                      3.106ns (1.234ns logic, 1.872ns route)
+                                       (39.7% logic, 60.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 5 / 5
+-------------------------------------------------------------------------
+Offset:              2.512ns (Levels of Logic = 1)
+  Source:            btnRst (PAD)
+  Destination:       arst_ff_0 (FF)
+  Destination Clock: clk rising
+
+  Data Path: btnRst to arst_ff_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   1.328   0.725  btnRst_IBUF (btnRst_IBUF)
+     FDP:PRE                   0.459          arst_ff_0
+    ----------------------------------------
+    Total                      2.512ns (1.787ns logic, 0.725ns route)
+                                       (71.1% logic, 28.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 10 / 6
+-------------------------------------------------------------------------
+Offset:              5.601ns (Levels of Logic = 2)
+  Source:            playerCtrl/playerHP_1 (FF)
+  Destination:       seg<3> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: playerCtrl/playerHP_1 to seg<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDS:C->Q              9   0.525   1.204  playerCtrl/playerHP_1 (playerCtrl/playerHP_1)
+     LUT4:I1->O            2   0.235   0.725  playerHealthDisplay/seg<3>1 (seg_0_OBUF)
+     OBUF:I->O                 2.912          seg_3_OBUF (seg<3>)
+    ----------------------------------------
+    Total                      5.601ns (3.672ns logic, 1.929ns route)
+                                       (65.6% logic, 34.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clkDisplay/clk_out'
+  Total number of paths / destination ports: 22 / 11
+-------------------------------------------------------------------------
+Offset:              5.731ns (Levels of Logic = 2)
+  Source:            playerHealthDisplay/state_1 (FF)
+  Destination:       seg<3> (PAD)
+  Source Clock:      clkDisplay/clk_out rising
+
+  Data Path: playerHealthDisplay/state_1 to seg<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q             11   0.525   1.315  playerHealthDisplay/state_1 (playerHealthDisplay/state_1)
+     LUT4:I0->O            2   0.254   0.725  playerHealthDisplay/seg<3>1 (seg_0_OBUF)
+     OBUF:I->O                 2.912          seg_3_OBUF (seg<3>)
+    ----------------------------------------
+    Total                      5.731ns (3.691ns logic, 2.040ns route)
+                                       (64.4% logic, 35.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'gen_clkVga/clk_out'
+  Total number of paths / destination ports: 14 / 2
+-------------------------------------------------------------------------
+Offset:              8.087ns (Levels of Logic = 3)
+  Source:            vgaController/vc_5 (FF)
+  Destination:       Vsync (PAD)
+  Source Clock:      gen_clkVga/clk_out rising
+
+  Data Path: vgaController/vc_5 to Vsync
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q            65   0.525   2.165  vgaController/vc_5 (vgaController/vc_5)
+     LUT3:I0->O           11   0.235   1.315  vgaController/vc[9]_GND_12_o_LessThan_338_o21 (vgaController/vc[9]_GND_12_o_LessThan_338_o2)
+     LUT5:I1->O            1   0.254   0.681  vgaController/_n12241 (Vsync_OBUF)
+     OBUF:I->O                 2.912          Vsync_OBUF (Vsync)
+    ----------------------------------------
+    Total                      8.087ns (3.926ns logic, 4.161ns route)
+                                       (48.5% logic, 51.5% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    7.542|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock clkDisplay/clk_out
+------------------+---------+---------+---------+---------+
+                  | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock      |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------+---------+---------+---------+---------+
+clkDisplay/clk_out|    3.106|         |         |         |
+------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock gen_clkVga/clk_out
+------------------+---------+---------+---------+---------+
+                  | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock      |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------+---------+---------+---------+---------+
+clk               |    3.395|         |         |         |
+gen_clkVga/clk_out|    6.045|         |         |         |
+------------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 18.00 secs
+Total CPU time to Xst completion: 18.17 secs
+ 
+--> 
+
+Total memory usage is 269596 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  153 (   0 filtered)
+Number of infos    :   61 (   0 filtered)
+

@@ -1,8 +1,8 @@
 INTSTYLE=ise
-INFILE=C:\Users\152\Desktop\CSM152A-Project4\Lab4\bossBattleTop.ncd
-OUTFILE=C:\Users\152\Desktop\CSM152A-Project4\Lab4\bossBattleTop.bit
+INFILE=C:\Users\152\Documents\CSM152A-Project4\Lab4\bossBattleTop.ncd
+OUTFILE=C:\Users\152\Documents\CSM152A-Project4\Lab4\bossBattleTop.bit
 FAMILY=Spartan6
 PART=xc6slx16-2csg324
-WORKINGDIR=C:\Users\152\Desktop\CSM152A-Project4\Lab4
+WORKINGDIR=C:\Users\152\Documents\CSM152A-Project4\Lab4
 LICENSE=ISE
-USER_INFO=203015155_203016297_210565169_900
+USER_INFO=203015155_203016297_210565169_304
