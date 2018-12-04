@@ -89,6 +89,11 @@ parameter VICTORY_X = 179;
 parameter GAMEOVER_X = 314;
 parameter GAMEOVER_Y = 189;
 
+parameter LEFTEYE_X = 334;
+parameter LEFTEYE_Y = 151;
+parameter RIGHTEYE_X = 264+230;
+parameter RIGHTEYE_Y = 151;
+
 parameter INDIC_W = 10;
 parameter INDIC_H = 15;
 parameter INDIC_Y = 231;
