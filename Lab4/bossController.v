@@ -30,8 +30,8 @@ module bossController(clk_master, pulse_cycleStep, rst, bossHit, delay,
 	indicate1, indicate2
     );
 
-	parameter BOSS_HP = 150;
-	parameter HIT_DMG = 50;
+	parameter BOSS_HP = 510;
+	parameter HIT_DMG = 1;
 	
 	input clk_master, pulse_cycleStep, rst, bossHit;
 	input [31:0] delay;
@@ -100,7 +100,7 @@ module bossController(clk_master, pulse_cycleStep, rst, bossHit, delay,
 	reg [2:0] state = 0;
 	reg [31:0] timer = 1;
 	reg waitSignal = 0;
-	
+
 	always @ (posedge clk_master) begin
 		if (rst) begin
 			state <= 0;
@@ -112,7 +112,7 @@ module bossController(clk_master, pulse_cycleStep, rst, bossHit, delay,
 		end
 		else begin
 			if (bossHit) begin
-				if (bossHP - HIT_DMG > 0)
+				if (bossHP > HIT_DMG)
 					bossHP <= bossHP - HIT_DMG;
 				else
 					bossHP <= 0;

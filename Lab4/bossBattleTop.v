@@ -41,17 +41,14 @@ module bossBattleTop(clk, btnRst, btnLeft, btnRight, btnShoot,
         arst_ff <= {1'b0, arst_ff[1]};
 	
 	parameter CYCLES_PER_BOSS_ATTACK = 300000000;
-	parameter IMMUNE_CYCLES = 600000000;
+	parameter IMMUNE_CYCLES = 150000000;
 	
 	wire clk_vga;
 	clockDivider gen_clkVga(clk, rst, 26'b0000000000000000000000010, clk_vga);
 	
 	wire pulse_bossProjSpeed;
 	clockPulser gen_pulseBossProjSpeed(clk, rst, 1000000, pulse_bossProjSpeed);
-	/*
-	wire clk_playerCollision;
-	clockDivider gen_clkPlayerCollision(clk, rst, 1000000, clk_playerCollision);
-	*/
+
 	wire pulse_playerProjSpeed;
 	clockPulser gen_pulsePlayerProjSpeed(clk, rst, 500000, pulse_playerProjSpeed);
 	
@@ -71,7 +68,8 @@ module bossBattleTop(clk, btnRst, btnLeft, btnRight, btnShoot,
     wire [1:0] atkType;
 	wire [9:0] bossHP;
 	wire indicate1, indicate2;
-	bossController bossCtrl(clk, pulse_cycleStep, rst, bossHit, (CYCLES_PER_BOSS_ATTACK / 2), bossX, bossY, bossW, bossH,
+	bossController bossCtrl(clk, pulse_cycleStep, rst, bossHit, (CYCLES_PER_BOSS_ATTACK / 2),
+		bossX, bossY, bossW, bossH,
 		bossProj1X, bossProj1Y, bossProj2X, bossProj2Y, bossProj3X, bossProj3Y, bossProj4X, bossProj4Y,
 		bossProj5X, bossProj5Y, bossProjW, bossProjH, bossHP, bossShoot, atkType, indicate1, indicate2);
     

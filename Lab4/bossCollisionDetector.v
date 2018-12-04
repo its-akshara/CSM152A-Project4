@@ -69,6 +69,7 @@ module bossCollisionDetector(clk, bossX, bossY, bossW, bossH,
 		else begin
 			bossHit <= 0;
 			projHit <= 0;
+			collidedProj <= 0;
 		end
 	end
 
