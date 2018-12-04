@@ -31,7 +31,7 @@ module bossController(clk_master, pulse_cycleStep, rst, bossHit, delay,
     );
 
 	parameter BOSS_HP = 510;
-	parameter HIT_DMG = 1;
+	parameter HIT_DMG = 20;
 	
 	input clk_master, pulse_cycleStep, rst, bossHit;
 	input [31:0] delay;

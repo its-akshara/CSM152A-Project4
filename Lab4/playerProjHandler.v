@@ -62,10 +62,10 @@ module playerProjHandler(clk, rst, pulse_projSpeed, shoot, projHit, collidedProj
 				o_proj3X <= playerX + playerW/4;
 				o_proj3Y <= playerY - playerW;
 			end
-		end //NOTE check logic here!!
+		end
 		if(pulse_projSpeed) // update location and check for collision
 		begin
-			if(((o_proj1Y+STEP)<=TOP_BOUNDARY || (projHit && collidedProj==2'b01)||(o_proj1X==0 && o_proj1Y==0))) 
+			if(((o_proj1Y+STEP)<=TOP_BOUNDARY || (o_proj1X==0 && o_proj1Y==0))) 
 			begin
 				o_proj1X <= 0;
 				o_proj1Y <= 0;
@@ -74,8 +74,8 @@ module playerProjHandler(clk, rst, pulse_projSpeed, shoot, projHit, collidedProj
 			begin
 				o_proj1X <= o_proj1X;
 				o_proj1Y <= o_proj1Y-STEP;
-			end // NOTE consider adding !shoot in if
-			if(((o_proj2Y+STEP)<=TOP_BOUNDARY || (projHit && collidedProj==2'b10)||(o_proj2X==0 && o_proj2Y==0))) 
+			end 
+			if(((o_proj2Y+STEP)<=TOP_BOUNDARY || (o_proj2X==0 && o_proj2Y==0))) 
 			begin
 				o_proj2X <= 0;
 				o_proj2Y <= 0;
@@ -85,7 +85,7 @@ module playerProjHandler(clk, rst, pulse_projSpeed, shoot, projHit, collidedProj
 				o_proj2X <= o_proj2X;
 				o_proj2Y <= o_proj2Y-STEP;
 			end
-			if(((o_proj3Y+STEP)<=TOP_BOUNDARY || (projHit && collidedProj==2'b11)|| (o_proj3X==0 && o_proj3Y==0))) 
+			if(((o_proj3Y+STEP)<=TOP_BOUNDARY || (o_proj3X==0 && o_proj3Y==0))) 
 			begin
 				o_proj3X <= 0;
 				o_proj3Y <= 0;
@@ -96,8 +96,7 @@ module playerProjHandler(clk, rst, pulse_projSpeed, shoot, projHit, collidedProj
 				o_proj3Y <= o_proj3Y-STEP;
 			end
 		end
-		/*
-		if (projHit && !shoot) begin
+		if (projHit) begin
 			case (collidedProj)
 				2'b01:
 					begin
@@ -115,7 +114,7 @@ module playerProjHandler(clk, rst, pulse_projSpeed, shoot, projHit, collidedProj
 						o_proj3Y <= 0;
 					end
 			endcase
-		end*/
+		end
 		
 	end
 

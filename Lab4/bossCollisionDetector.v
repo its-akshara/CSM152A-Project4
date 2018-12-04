@@ -18,12 +18,12 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module bossCollisionDetector(clk, bossX, bossY, bossW, bossH,
+module bossCollisionDetector(clk, rst, bossX, bossY, bossW, bossH,
 	playerProj1X, playerProj1Y, playerProj2X, playerProj2Y, playerProj3X, playerProj3Y,
 	projW, 
 	bossHit, projHit, collidedProj
     );
-	input clk;
+	input clk,rst;
 	input [9:0] bossX, bossW, playerProj1X, playerProj2X, playerProj3X, projW;
 	input [8:0] bossY, bossH, playerProj1Y, playerProj2Y, playerProj3Y;
 	output reg bossHit = 0, projHit = 0;
@@ -32,6 +32,12 @@ module bossCollisionDetector(clk, bossX, bossY, bossW, bossH,
 	parameter BORDER = 31;
 	
 	always @ (posedge clk) begin
+		if (rst)
+		begin
+			bossHit <= 0;
+			projHit <= 0;
+			collidedProj <= 0;
+		end
 		if ((playerProj1Y < (bossY + bossH)) &&
 			(((bossX >= playerProj1X) && (bossX < (playerProj1X + projW))) ||
 			((playerProj1X >= bossX) && (playerProj1X < (bossX + bossW))))) begin
@@ -54,6 +60,7 @@ module bossCollisionDetector(clk, bossX, bossY, bossW, bossH,
 			projHit <= 1;
 			collidedProj <= 3;
 		end
+		/*
 		else if (playerProj1Y < BORDER) begin
 			projHit <= 1;
 			collidedProj <= 1;
@@ -66,6 +73,7 @@ module bossCollisionDetector(clk, bossX, bossY, bossW, bossH,
 			projHit <= 1;
 			collidedProj <= 3;
 		end
+		*/
 		else begin
 			bossHit <= 0;
 			projHit <= 0;

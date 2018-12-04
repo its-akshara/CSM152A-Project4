@@ -105,7 +105,7 @@ module bossBattleTop(clk, btnRst, btnLeft, btnRight, btnShoot,
 								bossProj3X_out, bossProj3Y_out, bossProj4X_out, bossProj4Y_out, bossProj5X_out, bossProj5Y_out,
 								bossProjW, bossProjH, playerHit, bossProjHit, bossCollidedProj);
 										
-	bossCollisionDetector bossCollisions(clk, bossX, bossY, bossW, bossH,
+	bossCollisionDetector bossCollisions(clk, rst, bossX, bossY, bossW, bossH,
 	playerProj1X_out, playerProj1Y_out, playerProj2X_out, playerProj2Y_out, playerProj3X_out, playerProj3Y_out,
 	playerProjW, bossHit, playerProjHit, playerCollidedProj);
 	
