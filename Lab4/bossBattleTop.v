@@ -55,6 +55,9 @@ module bossBattleTop(clk, btnRst, btnLeft, btnRight, btnShoot,
 	wire pulse_cycleStep;
 	clockPulser gen_pulseCycleStep(clk, rst, CYCLES_PER_BOSS_ATTACK, pulse_cycleStep);
 	
+	wire clk_immune;
+	clockDivider gen_clkImmune(clk,rst,26'b0000000000000000000000100,clk_immune);
+	
 	wire mvLeft;
 	wire mvRight;
 	wire shoot;
@@ -116,7 +119,7 @@ module bossBattleTop(clk, btnRst, btnLeft, btnRight, btnShoot,
 	wire [1:0] gameState;
 	gameStateHandler state(clk, rst, bossHP, playerHP, gameState);
 	 
-    vga640x480 vgaController(clk_vga, rst, bossX, bossY, bossW, bossH, indicate1, indicate2, bossProj1X_out,
+    vga640x480 vgaController(clk_vga, clk_immune, rst, bossX, bossY, bossW, bossH, indicate1, indicate2, bossProj1X_out,
         bossProj1Y_out, bossProj2X_out, bossProj2Y_out, bossProj3X_out, bossProj3Y_out, bossProj4X_out,
         bossProj4Y_out,	bossProj5X_out, bossProj5Y_out, bossProjW, bossProjH, bossHP,
         playerX, playerY, playerW, playerH, playerProj1X_out, playerProj1Y_out, playerProj2X_out, playerProj2Y_out, playerProj3X_out, playerProj3Y_out,

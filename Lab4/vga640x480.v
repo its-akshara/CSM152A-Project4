@@ -20,6 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 module vga640x480(
 	input wire dclk,			//pixel clock: 25MHz
+	input wire clk_immune,
 	input wire rst,			//asynchronous reset
 	
 	input wire [9:0] bossX,
@@ -27,6 +28,7 @@ module vga640x480(
 	input wire [9:0] bossW,
 	input wire [8:0] bossH,
 	
+	input wire playerImmune,
 	input wire indicate1,
 	input wire indicate2,
 	input wire [9:0] bossProj1X,
@@ -268,7 +270,7 @@ begin
 			end
 			
 			// draw player
-			else if (vc >= playerY && vc <= playerY + playerH &&
+			else if ((!playerImmune || (playerImmune && clk_immune)) && vc >= playerY && vc <= playerY + playerH &&
 				hc >= playerX && hc <= playerX + playerW)
 			begin
 				red = 3'b000;
