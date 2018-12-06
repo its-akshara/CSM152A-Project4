@@ -52,9 +52,9 @@ module bossController(clk_master, pulse_cycleStep, rst, bossHit, delay,
 	
 	//BOSS LOCATION, SIZE CONSTANTS
 	parameter BOSS_X = 264;
-	parameter BOSS_Y = 131;
+	parameter BOSS_Y = 121;
 	parameter BOSS_W = 400;
-	parameter BOSS_H = 100;
+	parameter BOSS_H = 110;
 	
 	assign bossLocX = BOSS_X;
 	assign bossLocY = BOSS_Y;
@@ -81,7 +81,7 @@ module bossController(clk_master, pulse_cycleStep, rst, bossHit, delay,
 	parameter ATK2_PROJ4_X = ATK2_PROJ3_X + PROJ_OFFSET;
 	
 	//ATTACK 3 CONSTANTS
-	parameter BEAM_W = 60;
+	parameter BEAM_W = 80;
 	parameter BEAM_H = 280;
 	parameter ATK3_PROJ1_X = BOSS_X - (BEAM_W / 2);
 	parameter ATK3_PROJ2_X = BOSS_X + BOSS_W - (BEAM_W / 2);

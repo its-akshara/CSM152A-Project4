@@ -42,12 +42,13 @@ module bossBattleTop(clk, btnRst, btnLeft, btnRight, btnShoot,
 	
 	parameter CYCLES_PER_BOSS_ATTACK = 300000000;
 	parameter IMMUNE_CYCLES = 150000000;
+	parameter IMMUNE_BLINK_CYCLES = IMMUNE_CYCLES/10;
 	
 	wire clk_vga;
 	clockDivider gen_clkVga(clk, rst, 26'b0000000000000000000000010, clk_vga);
 	
 	wire pulse_bossProjSpeed;
-	clockPulser gen_pulseBossProjSpeed(clk, rst, 1000000, pulse_bossProjSpeed);
+	clockPulser gen_pulseBossProjSpeed(clk, rst, 750000, pulse_bossProjSpeed);
 
 	wire pulse_playerProjSpeed;
 	clockPulser gen_pulsePlayerProjSpeed(clk, rst, 500000, pulse_playerProjSpeed);
@@ -55,8 +56,8 @@ module bossBattleTop(clk, btnRst, btnLeft, btnRight, btnShoot,
 	wire pulse_cycleStep;
 	clockPulser gen_pulseCycleStep(clk, rst, CYCLES_PER_BOSS_ATTACK, pulse_cycleStep);
 	
-	wire clk_immune;
-	clockDivider gen_clkImmune(clk,rst,50000000,clk_immune);
+	wire pulse_immune;
+	clockPulser gen_pulseImmune(clk,rst,IMMUNE_BLINK_CYCLES,pulse_immune);
 	
 	wire mvLeft;
 	wire mvRight;
@@ -81,7 +82,7 @@ module bossBattleTop(clk, btnRst, btnLeft, btnRight, btnShoot,
     wire [9:0] bossProj1X_out, bossProj2X_out, bossProj3X_out, bossProj4X_out, bossProj5X_out;
     wire [8:0] bossProj1Y_out, bossProj2Y_out, bossProj3Y_out, bossProj4Y_out, bossProj5Y_out;
     bossProjHandler bossProj(clk, rst, pulse_bossProjSpeed, bossShoot, bossProjHit, bossCollidedProj, atkType,
-        (CYCLES_PER_BOSS_ATTACK / 4), bossProj1X, bossProj1Y, bossProj2X, bossProj2Y, bossProj3X, bossProj3Y,
+        (CYCLES_PER_BOSS_ATTACK / 3), bossProj1X, bossProj1Y, bossProj2X, bossProj2Y, bossProj3X, bossProj3Y,
         bossProj4X, bossProj4Y,	bossProj5X, bossProj5Y, bossProj1X_out, bossProj1Y_out, bossProj2X_out,
         bossProj2Y_out, bossProj3X_out, bossProj3Y_out, bossProj4X_out, bossProj4Y_out, bossProj5X_out,
         bossProj5Y_out);
@@ -116,11 +117,14 @@ module bossBattleTop(clk, btnRst, btnLeft, btnRight, btnShoot,
 	wire clk_display;
 	clockDivider clkDisplay(clk, 1'b0, 26'b00000000111101000010010000, clk_display);
 	sevenSegmentDisplayController playerHealthDisplay(playerHP,clk_display,seg,an);
+	
+	wire display_player;
+	immuneController immuneHandler(clk,pulse_immune,playerImmune,display_player);
 	 
 	wire [1:0] gameState;
 	gameStateHandler state(clk, rst, bossHP, playerHP, gameState);
 	 
-    vga640x480 vgaController(clk_vga, clk_immune, rst, bossX, bossY, bossW, bossH,playerImmune, indicate1, indicate2, bossProj1X_out,
+    vga640x480 vgaController(clk_vga, display_player, rst, bossX, bossY, bossW, bossH,playerImmune, indicate1, indicate2, bossProj1X_out,
         bossProj1Y_out, bossProj2X_out, bossProj2Y_out, bossProj3X_out, bossProj3Y_out, bossProj4X_out,
         bossProj4Y_out,	bossProj5X_out, bossProj5Y_out, bossProjW, bossProjH, bossHP,
         playerX, playerY, playerW, playerH, playerProj1X_out, playerProj1Y_out, playerProj2X_out, playerProj2Y_out, playerProj3X_out, playerProj3Y_out,

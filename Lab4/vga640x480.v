@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 module vga640x480(
 	input wire dclk,			//pixel clock: 25MHz
-	input wire clk_immune,
+	input wire display_player,
 	input wire rst,			//asynchronous reset
 	
 	input wire [9:0] bossX,
@@ -81,7 +81,7 @@ parameter vfp = 511; 	// beginning of vertical front porch
 // active vertical video is therefore: 511 - 31 = 480
 
 parameter bossHP_Y = 56;
-parameter bossHP_H = 50;
+parameter bossHP_H = 40;
 parameter bossHP_X = 144 + 50;
 
 parameter PX_PER_BLOCK = 15;
@@ -233,6 +233,31 @@ begin
 				green = 3'b111;
 				blue = 2'b11;
 			end
+			//boss left eyebrow
+			else if (vc >= LEFT_EYE_Y - (2*EYE_PX_PER_BLOCK) && vc <= LEFT_EYE_Y - EYE_PX_PER_BLOCK &&
+				hc >= LEFT_EYE_X + (3*EYE_PX_PER_BLOCK) && hc <= LEFT_EYE_X + (6*EYE_PX_PER_BLOCK))
+			begin
+				red = 3'b000;
+				green = 3'b000;
+				blue = 2'b00;
+			end
+
+			else if (vc >= LEFT_EYE_Y - EYE_PX_PER_BLOCK && vc <= LEFT_EYE_Y &&
+				hc >= LEFT_EYE_X + (5*EYE_PX_PER_BLOCK) && hc <= LEFT_EYE_X + (8*EYE_PX_PER_BLOCK))
+			begin
+				red = 3'b000;
+				green = 3'b000;
+				blue = 2'b00;
+			end
+
+			else if (vc >= LEFT_EYE_Y && vc <= LEFT_EYE_Y + EYE_PX_PER_BLOCK &&
+				hc >= LEFT_EYE_X + (7*EYE_PX_PER_BLOCK) && hc <= LEFT_EYE_X + (10*EYE_PX_PER_BLOCK))
+			begin
+				red = 3'b000;
+				green = 3'b000;
+				blue = 2'b00;
+			end
+
 
 			
 			
@@ -300,7 +325,31 @@ begin
 				blue = 2'b11;
 			end
 
+			else if (vc >= RIGHT_EYE_Y - (2*EYE_PX_PER_BLOCK) && vc <= RIGHT_EYE_Y - EYE_PX_PER_BLOCK &&
+				hc >= RIGHT_EYE_X + (3*EYE_PX_PER_BLOCK) && hc <= RIGHT_EYE_X + (6*EYE_PX_PER_BLOCK))
+			begin
+				red = 3'b000;
+				green = 3'b000;
+				blue = 2'b00;
+			end
+			// Boss right eyebrow
+			else if (vc >= RIGHT_EYE_Y - EYE_PX_PER_BLOCK && vc <= RIGHT_EYE_Y &&
+				hc >= RIGHT_EYE_X + EYE_PX_PER_BLOCK && hc <= RIGHT_EYE_X + (4*EYE_PX_PER_BLOCK))
+			begin
+				red = 3'b000;
+				green = 3'b000;
+				blue = 2'b00;
+			end
 
+			else if (vc >= RIGHT_EYE_Y && vc <= RIGHT_EYE_Y + EYE_PX_PER_BLOCK &&
+				hc >= RIGHT_EYE_X - EYE_PX_PER_BLOCK && hc <= RIGHT_EYE_X + (2*EYE_PX_PER_BLOCK))
+			begin
+				red = 3'b000;
+				green = 3'b000;
+				blue = 2'b00;
+			end
+
+			
 
 		
 			// draw boss rectangle
@@ -405,7 +454,7 @@ begin
 			end
 			
 			// draw player
-			else if (/*(!playerImmune || (playerImmune && clk_immune)) &&*/ vc >= playerY && vc <= playerY + playerH &&
+			else if (/*(!playerImmune || (playerImmune && clk_immune)) &&*/ display_player && vc >= playerY && vc <= playerY + playerH &&
 				hc >= playerX && hc <= playerX + playerW)
 			begin
 				red = 3'b000;
