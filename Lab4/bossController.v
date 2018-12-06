@@ -96,6 +96,7 @@ module bossController(clk_master, pulse_cycleStep, rst, bossHit, delay,
 	parameter ATK5_PROJ_H = 20;
 	parameter ATK5_PROJ1_X = BOSS_X - ATK5_PROJ_W;
 	parameter ATK5_PROJ2_X = BOSS_X + BOSS_W + ATK5_PROJ_W;
+	parameter ATK5_PROJ3_X = BOSS_X + BOSS_W/2 - PROJ_W/2;
 	
 	reg [2:0] state = 0;
 	reg [31:0] timer = 1;
@@ -212,10 +213,10 @@ module bossController(clk_master, pulse_cycleStep, rst, bossHit, delay,
 						proj1Y <= PROJ_Y;
 						proj2X <= ATK5_PROJ2_X;
 						proj2Y <= PROJ_Y;
-						proj3X <= 0;
-						proj3Y <= 0;
-						proj4X <= 0;
-						proj4Y <= 0;
+						proj3X <= ATK5_PROJ3_X;
+						proj3Y <= PROJ_Y;
+						proj4X <= ATK5_PROJ3_X;
+						proj4Y <= PROJ_Y;
 						proj5X <= 0;
 						proj5Y <= 0;
 						projW <= ATK5_PROJ_W;

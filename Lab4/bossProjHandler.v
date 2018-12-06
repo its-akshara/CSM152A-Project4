@@ -91,6 +91,10 @@ module bossProjHandler(clk, rst, pulse_projSpeed, bossShoot, projHit, collidedPr
 			if (proj1Y_out > 0) proj1Y_out <= proj1Y_out + STEP;
 			if (proj2X_out > 0) proj2X_out <= proj2X_out - STEP;
 			if (proj2Y_out > 0) proj2Y_out <= proj2Y_out + STEP;
+			if (proj3X_out > 0) proj3X_out <= proj3X_out + STEP;
+			if (proj3Y_out > 0) proj3Y_out <= proj3Y_out + STEP;
+			if (proj4X_out > 0) proj4X_out <= proj4X_out - STEP;
+			if (proj4Y_out > 0) proj4Y_out <= proj4Y_out + STEP;
 		end
 		else if (projHit && (attackType == 2'b00 || attackType == 2'b10)) begin
 			if (collidedProj == 1) begin
