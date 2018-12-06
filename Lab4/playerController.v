@@ -21,7 +21,7 @@
 module playerController(clk_master, pulse_stepCycle, rst, mvLeft, mvRight, playerHit, delay,
 	playerX, playerY, playerW, playerH,
 	projW, projH,
-	playerHP
+	playerHP, immune
     );
 	input clk_master, pulse_stepCycle, rst, mvLeft, mvRight, playerHit;
 	input [31:0] delay;
@@ -44,6 +44,7 @@ module playerController(clk_master, pulse_stepCycle, rst, mvLeft, mvRight, playe
 	output wire [9:0] playerW, projW;
 	output wire [8:0] playerH, projH;
 	output reg [1:0] playerHP= MAX_HEALTH;
+	output reg immune = 0;
 	
 	assign playerW = PLAYER_W;
 	assign playerH = PLAYER_H;
@@ -51,7 +52,6 @@ module playerController(clk_master, pulse_stepCycle, rst, mvLeft, mvRight, playe
 	assign projW = PROJ_W;
 	assign projH = PROJ_H;
 	
-	reg immune = 0;
 	reg [31:0] timer = 1;
 	
 	always @(posedge clk_master)

@@ -85,16 +85,17 @@ parameter bossHP_H = 50;
 parameter bossHP_X = 144 + 50;
 
 parameter PX_PER_BLOCK = 15;
+parameter EYE_PX_PER_BLOCK = 10;
 parameter VICTORY_Y = 233;
 parameter VICTORY_X = 179;
 
 parameter GAMEOVER_X = 314;
 parameter GAMEOVER_Y = 189;
 
-parameter LEFTEYE_X = 334;
-parameter LEFTEYE_Y = 151;
-parameter RIGHTEYE_X = 264+230;
-parameter RIGHTEYE_Y = 151;
+parameter LEFT_EYE_X = 334;
+parameter LEFT_EYE_Y = 151;
+parameter RIGHT_EYE_X = 264+230;
+parameter RIGHT_EYE_Y = 151;
 
 parameter INDIC_W = 10;
 parameter INDIC_H = 15;
@@ -167,8 +168,143 @@ begin
 	begin
 		// NORMAL GAME STATE
 		if (gameState == 2'b00) begin
+		
+				
+			// Boss' left eye
+			if (vc >= LEFT_EYE_Y + (2*EYE_PX_PER_BLOCK) && vc <= LEFT_EYE_Y + (4*EYE_PX_PER_BLOCK) &&
+				hc >= LEFT_EYE_X + (5*EYE_PX_PER_BLOCK) && hc <= LEFT_EYE_X + (7*EYE_PX_PER_BLOCK))
+			begin
+				red = 3'b000;
+				green = 3'b000;
+				blue = 2'b00;
+			end
+
+			else if (vc >= LEFT_EYE_Y + EYE_PX_PER_BLOCK && vc <= LEFT_EYE_Y + (2*EYE_PX_PER_BLOCK) &&
+				hc >= LEFT_EYE_X + (5*EYE_PX_PER_BLOCK) && hc <= LEFT_EYE_X + (6*EYE_PX_PER_BLOCK))
+			begin
+				red = 3'b000;
+				green = 3'b000;
+				blue = 2'b00;
+			end
+			else if (vc >= LEFT_EYE_Y && vc <= LEFT_EYE_Y + EYE_PX_PER_BLOCK &&
+				hc >= LEFT_EYE_X && hc <= LEFT_EYE_X + (3*EYE_PX_PER_BLOCK))
+			begin
+				red = 3'b111;
+				green = 3'b111;
+				blue = 2'b11;
+			end
+
+			else if (vc >= LEFT_EYE_Y + EYE_PX_PER_BLOCK && vc <= LEFT_EYE_Y + (2*EYE_PX_PER_BLOCK) &&
+				hc >= LEFT_EYE_X + EYE_PX_PER_BLOCK && hc <= LEFT_EYE_X + (6*EYE_PX_PER_BLOCK))
+			begin
+				red = 3'b111;
+				green = 3'b111;
+				blue = 2'b11;
+			end
+
+			else if (vc >= LEFT_EYE_Y + (2*EYE_PX_PER_BLOCK) && vc <= LEFT_EYE_Y + (3*EYE_PX_PER_BLOCK) &&
+				hc >= LEFT_EYE_X + EYE_PX_PER_BLOCK && hc <= LEFT_EYE_X + (9*EYE_PX_PER_BLOCK))
+			begin
+				red = 3'b111;
+				green = 3'b111;
+				blue = 2'b11;
+			end
+
+			else if (vc >= LEFT_EYE_Y + (3*EYE_PX_PER_BLOCK) && vc <= LEFT_EYE_Y + (4*EYE_PX_PER_BLOCK) &&
+				hc >= LEFT_EYE_X + (2*EYE_PX_PER_BLOCK) && hc <= LEFT_EYE_X + (9*EYE_PX_PER_BLOCK))
+			begin
+				red = 3'b111;
+				green = 3'b111;
+				blue = 2'b11;
+			end
+
+			else if (vc >= LEFT_EYE_Y + (4*EYE_PX_PER_BLOCK) && vc <= LEFT_EYE_Y + (5*EYE_PX_PER_BLOCK) &&
+				hc >= LEFT_EYE_X + (3*EYE_PX_PER_BLOCK) && hc <= LEFT_EYE_X + (9*EYE_PX_PER_BLOCK))
+			begin
+				red = 3'b111;
+				green = 3'b111;
+				blue = 2'b11;
+			end
+
+			else if (vc >= LEFT_EYE_Y + (5*EYE_PX_PER_BLOCK) && vc <= LEFT_EYE_Y + (6*EYE_PX_PER_BLOCK) &&
+				hc >= LEFT_EYE_X + (4*EYE_PX_PER_BLOCK) && hc <= LEFT_EYE_X + (8*EYE_PX_PER_BLOCK))
+			begin
+				red = 3'b111;
+				green = 3'b111;
+				blue = 2'b11;
+			end
+
+			
+			
+			// Boss' right eye
+			else if (vc >= RIGHT_EYE_Y + (2*EYE_PX_PER_BLOCK) && vc <= RIGHT_EYE_Y + (4*EYE_PX_PER_BLOCK) &&
+				hc >= RIGHT_EYE_X + (2*EYE_PX_PER_BLOCK) && hc <= RIGHT_EYE_X + (4*EYE_PX_PER_BLOCK))
+			begin
+				red = 3'b000;
+				green = 3'b000;
+				blue = 2'b00;
+			end
+
+			else if (vc >= RIGHT_EYE_Y + EYE_PX_PER_BLOCK && vc <= RIGHT_EYE_Y + (2*EYE_PX_PER_BLOCK) &&
+				hc >= RIGHT_EYE_X + (3*EYE_PX_PER_BLOCK) && hc <= RIGHT_EYE_X + (4*EYE_PX_PER_BLOCK))
+			begin
+				red = 3'b000;
+				green = 3'b000;
+				blue = 2'b00;
+			end
+			else if (vc >= RIGHT_EYE_Y && vc <= RIGHT_EYE_Y + EYE_PX_PER_BLOCK &&
+				hc >= RIGHT_EYE_X + (6*EYE_PX_PER_BLOCK) && hc <= RIGHT_EYE_X + (9*EYE_PX_PER_BLOCK))
+			begin
+				red = 3'b111;
+				green = 3'b111;
+				blue = 2'b11;
+			end
+
+			else if (vc >= RIGHT_EYE_Y + EYE_PX_PER_BLOCK && vc <= RIGHT_EYE_Y + (2*EYE_PX_PER_BLOCK) &&
+				hc >= RIGHT_EYE_X + (3*EYE_PX_PER_BLOCK) && hc <= RIGHT_EYE_X + (8*EYE_PX_PER_BLOCK))
+			begin
+				red = 3'b111;
+				green = 3'b111;
+				blue = 2'b11;
+			end
+
+			else if (vc >= RIGHT_EYE_Y + (2*EYE_PX_PER_BLOCK) && vc <= RIGHT_EYE_Y + (3*EYE_PX_PER_BLOCK) &&
+				hc >= RIGHT_EYE_X && hc <= RIGHT_EYE_X + (8*EYE_PX_PER_BLOCK))
+			begin
+				red = 3'b111;
+				green = 3'b111;
+				blue = 2'b11;
+			end
+
+			else if (vc >= RIGHT_EYE_Y + (3*EYE_PX_PER_BLOCK) && vc <= RIGHT_EYE_Y + (4*EYE_PX_PER_BLOCK) &&
+				hc >= RIGHT_EYE_X && hc <= RIGHT_EYE_X + (7*EYE_PX_PER_BLOCK))
+			begin
+				red = 3'b111;
+				green = 3'b111;
+				blue = 2'b11;
+			end
+
+			else if (vc >= RIGHT_EYE_Y + (4*EYE_PX_PER_BLOCK) && vc <= RIGHT_EYE_Y + (5*EYE_PX_PER_BLOCK) &&
+				hc >= RIGHT_EYE_X && hc <= RIGHT_EYE_X + (6*EYE_PX_PER_BLOCK))
+			begin
+				red = 3'b111;
+				green = 3'b111;
+				blue = 2'b11;
+			end
+
+			else if (vc >= RIGHT_EYE_Y + (5*EYE_PX_PER_BLOCK) && vc <= RIGHT_EYE_Y + (6*EYE_PX_PER_BLOCK) &&
+				hc >= RIGHT_EYE_X + EYE_PX_PER_BLOCK && hc <= RIGHT_EYE_X + (5*EYE_PX_PER_BLOCK))
+			begin
+				red = 3'b111;
+				green = 3'b111;
+				blue = 2'b11;
+			end
+
+
+
+		
 			// draw boss rectangle
-			if (vc >= bossY && vc <= bossY + bossH &&
+			else if (vc >= bossY && vc <= bossY + bossH &&
 				hc >= bossX && hc <= bossX + bossW)
 			begin
 				red = 3'b111;
@@ -180,12 +316,12 @@ begin
 			else if (vc >= bossHP_Y && vc <= (bossHP_Y + bossHP_H) &&
 				hc >= bossHP_X && hc <= (bossHP_X + bossHP))
 			begin
-				//if (bossHP > 360) begin
+				if (bossHP > 360) begin
 					red = 3'b000;
 					green = 3'b111;
 					blue = 2'b00;
-				//end
-				/*
+				end
+				
 				else if (bossHP > 180) begin
 					red = 3'b111;
 					green = 3'b111;
@@ -196,9 +332,8 @@ begin
 					green = 3'b000;
 					blue = 2'b00;
 				end
-				*/
 			end
-			
+		
 			// draw indicators
 			else if (indicate1 && vc >= INDIC_Y && vc <= INDIC_Y + INDIC_H &&
 					((hc >= INDIC1_1X && hc <= INDIC1_1X + INDIC_W) ||
@@ -270,7 +405,7 @@ begin
 			end
 			
 			// draw player
-			else if ((!playerImmune || (playerImmune && clk_immune)) && vc >= playerY && vc <= playerY + playerH &&
+			else if (/*(!playerImmune || (playerImmune && clk_immune)) &&*/ vc >= playerY && vc <= playerY + playerH &&
 				hc >= playerX && hc <= playerX + playerW)
 			begin
 				red = 3'b000;
