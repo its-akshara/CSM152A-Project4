@@ -48,7 +48,7 @@ module bossBattleTop(clk, btnRst, btnLeft, btnRight, btnShoot,
 	clockDivider gen_clkVga(clk, rst, 26'b0000000000000000000000010, clk_vga);
 	
 	wire pulse_bossProjSpeed;
-	clockPulser gen_pulseBossProjSpeed(clk, rst, 750000, pulse_bossProjSpeed);
+	clockPulser gen_pulseBossProjSpeed(clk, rst, 400000, pulse_bossProjSpeed);
 
 	wire pulse_playerProjSpeed;
 	clockPulser gen_pulsePlayerProjSpeed(clk, rst, 500000, pulse_playerProjSpeed);

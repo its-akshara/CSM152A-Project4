@@ -64,8 +64,8 @@ module bossController(clk_master, pulse_cycleStep, rst, bossHit, delay,
 	//ATTACK 1 & 2 CONSTANTS
 	parameter PROJ_OFFSET = BOSS_W / 4;
 	parameter PROJ_Y = BOSS_Y + BOSS_H;
-	parameter PROJ_W = 10;
-	parameter PROJ_H = 15;
+	parameter PROJ_W = 20;
+	parameter PROJ_H = 25;
 	
 	//ATTACK 1 CONSTANTS
 	parameter ATK1_PROJ1_X = BOSS_X - (PROJ_W / 2);
@@ -81,7 +81,7 @@ module bossController(clk_master, pulse_cycleStep, rst, bossHit, delay,
 	parameter ATK2_PROJ4_X = ATK2_PROJ3_X + PROJ_OFFSET;
 	
 	//ATTACK 3 CONSTANTS
-	parameter BEAM_W = 80;
+	parameter BEAM_W = 100;
 	parameter BEAM_H = 280;
 	parameter ATK3_PROJ1_X = BOSS_X - (BEAM_W / 2);
 	parameter ATK3_PROJ2_X = BOSS_X + BOSS_W - (BEAM_W / 2);
