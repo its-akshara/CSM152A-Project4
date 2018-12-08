@@ -31,6 +31,7 @@ module playerController_tb;
 	reg mvLeft;
 	reg mvRight;
 	reg playerHit;
+	reg [31:0] delay;
 
 	// Outputs
 	wire [9:0] playerX;
@@ -40,6 +41,10 @@ module playerController_tb;
 	wire [9:0] projW;
 	wire [8:0] projH;
 	wire [1:0] playerHP;
+	wire immune;
+	
+	always #0.5 clk_master = ~clk_master;
+	clockPulser pulseGen(clk_master, rst, 4, pulse_stepCycle);
 
 	// Instantiate the Unit Under Test (UUT)
 	playerController uut (
@@ -48,18 +53,17 @@ module playerController_tb;
 		.rst(rst), 
 		.mvLeft(mvLeft), 
 		.mvRight(mvRight), 
-		.playerHit(playerHit), 
+		.playerHit(playerHit),
+		.delay(delay),
 		.playerX(playerX), 
 		.playerY(playerY),
 		.playerW(playerW), 
 		.playerH(playerH), 
 		.projW(projW), 
 		.projH(projH), 
-		.playerHP(playerHP)
+		.playerHP(playerHP),
+		.immune(immune)
 	);
-	
-	always #0.5 clk_master = ~clk_master;
-	clockPulser pulseGen(clk_master, rst, 4, pulse_stepCycle);
 
 
 	initial begin
@@ -70,6 +74,7 @@ module playerController_tb;
 		mvLeft = 0;
 		mvRight = 0;
 		playerHit = 0;
+		delay = 0;
 		
 		#0.5
 		rst = 1;
@@ -106,7 +111,16 @@ module playerController_tb;
 		
 		#5
 		mvRight = 0;
-        
+		
+		#5
+		rst = 1;
+		
+		#5
+		rst = 0;
+		
+		#8
+      delay = 2;
+		playerHit = 1;
 
 	end
       
