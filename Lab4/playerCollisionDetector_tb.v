@@ -41,6 +41,7 @@ module playerCollisionDetector_tb;
 	reg [9:0] bossProj5X;
 	reg [8:0] bossProj5Y;
 	reg [9:0] projW;
+	reg [8:0] projH;
 
 	// Outputs
 	wire playerHit;
@@ -65,6 +66,7 @@ module playerCollisionDetector_tb;
 		.bossProj5X(bossProj5X), 
 		.bossProj5Y(bossProj5Y), 
 		.projW(projW), 
+		.projH(projH),
 		.playerHit(playerHit), 
 		.projHit(projHit), 
 		.collidedProj(collidedProj)
@@ -90,22 +92,29 @@ module playerCollisionDetector_tb;
 		bossProj5X = 0;
 		bossProj5Y = 0;
 		projW = 100;
+		projH = 100;
 
 		#3;
-		bossProj1X = 190;
-		bossProj1Y = 210;
+		bossProj1X =190;
+		bossProj1Y = 200;
 		
 		#5
-		bossProj5X = 300;
-		bossProj5Y = 300;
+		bossProj3X = 200;
+		bossProj3Y = 100;
 		
 		#5
 		bossProj1X =0;
 		bossProj1Y = 0;
 		bossProj4X = 300;
 		bossProj4Y = 200;
-		playerX = 330;
+		playerX = 290;
 		playerY = 200;
+		
+		#5
+		bossProj4X = 0;
+		bossProj4Y = 0;
+		bossProj2Y = 200;
+		bossProj2X = 50;
 
 	end
       

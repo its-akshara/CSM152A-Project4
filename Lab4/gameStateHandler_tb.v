@@ -68,14 +68,12 @@ module gameStateHandler_tb;
 		playerHP = 0;
 		
 		#3
-		bossHP = 3;
-		playerHP = 3;
-		
-		#2
 		rst = 1;
 		
 		#3
 		rst = 0;
+		bossHP = 3;
+		playerHP = 3;
 		
 	end
       
